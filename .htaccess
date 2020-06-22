@@ -1,5 +1,0 @@
-RewriteEngine On
-RewriteCond %{HTTP_HOST} ^csunacm.org
-RewriteRule (.*) http://www.csunacm.org/$1 [R=301,L]
-
-DirectoryIndex index.html
