@@ -1,0 +1,8 @@
+User-Agent: * 
+Allow: /https://csun-acm.github.io/acm/ 
+Allow: /https://csun-acm.github.io/acm/index.html/
+Allow: /https://csun-acm.github.io/acm/about.html/
+Disallow: /https://csun-acm.github.io/index.html/ 
+
+
+Sitemap: https://csun-acm.github.io/acm/sitemap.xml 
