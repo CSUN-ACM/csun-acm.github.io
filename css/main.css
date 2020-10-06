@@ -18,6 +18,10 @@ nav {
     font-size: 1.1em;
 }
 
+.navbar-brand {
+    color: white;
+}
+
 .navbar-brand .img-responsive2{
     max-height: 45px;
     max-width: 50%;
@@ -69,6 +73,7 @@ nav {
 #home hr{
     background-color: white;
     border: 1px solid;
+    max-width: 33ch;
 }
 
 
