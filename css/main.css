@@ -139,6 +139,11 @@ nav {
 
 .event-cards{
     padding-bottom: 2em;
+    min-width: 330px;
+}
+
+.event-title {
+    padding-top: 1em;
 }
 
 .top-picture{
