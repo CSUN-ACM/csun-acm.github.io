@@ -7,6 +7,12 @@ nav {
     color: white;
     padding-bottom:65px;
 }
+
+hr {
+    height: 2px;
+    background-color: #D00D2D;
+}
+
 .logo{
     font-size: 1.2em;
     font-weight: 800;
@@ -40,42 +46,30 @@ nav {
     color: #D00D2D;
 }
 
-#home, .homeoverlay
+.homeoverlay
 {
     color: white;
     width: 100%;
     height: 100vh;
     position: absolute;
 }
-#home .display-3{
-    font-size: 8rem;
-}
-#home .under{
-    font-size: 3.7em;
+
+#acm-display {
+    z-index: 2;
 }
 
-#home-writing{
-    font-weight: 700;
-    color: white;
+#acm-title {
+    font-size: 8rem;
+}
+
+#acm-subtitle {
+    font-size: 3.7em;
     letter-spacing: 4px;
 }
 
-#home
-{
-    color: white;
-    z-index: 2;
-    font-weight: 800;
-}
 .test{
     display:none;
 }
-
-#home hr{
-    background-color: white;
-    border: 1px solid;
-    max-width: 33ch;
-}
-
 
 .homeoverlay
 {
@@ -223,15 +217,11 @@ footer{
         padding-bottom: 4rem;
     }
 
-
-    #home-writing{
-        padding-top:5em;
-    }
-
-    #home .display-3{
+    #acm-title {
         font-size: 6rem;
     }
-    #home .under{
+
+    #acm-subtitle {
         font-size: 2em;
     }
 
@@ -253,4 +243,10 @@ footer{
         font-size: 3em;
     }
 
+}
+
+@media (max-width: 568px) {
+    #acm-title {
+        font-size: 5rem;
+    }
 }
