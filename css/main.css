@@ -100,23 +100,16 @@ hr {
     padding-bottom: 0.75em;
 }
 
-.intro{
-    padding-top: 7rem;
-    padding-bottom: 5rem;
-    padding-left: 10rem;
-    padding-right: 10rem;
-    font-size: 1rem;
-}
+#intro-body {
 
-
-
-.intro p{
-    padding-top:4em;
     text-align: justify;
     text-justify: inter-word;
+    /*
+    padding-top:4em;
     padding-bottom: 4em;
     border-bottom: solid #D00D2D 5px;
     border-top: solid #D00D2D 5px;
+    */
     font-size: 1.25em;
 }
 
@@ -247,6 +240,14 @@ footer{
 
 @media (max-width: 568px) {
     #acm-title {
-        font-size: 5rem;
+        font-size: 4rem;
+    }
+
+    #intro-title {
+        font-size: 2rem;
+    }
+
+    #events-title {
+        font-size: 2rem;
     }
 }
