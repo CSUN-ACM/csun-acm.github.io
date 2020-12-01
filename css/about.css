@@ -11,13 +11,14 @@ nav {
 hr {
     height: 3px;
     background-color: #D00D2D;
-    max-width: 80%;
+    max-width: 100%;
 }
 
 .logo{
     font-size: 1.2em;
     font-weight: 800;
 }
+
 .navbar-inverse .navbar-nav .nav-link {
     color: white;
     font-family: 'Fjalla One', sans-serif;
@@ -39,59 +40,20 @@ hr {
     padding-right:1.5em;
 }
 
+#heading-1 { padding-top: 3em; }
 
-#about-title{
-    padding-bottom: 1.2rem;
-}
+#about p { font-size: 1.2em; }
 
-#about{
-    padding-right: 8rem;
-    padding-left: 8rem;
-}
-
-#heading-1{
-    border-bottom: solid #D00D2D 5px;
-    text-align: center;
-    padding-top: 3em;
-    padding-bottom: 5rem;
-    margin-bottom: 1rem;
-
-}
-
-#heading-2{
-    border-bottom: solid #D00D2D 5px;
-    text-align: center;
-    padding-bottom: 5rem;
-    margin-bottom: 1rem;
-    padding-top: 3rem;
-}
-
-#heading-3{
-    border-bottom: solid #D00D2D 5px;
-    text-align: center;
-    padding-bottom: 5rem;
-    margin-bottom: 1rem;
-    padding-top: 3rem;
-}
-
-#about p{
-    font-size: 1.2em;
-    border-bottom: solid #D00D2D 5px;
-    padding-bottom: 1rem;
-    margin-bottom: 3rem;
-}
+#contact p{ font-size: 1.2em;}
 
 .card {
     /* need min/max because flexbox */
     min-width: 310px;
     max-width: 310px;
     height: 160px;
-    float: none; /* Added */
-    margin: 0 auto; /* Added */
-    margin-bottom: 10px; /* Added */
+    float: none;
+    margin: 0 auto 10px;
 }
-
-.card-body {}
 
 .card-img {
     object-fit: cover;
@@ -100,60 +62,21 @@ hr {
     max-height: 100px;
 }
 
-.card-footer {
-    height: 50px;
-}
-
-.board-title{
-    padding-top: 2rem;
-    padding-bottom: 4rem;
-    border-bottom: solid 5px #D00D2D;
-    margin-bottom: 2rem;
-}
-
-
-#contact-heading{
-    padding-bottom: 3rem;
-    text-align: center;
-    border-bottom: solid #D00D2D 5px;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-#contact{
-    padding-right: 7rem;
-    padding-left: 7rem;
-
-}
-#contact p{
-    font-size: 1.2em;
-}
-
-.second-p{
-    border-bottom: solid #D00D2D 5px;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-}
-
+.card-footer { height: 50px; }
 
 footer{
     background: #000000;
     color: #D00D2D;
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     font-weight: 700;
     padding-top: 2em;
 }
 
-.footer-text {
-    font-size: 0.8em;
-    padding:0;
-}
-
 .follow-us{
-    padding-top:0.1em;
     font-size: 4em;
     color: #D00D2D;
 }
+
 .follow-us a{
     color:#D00D2D;
     text-align: center;
@@ -162,49 +85,22 @@ footer{
 .follow-us h1{
     font-weight: 700;
     font-size: 0.5em;
-    font-family: Poppins
+    font-family: Poppins, serif
 }
+
 .footer-text p{
+    font-size: 0.8em;
     letter-spacing: 4px;
-    margin: 0;
-}
-
-.footer{
-    width: 55%;
-}
-
-.fa-discord {
-    height: 48px;
-    width: 41.15px;
 }
 
 @media (max-width: 978px) {
-    hr {
-        max-width: 97%;
-    }
+    hr { max-width: 100%; }
 
-    #about{
-        padding:0;
-        margin:0;
-        padding-top: 1em;
-        padding-bottom: 1rem;
-    }
+    .footer h1{ font-size: 1.75em; }
 
-    #contact {
-        padding: 0;
-        margin: 0;
-        padding-bottom: 2rem;
-    }
-    .footer{
-        width: 100%;
-    }
+    .follow-us{ font-size: 3em; }
+}
 
-    .footer h1{
-        font-size: 1.75em;
-    }
-
-    .follow-us{
-        font-size: 3em;
-    }
+@media (max-width: 568px) {
 
 }
