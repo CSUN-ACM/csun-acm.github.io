@@ -7,6 +7,13 @@ nav {
     color: white;
     padding-bottom:65px;
 }
+
+hr {
+    height: 3px;
+    background-color: #D00D2D;
+    max-width: 80%;
+}
+
 .logo{
     font-size: 1.2em;
     font-weight: 800;
@@ -74,40 +81,27 @@ nav {
     margin-bottom: 3rem;
 }
 
-.card-block{
-    vertical-align: bottom;
+.card {
+    /* need min/max because flexbox */
+    min-width: 310px;
+    max-width: 310px;
+    height: 160px;
+    float: none; /* Added */
+    margin: 0 auto; /* Added */
+    margin-bottom: 10px; /* Added */
 }
 
-#board img {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+.card-body {}
+
+.card-img {
+    object-fit: cover;
+    object-position: center;
+    width: 100px;
+    max-height: 100px;
 }
 
-#board{
-    background-color: white;
-    color:  #000000;
-    height:auto;
-    width:100%;
-    text-align: justify;
-    text-justify: inter-word;
-    padding-right: 8rem;
-    padding-left: 8rem;
-}
-
-#board .card-img-top{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.card-block{
-    background: #D00D2D;
-    color: white;
-}
-
-.board-cards{
-    padding-bottom: 2rem;
+.card-footer {
+    height: 50px;
 }
 
 .board-title{
@@ -117,22 +111,6 @@ nav {
     margin-bottom: 2rem;
 }
 
-.board-container{
-    border-bottom: solid 5px #D00D2D;
-    margin-bottom: 4rem;
-}
-
-#board .samir{
-    padding-bottom: 2.9rem;
-}
-
-#board h4{
-    font-family: Poppins;
-}
-
-#board h6{
-    font-family: Poppins;
-}
 
 #contact-heading{
     padding-bottom: 3rem;
@@ -201,17 +179,15 @@ footer{
 }
 
 @media (max-width: 978px) {
+    hr {
+        max-width: 97%;
+    }
+
     #about{
         padding:0;
         margin:0;
         padding-top: 1em;
         padding-bottom: 1rem;
-    }
-
-    #board{
-        padding:0;
-        margin:0;
-        padding-bottom: 2rem;
     }
 
     #contact {
