@@ -75,6 +75,13 @@ hr {
     max-height: 100px;
 }
 
+.card-img-sm {
+    object-fit: cover;
+    object-position: center;
+    width: 42px;
+    max-height: 42px;
+}
+
 .card-footer { height: 50px; }
 
 footer{
