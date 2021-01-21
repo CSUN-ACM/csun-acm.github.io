@@ -59,11 +59,27 @@ hr {
     margin: 0 auto 10px;
 }
 
+.card-short {
+    /* need min/max because flexbox */
+    min-width: 310px;
+    max-width: 310px;
+    height: 160px;
+    float: none;
+    margin: 0 auto 10px;
+}
+
 .card-img {
     object-fit: cover;
     object-position: center;
     width: 100px;
     max-height: 100px;
+}
+
+.card-img-sm {
+    object-fit: cover;
+    object-position: center;
+    width: 42px;
+    max-height: 42px;
 }
 
 .card-footer { height: 50px; }
