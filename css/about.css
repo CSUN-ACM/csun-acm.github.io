@@ -1,5 +1,11 @@
-html, body { width: 100%; height: 100%;
+html, body {
+    width: 100%;
+    height: 100%;
     font-family: 'Fjalla One', sans-serif;
+}
+
+footer{
+    font-family: "Poppins", sans-serif;
 }
 
 nav {
@@ -83,35 +89,6 @@ hr {
 }
 
 .card-footer { height: 50px; }
-
-footer{
-    background: #000000;
-    color: #D00D2D;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    padding-top: 2em;
-}
-
-.follow-us{
-    font-size: 4em;
-    color: #D00D2D;
-}
-
-.follow-us a{
-    color:#D00D2D;
-    text-align: center;
-}
-
-.follow-us h1{
-    font-weight: 700;
-    font-size: 0.5em;
-    font-family: Poppins, serif
-}
-
-.footer-text p{
-    font-size: 0.8em;
-    letter-spacing: 4px;
-}
 
 @media (max-width: 978px) {
     hr { max-width: 100%; }
