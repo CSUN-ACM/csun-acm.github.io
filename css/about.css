@@ -4,9 +4,7 @@ html, body {
     font-family: 'Fjalla One', sans-serif;
 }
 
-footer{
-    font-family: "Poppins", sans-serif;
-}
+footer{ font-family: "Poppins", sans-serif; }
 
 nav {
     color: white;

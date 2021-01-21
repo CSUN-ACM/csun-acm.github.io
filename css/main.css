@@ -2,8 +2,9 @@ html, body { width: 100%; height: 100%;
     font-family: 'Fjalla One', sans-serif;
 }
 
+footer{ font-family: "Poppins"; }
+
 nav {
-    background-color:#D00D2D;
     color: white;
     padding-bottom:65px;
 }
@@ -24,9 +25,7 @@ hr {
     font-size: 1.1em;
 }
 
-.navbar-brand {
-    color: white;
-}
+.navbar-brand { color: white; }
 
 .navbar-brand .img-responsive2{
     max-height: 45px;
@@ -42,9 +41,7 @@ hr {
     padding-right:1.5em;
 }
 
-#home-br{
-    color: #D00D2D;
-}
+#home-br{ color: #D00D2D; }
 
 .homeoverlay
 {
@@ -54,22 +51,16 @@ hr {
     position: absolute;
 }
 
-#acm-display {
-    z-index: 2;
-}
+#acm-display { z-index: 2; }
 
-#acm-title {
-    font-size: 8rem;
-}
+#acm-title { font-size: 8rem; }
 
 #acm-subtitle {
     font-size: 3.7em;
     letter-spacing: 4px;
 }
 
-.test{
-    display:none;
-}
+.test{ display:none; }
 
 .homeoverlay
 {
@@ -92,24 +83,13 @@ hr {
 }
 
 
-.intro display-3{
-    font-size: 2rem;
-}
+.intro display-3{ font-size: 2rem; }
 
-#intro-title{
-    padding-bottom: 0.75em;
-}
+#intro-title{ padding-bottom: 0.75em; }
 
 #intro-body {
-
     text-align: justify;
     text-justify: inter-word;
-    /*
-    padding-top:4em;
-    padding-bottom: 4em;
-    border-bottom: solid #D00D2D 5px;
-    border-top: solid #D00D2D 5px;
-    */
     font-size: 1.25em;
 }
 
@@ -129,13 +109,9 @@ hr {
     min-width: 330px;
 }
 
-.event-title {
-    padding-top: 1em;
-}
+.event-title { padding-top: 1em; }
 
-.top-picture{
-    background: #D00D2D;
-}
+.top-picture{ background: #D00D2D; }
 
 .btn-primary:hover,
 .btn-primary:focus,
@@ -153,11 +129,7 @@ hr {
 
 }
 
-#events button{
-    font-family: "Fjalla One";
-}
-
-footer{ font-family: "Poppins"; }
+#events button{ font-family: "Fjalla One"; }
 
 @media (max-width: 978px) {
     .intro{
@@ -169,13 +141,9 @@ footer{ font-family: "Poppins"; }
         padding-bottom: 4rem;
     }
 
-    #acm-title {
-        font-size: 6rem;
-    }
+    #acm-title { font-size: 6rem; }
 
-    #acm-subtitle {
-        font-size: 2em;
-    }
+    #acm-subtitle { font-size: 2em; }
 
     #events{
         margin:0;
@@ -185,15 +153,9 @@ footer{ font-family: "Poppins"; }
 }
 
 @media (max-width: 568px) {
-    #acm-title {
-        font-size: 4rem;
-    }
+    #acm-title { font-size: 4rem; }
 
-    #intro-title {
-        font-size: 2rem;
-    }
+    #intro-title { font-size: 2rem; }
 
-    #events-title {
-        font-size: 2rem;
-    }
+    #events-title { font-size: 2rem; }
 }
