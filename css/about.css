@@ -91,10 +91,6 @@ hr {
 
 @media (max-width: 978px) {
     hr { max-width: 100%; }
-
-    .footer h1{ font-size: 1.75em; }
-
-    .follow-us{ font-size: 3em; }
 }
 
 @media (max-width: 568px) {

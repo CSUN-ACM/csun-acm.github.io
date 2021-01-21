@@ -157,48 +157,7 @@ hr {
     font-family: "Fjalla One";
 }
 
-footer{
-    background: #000000;
-    color: #D00D2D;
-    font-family: "Poppins";
-    font-weight: 700;
-    padding-top: 2em;
-}
-
-.footer-text {
-    font-size: 0.8em;
-    padding:0;
-}
-
-.follow-us{
-    padding-top:0.1em;
-    font-size: 4em;
-    color: #D00D2D;
-}
-.follow-us a{
-    color:#D00D2D;
-    text-align: center;
-}
-
-.follow-us h1{
-    font-weight: 700;
-    font-size: 0.5em;
-    font-family: Poppins
-}
-.footer-text p{
-    letter-spacing: 4px;
-    margin: 0;
-}
-
-.footer{
-    width: 55%;
-}
-
-
-.fa-discord {
-    height: 48px;
-    width: 41.15px;
-}
+footer{ font-family: "Poppins"; }
 
 @media (max-width: 978px) {
     .intro{
@@ -223,19 +182,6 @@ footer{
         padding-left: 3rem;
         padding-right: 3rem;
     }
-
-    .footer{
-        width: 100%;
-    }
-
-    .footer h1{
-        font-size: 1.75em;
-    }
-
-    .follow-us{
-        font-size: 3em;
-    }
-
 }
 
 @media (max-width: 568px) {
