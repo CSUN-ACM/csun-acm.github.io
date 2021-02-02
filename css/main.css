@@ -81,7 +81,7 @@ hr {
     padding-left: 10rem;
     padding-right: 10rem;
 }
-.events-title{ font-size:5em;}
+.body-title{ font-size:5em;}
 
 .event-cards{
     padding-bottom: 2em;
@@ -110,6 +110,9 @@ hr {
 
 #events button{ font-family: "Fjalla One"; }
 
+#twitch { overflow: hidden; }
+#twitch-player { min-width: 400px; }
+
 @media (max-width: 978px) {
     .intro{
         padding:0;
@@ -136,7 +139,10 @@ hr {
 
     #intro-title { font-size: 2rem; }
 
-    #events-title { font-size: 2rem; }
+    .body-title { font-size: 2rem; }
+
+    #twitch { padding: 0;}
+    #twitch > hr { width: 75%; }
 }
 
 .fade-in-6 { animation: fadeIn ease 6s; }
