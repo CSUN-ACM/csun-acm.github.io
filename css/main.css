@@ -12,6 +12,7 @@ nav {
 hr {
     height: 2px;
     background-color: #D00D2D;
+    max-width: 1600px;
 }
 
 .logo{
@@ -80,12 +81,7 @@ hr {
     padding-left: 10rem;
     padding-right: 10rem;
 }
-.events-title{
-    padding-bottom: 1em;
-    font-size:5em;
-    border-bottom: solid #D00D2D 5px;
-    margin-bottom: 1em;
-}
+.events-title{ font-size:5em;}
 
 .event-cards{
     padding-bottom: 2em;
