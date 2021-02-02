@@ -71,7 +71,7 @@ hr {
 
 #intro-title{ padding-bottom: 0.75em; }
 
-#intro-body {
+.body-text {
     text-align: justify;
     text-justify: inter-word;
     font-size: 1.25em;
