@@ -198,53 +198,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-    <script>
-        $('.test').hide(0).delay(100).fadeIn(5000);
-    </script>
-    <script>/* <![CDATA[ */
-    (function (d, s, a, i, j, r, l, m, t) {
-        try {
-            l = d.getElementsByTagName('a');
-            t = d.createElement('textarea');
-            for (i = 0; l.length - i; i++) {
-                try {
-                    a = l[i].href;
-                    s = a.indexOf('/cdn-cgi/l/email-protection');
-                    m = a.length;
-                    if (a && s > -1 && m > 28) {
-                        j = 28 + s;
-                        s = '';
-                        if (j < m) {
-                            r = '0x' + a.substr(j, 2) | 0;
-                            for (j += 2; j < m && a.charAt(j) != 'X'; j += 2) s += '%' + ('0' + ('0x' + a.substr(j, 2) ^ r).toString(16)).slice(-2);
-                            j++;
-                            s = decodeURIComponent(s) + a.substr(j, m - j)
-                        }
-                        t.innerHTML = s.replace(/</g, '&lt;').replace(/\>/g, '&gt;');
-                        l[i].href = 'mailto:' + t.value
-                    }
-                } catch (e) {
-                }
-            }
-        } catch (e) {
-        }
-    })(document);
-    /* ]]> */</script>
-    <script>
-        $(document).ready(function () {
-            $('a[href^="#"]').on('click', function (e) {
-                e.preventDefault();
-        
-                var target = this.hash;
-                var $target = $(target);
-        
-                $('html, body').stop().animate({
-                    'scrollTop': $target.offset().top
-                }, 1500, 'swing', function () {
-                    window.location.hash = target;
-                });
-            });
-        });
-    </script>
+    <!-- custom js -->
+    <script src="main.js" ></script>
+
 </body>
 </html>
