@@ -18,6 +18,7 @@ hr {
     font-size: 1.2em;
     font-weight: 800;
 }
+
 .navbar-inverse .navbar-nav .nav-link {
     color: white;
     font-family: 'Fjalla One', sans-serif;
@@ -27,7 +28,7 @@ hr {
 
 .navbar-brand { color: white; }
 
-.navbar-brand .img-responsive2{
+.navbar-brand .img-responsive2 {
     max-height: 45px;
     max-width: 50%;
     overflow: visible;
@@ -36,22 +37,17 @@ hr {
     padding-right: 10px;
 }
 
-.navbar-nav > li{
+.navbar-nav > li {
     padding-left:1.5em;
     padding-right:1.5em;
 }
 
 #home-br{ color: #D00D2D; }
 
-.homeoverlay
-{
-    color: white;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
+#acm-display {
+    z-index: 2;
+    max-height: 900px !important;
 }
-
-#acm-display { z-index: 2; }
 
 #acm-title { font-size: 8rem; }
 
@@ -60,28 +56,15 @@ hr {
     letter-spacing: 4px;
 }
 
-.test{ display:none; }
-
-.homeoverlay
-{
-    background-color: #103486;
-    opacity: .5;
-    z-index: 1;
-}
-
-.homeimage
-{
+.homeimage {
     width: 100%;
     height: 100vh;
+    max-height: 900px;
     position: initial;
     overflow: hidden;
     background: url(../img/landing_page.jpg) top center no-repeat ;
-    /*background: #BEC6C3 url(http://i.imgur.com/rSjyA4F.jpg) top center no-repeat;*/
     background-size: cover;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
 }
-
 
 .intro display-3{ font-size: 2rem; }
 
@@ -158,4 +141,11 @@ hr {
     #intro-title { font-size: 2rem; }
 
     #events-title { font-size: 2rem; }
+}
+
+.fade-in-6 { animation: fadeIn ease 6s; }
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
