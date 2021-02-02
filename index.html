@@ -44,7 +44,7 @@
 </head>
 <body>
     <!-- navbar -->
-    <nav class="navbar fixed-top navbar-expand-md navbar-inverse navbar-dark bg-danger">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-inverse navbar-dark bg-danger">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -55,7 +55,7 @@
         <div class="collapse navbar-collapse " id="navbarToggler">
             <ul class="navbar-nav ml-auto mt-2 mt-md-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="#twitch">Twitch</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#events">Events</a>
@@ -105,7 +105,7 @@
                     -&nbspAlan&nbspTuring
                 </h1>
                 <hr />
-                <p id="intro-body" class="pt-5"> At CSUN, we believe in inclusivity, hard work, and determination and here at ACM we cherish and promote
+                <p class="pt-5 body-text"> At CSUN, we believe in inclusivity, hard work, and determination and here at ACM we cherish and promote
                     those values. Come join us at our next meeting and see the amazing guest speakers, workshops, and
                     social events we can offer you. We promise that you'll never be bored and that you'll always be
                     challenged by our new and innovative event We understand that many students have very intense
@@ -172,8 +172,19 @@
 
     <!-- Twitch stream -->
     <div id="twitch" class="container mt-5 mb-5">
-        <h1 class="display-4 mb-4 text-center body-title">Twitch Live-Stream</h1>
-        <hr />
+        <div class="row intro pt-5 pb-5 justify-content-center">
+            <div class="col-12 col-md-9 col-xl-12">
+                <h1 class="display-4 mb-4 text-center body-title">Twitch Live-Stream</h1>
+                <hr />
+                <p class="pt-5 body-text">
+                    As each workshop we host is orientated for a certain subject,
+                    our streams would be on the more casual side with random topics,
+                    one day we may be playing games where anyone can join,
+                    or another day we might be streaming development on a certain project.
+                    Whatever it may be, feel free to come and chill!
+                </p>
+            </div>
+        </div>
         <!-- 16:9 aspect ratio -->
         <div id="twitch-player" class="mt-4 mx-auto w-75 overflow-hidden embed-responsive embed-responsive-16by9">
             <iframe
