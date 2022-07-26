@@ -1,5 +1,5 @@
 <!-- ABOUT CSUN ACM -->
-## About CSUN ACM
+## About (CSUN) ACM
 
 The CSUN ACM is a student chapter of the Association for Computing Machinery, 
 an international scientific and educational organization dedicated to advancing the arts, 
