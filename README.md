@@ -8,7 +8,7 @@ sciences, and applications of information technology.
 <!-- CONTACT -->
 ## Contact
 
-acm@my.csun.edu | csuncstc@gmail.com
+acm@my.csun.edu | acm.sc@my.csun.edu| csuncstc@gmail.com 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
