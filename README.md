@@ -14,3 +14,5 @@ acm@my.csun.edu | acm.sc@my.csun.edu| csuncstc@gmail.com
 ## Acknowledgements
 * [GitHub Pages](https://pages.github.com)
 * [Font Awesome](https://fontawesome.com)
+
+@2024 CSUN ACM
