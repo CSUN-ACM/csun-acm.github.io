@@ -2,12 +2,17 @@
 
 /* Import custom font */
 @import url('./styles.css');
+:root {
+    --main-bg-color: #DC3545;
+    --font-family: 'Times New Roman', Times, serif;
+    --white-color: #fff;
+}
 
 html,
 body {
     width: 100%;
     height: 100%;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: var(--font-family);
 }
 /* Navbar text */
 .navbar-inverse .navbar-nav .nav-link {
@@ -24,6 +29,7 @@ body {
     overflow: hidden;
     background-color: var(--main-bg-color);
     white-space: nowrap;
+    
 }
 
 .scrolling-banner p {
@@ -31,6 +37,7 @@ body {
     display: inline-block;
     animation: scroll-left 55s linear infinite;
     color: var(--white-color);
+    font-family: var(--font-family);
 }
 
 @keyframes scroll-left {
@@ -84,6 +91,7 @@ footer .bi {
     flex-direction: row;
     align-items: center;
     margin-top: 30px;
+    font-family: var(--font-family);
 }
 
 .about-paragraph img {
@@ -111,6 +119,7 @@ blockquote {
 
 .accordion-body {
     font-size: 1em;
+    font-family: var(--font-family);
 }
 
 hr {

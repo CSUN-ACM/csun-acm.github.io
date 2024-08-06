@@ -11,17 +11,6 @@ body {
   font-family: var(--font-family);
 }
 
-footer {
-  font-family: var(--font-family);
-  color: var(--white-color);
-}
-
-footer .bi {
-  color: var(--white-color);
-  font-size: 1em;
-  font-family: var(--font-family);
-}
-
 .social-media,
 .copyright {
   color: var(--white-color);
@@ -83,7 +72,16 @@ hr {
     transform: translateX(-100%);
   }
 }
+footer {
+  font-family: var(--font-family);
+  color: var(--white-color);
+}
 
+footer .bi {
+  color: var(--white-color);
+  font-size: 1em;
+  font-family: var(--font-family);
+}
 h1 {
   text-align: center;
 }
@@ -116,7 +114,7 @@ h1 {
 .card-img-top {
   height: 200px;
   padding: 10px 5px;
-  border-radius: 8px;
+  border-radius: 15px;
 }
 
 .card-title,
