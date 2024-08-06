@@ -1,57 +1,138 @@
-html, body {
-    width: 100%;
-    height: 100%;
-    font-family: 'Fjalla One', sans-serif;
+/* about.css */
+
+/* Import custom font */
+@import url('./styles.css');
+:root {
+    --main-bg-color: #DC3545;
+    --font-family: 'Times New Roman', Times, serif;
+    --white-color: #fff;
 }
 
-footer{ font-family: "Poppins", sans-serif; }
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-family);
+}
+/* Navbar text */
+.navbar-inverse .navbar-nav .nav-link {
+    color: var(--white-color);
+    font-weight: 400;
+    font-size: 1em;
+}
 
-nav {
+/* Scrolling banner */
+.scrolling-banner {
+    width: 100%;
+    height: 30px;
+    margin-top: 81px;
+    overflow: hidden;
+    background-color: var(--main-bg-color);
+    white-space: nowrap;
+    
+}
+
+.scrolling-banner p {
+    font-size: medium;
+    display: inline-block;
+    animation: scroll-left 55s linear infinite;
+    color: var(--white-color);
+    font-family: var(--font-family);
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Footer styles */
+footer {
+    font-family: var(--font-family);
+    color: var(--white-color);
+}
+
+footer .bi {
+    color: var(--white-color);
+    font-size: 1em;
+    font-family: var(--font-family);
+}
+
+.social-media {
+    color: white !important;
+}
+
+.copyright {
+    color: white !important;
+    font-size: 1em;
+    text-decoration: none;
+    margin-right: 35px !important;
+}
+
+/* About Styles */
+.about-container {
+    background-color: rgb(255, 255, 255);
     color: white;
-    padding-bottom:65px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.about-description {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-paragraph {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+    font-family: var(--font-family);
+}
+
+.about-paragraph img {
+    width: 100px;
+    object-fit: contain;
+    margin-right: 30px;
+}
+
+blockquote {
+    font-size: 1.5em;
+    font-family: var(--font-family);
+    text-align: center;
+    margin-top: 45px;
+}
+
+/* Accordion styles*/
+.accordion {
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.accordion-button {
+    font-size: 0.7em;
+}
+
+.accordion-body {
+    font-size: 1em;
+    font-family: var(--font-family);
 }
 
 hr {
-    height: 3px;
-    background-color: #D00D2D;
-    max-width: 100%;
-}
-
-.logo{
-    font-size: 1.2em;
-    font-weight: 800;
-}
-
-.navbar-inverse .navbar-nav .nav-link {
-    color: white;
-    font-family: 'Fjalla One', sans-serif;
-    font-weight: 700;
-    font-size: 1.1em;
-}
-
-.navbar-brand .img-responsive2{
-    max-height: 45px;
+    background-color: #474646;
     max-width: 50%;
-    overflow: visible;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-right: 10px;
+    margin: auto;
+    margin-bottom: 15px;
 }
 
-.navbar-nav > li{
-    padding-left:1.5em;
-    padding-right:1.5em;
-}
-
-#heading-1 { padding-top: 3em; }
-
-#about p {
-    text-align: justify;
-    text-justify: inter-word;
+/* Board CSS */
+#contact p {
     font-size: 1.2em;
 }
-
-#contact p{ font-size: 1.2em;}
 
 .card {
     /* need min/max because flexbox */
@@ -81,16 +162,34 @@ hr {
 .card-img-sm {
     object-fit: cover;
     object-position: center;
-    width: 42px;
-    max-height: 42px;
+    width: 45px;
+    max-height: 45px;
+}
+.card-deck {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.card-footer {
+    height: 50px;
 }
 
-.card-footer { height: 50px; }
+
+/* Media Queries */
+@media (max-width: 978px) {
+    .about-paragraph {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-paragraph img {
+        margin-bottom: 20px;
+    }
+}
 
 @media (max-width: 978px) {
-    hr { max-width: 100%; }
-}
-
-@media (max-width: 568px) {
-
+    hr {
+        max-width: 100%;
+    }
 }
