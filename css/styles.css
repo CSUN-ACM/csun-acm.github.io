@@ -44,7 +44,7 @@ hr {
 .custom-carousel {
   width: 100%;
   overflow: hidden;
-  margin-left: 0.28rem;
+  margin: 0;
 }
 
 .custom-carousel .carousel-item img {
