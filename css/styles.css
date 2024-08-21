@@ -137,7 +137,12 @@ h1, .button, .hero-text {
   height: 100%;
   z-index: 1;
 }
-
+blockquote {
+  font-size: 1.5em;
+  font-family: var(--font-family);
+  text-align: center;
+  margin-top: 45px;
+}
 .content {
   position: relative;
   z-index: 2;

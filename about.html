@@ -56,22 +56,24 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-inverse navbar-dark bg-danger">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-danger">
     <div class="container-fluid">
+      <a class="navbar-brand logo d-flex align-items-center" href="index.html">
+        <img src="img/acm_logo.png" alt="ACM Logo" class="img-fluid" style="height: 55px;">
+        <span class="ms-2" style="font-family: 'Times New Roman', Times, serif;">ACM (CSUN)</span>
+      </a>
+  
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand logo" href="index.html" style="font-family: 'Times New Roman', Times, serif;">
-        <img class="img-responsive2" src="img/acm_logo.png" alt="ACM Logo" style="height: 55px;">ACM (CSUN)
-      </a>
+  
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0"
-          style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="font-family: 'Times New Roman', Times, serif;">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAbout" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">About</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
               <li><a class="dropdown-item" href="about.html">About Us</a></li>
               <li><a class="dropdown-item" href="board.html">Board</a></li>
               <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
@@ -80,28 +82,29 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEvents" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">Events</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownEvents">
               <li><a class="dropdown-item" href="index.html#events">Upcoming Events</a></li>
               <li><a class="dropdown-item" href="index.html#events">Coding</a></li>
               <li><a class="dropdown-item" href="index.html#events">Workshops</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact&nbspUs</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact&nbsp;Us</a></li>
           <li class="nav-item"><a class="nav-link"
               href="https://csun.campuslabs.com/engage/organization/association-for-computing-machinery-acm"
-              target="_blank">Join&nbspToday</a></li>
+              target="_blank">Join&nbsp;Today</a></li>
         </ul>
-        <ul class="navbar-nav sm-icons" style="font-size:23px; font-family: 'Times New Roman', Times, serif;">
-          <li><a class="nav-link" href="https://discord.gg/upxNx7U" target="_blank"><i class="bi bi-discord"></i></a>
-          </li>
-          <li><a class="nav-link" href="https://github.com/CSUN-ACM/" target="_blank"><i class="bi bi-github"></i></a>
-          </li>
-          <li><a class="nav-link" href="https://twitter.com/acmcsun/" target="_blank"><i
-                class="bi bi-twitter-x"></i></a>
-          </li>
-          <li><a class="nav-link" href="https://www.linkedin.com/company/acm-csun/mycompany/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+  
+        <ul class="navbar-nav sm-icons" style="font-size: 23px;">
+          <li><a class="nav-link" href="https://discord.gg/upxNx7U" target="_blank" aria-label="Discord"><i
+                class="bi bi-discord"></i></a></li>
+          <li><a class="nav-link" href="https://github.com/CSUN-ACM/" target="_blank" aria-label="GitHub"><i
+                class="bi bi-github"></i></a></li>
+          <li><a class="nav-link" href="https://twitter.com/acmcsun/" target="_blank" aria-label="Twitter"><i
+                class="bi bi-twitter"></i></a></li>
+          <li><a class="nav-link" href="https://www.linkedin.com/company/acm-csun/mycompany/" target="_blank"
+              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
         </ul>
       </div>
     </div>
