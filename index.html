@@ -57,23 +57,24 @@
 
 <body>
   <!-- Navbar -->
-  <div class="container-fluid">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light navbar-inverse navbar-dark bg-danger">
-    
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-danger">
+    <div class="container-fluid">
+      <a class="navbar-brand logo d-flex align-items-center" href="index.html">
+        <img src="img/acm_logo.png" alt="ACM Logo" class="img-fluid" style="height: 55px;">
+        <span class="ms-2" style="font-family: 'Times New Roman', Times, serif;">ACM (CSUN)</span>
+      </a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand logo" href="index.html" style="font-family: 'Times New Roman', Times, serif;">
-        <img class="img-responsive2" src="img/acm_logo.png" alt="ACM Logo" style="height: 55px;">ACM (CSUN)
-      </a>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0"
-          style="font-size: 20px; font-family: 'Times New Roman', Times, serif;">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="font-family: 'Times New Roman', Times, serif;">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">About</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAbout" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">About</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
               <li><a class="dropdown-item" href="about.html">About Us</a></li>
               <li><a class="dropdown-item" href="board.html">Board</a></li>
               <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
@@ -82,32 +83,35 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">Events</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEvents" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Events</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownEvents">
               <li><a class="dropdown-item" href="index.html#events">Upcoming Events</a></li>
               <li><a class="dropdown-item" href="index.html#events">Coding</a></li>
               <li><a class="dropdown-item" href="index.html#events">Workshops</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact&nbspUs</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact&nbsp;Us</a></li>
           <li class="nav-item"><a class="nav-link"
               href="https://csun.campuslabs.com/engage/organization/association-for-computing-machinery-acm"
-              target="_blank">Join&nbspToday</a></li>
+              target="_blank">Join&nbsp;Today</a></li>
         </ul>
-        <ul class="navbar-nav sm-icons" style="font-size:23px; font-family: 'Times New Roman', Times, serif;">
-          <li><a class="nav-link" href="https://discord.gg/upxNx7U" target="_blank"><i class="bi bi-discord"></i></a>
-          </li>
-          <li><a class="nav-link" href="https://github.com/CSUN-ACM/" target="_blank"><i class="bi bi-github"></i></a>
-          </li>
-          <li><a class="nav-link" href="https://twitter.com/acmcsun/" target="_blank"><i
-                class="bi bi-twitter-x"></i></a>
-          </li>
-          <li><a class="nav-link" href="https://www.linkedin.com/company/acm-csun/mycompany/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+
+        <ul class="navbar-nav sm-icons" style="font-size: 23px;">
+          <li><a class="nav-link" href="https://discord.gg/upxNx7U" target="_blank" aria-label="Discord"><i
+                class="bi bi-discord"></i></a></li>
+          <li><a class="nav-link" href="https://github.com/CSUN-ACM/" target="_blank" aria-label="GitHub"><i
+                class="bi bi-github"></i></a></li>
+          <li><a class="nav-link" href="https://twitter.com/acmcsun/" target="_blank" aria-label="Twitter"><i
+                class="bi bi-twitter"></i></a></li>
+          <li><a class="nav-link" href="https://www.linkedin.com/company/acm-csun/mycompany/" target="_blank"
+              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
         </ul>
       </div>
     </div>
   </nav>
+
+
 
   <!-- Scrolling banner -->
   <div class="scrolling-banner">
@@ -117,51 +121,29 @@
       Relations).</p>
   </div>
 
-
-
-  <!-- srcset="./img/outdoors-small.webp 500w,
-             ./img/outdoors-medium.webp 1000w,
-             ./img/outdoors-large.webp 1500w"
-     sizes="(max-width: 600px) 480px,
-            (max-width: 1200px) 800px,
-            1200px" -->
-  <!-- Carousel -->
-   <div class="container-fluid img-responsive">
-  <div id="carousel" class="carousel slide custom-carousel" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./img/outodoors.webp"  class="d-block w-100 h-100" alt="outodoors">
-      </div>
-      <div class="carousel-item">
-        <img src="./img/students.webp" class="d-block w-100 h-100" alt="students">
-      </div>
-      <div class="carousel-item">
-        <img src="./img/workshop.webp" class="d-block w-100 h-100" alt="workshop">
-      </div>
-    </div>
-  </div>
-</div>
-  <!-- Welcome message -->
-  <div class="container my-5">
-    <div class="custom-box p-4">
-      <img class="mx-auto d-block" src="img/acm_logo.png" style="height: 100px;" alt="ACM Logo">
-      <p class=".col-md-6 .offset-md-3 mx-auto fs-5 text-muted custom-paragraph">
-        At CSUN ACM, we embrace inclusivity, hard work, and determination.<br>
-        We know student life is tough, take a break with us!<br>
-        If you are looking to learn, connect, or just unwind, we&rsquo;ve got something for
-        you.<br>
-        Check out our
-        upcoming events
-        and come say hi!
+  <!-- Hero -->
+  <div
+    class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg background-image position-relative">
+    <div class="overlay"></div>
+    <div class="col-lg-7 p-3 pt-lg-5 pt-lg-3 z-index-2">
+      <h1 class="display-4 fw-bold lh-1 text-white">Welcome to CSUN ACM</h1>
+      <p class="lead text-white hero-text">
+        At CSUN ACM, we embrace inclusivity, hard work, and determination.
+        We know student life is tough, take a break with us!
+        If you are looking to learn, connect, or just unwind, weve got something for you.
+        Check out our upcoming events and come say hi!
       </p>
-      <div class="d-flex justify-content-center">
-        <a class="btn btn-danger btn-lg px-3 rounded-pill mx-2" href="about.html" >Learn&nbsp;More</a>
-        <a class="btn btn-outline-secondary btn-lg px-4 rounded-pill mx-2"
-          href="https://csun.campuslabs.com/engage/organization/association-for-computing-machinery-acm"
-          target="_blank">Join&nbsp;Today</a>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+        <a class="btn btn-danger btn-lg mx-auto button" href="about.html" style="border-radius: 10px;">Learn More</a>
+        <a class="btn btn-outline-secondary btn-lg mx-auto button"
+          href="https://csun.campuslabs.com/engage/organization/association-for-computing-machinery-acm" target="_blank"
+          style="border-radius: 10px;">Join Today</a>
+
       </div>
     </div>
+
   </div>
+
 
   <!-- Events -->
   <h1 class="text-body-emphasis" id="events">Upcoming events</h1>
@@ -200,8 +182,9 @@
             target="_blank"><i class="bi bi-github"></i></a>
           <a class="btn btn-link btn-floating btn-lg text-body m-1" href="https://twitter.com/acmcsun/"
             target="_blank"><i class="bi bi-twitter-x"></i></a>
-          <a class="btn btn-link btn-floating btn-lg text-body m-1" href="https://www.linkedin.com/company/acm-csun/mycompany/"
-            target="_blank"><i class="bi bi-linkedin"></i></a><br>
+          <a class="btn btn-link btn-floating btn-lg text-body m-1"
+            href="https://www.linkedin.com/company/acm-csun/mycompany/" target="_blank"><i
+              class="bi bi-linkedin"></i></a><br>
           <p>© 2024 Association for
             Computing Machinery (CSUN)</p>CSUN | ACM
         </div>
@@ -218,8 +201,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
-      <!-- custom scripts -->
-      <script src="main.js"></script>
+  <!-- custom scripts -->
+  <script src="main.js"></script>
 </body>
 
 </html>
