@@ -57,8 +57,17 @@ body {
   font-size: 20px;
   padding: 0 0.5rem;
 }
-h1{
+h1,
+p {
+  font-family: var(--font-family);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
   color: black;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
 }
 /* Scrolling banner */
 .scrolling-banner {
