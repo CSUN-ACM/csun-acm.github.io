@@ -101,27 +101,38 @@ hr {
   padding: 0 0.5rem;
 }
 
-.background-image {
+.hero-section {
   background-image: url('../img/landing_page.jpg');
+  padding-bottom: 3.4rem;
   margin: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  position: relative;
 }
 
-h1, .button, .hero-text {
+
+h1,
+.button,
+p {
   font-family: var(--font-family);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.5;
   color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+blockquote {
+  font-family: var(--font-family);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: black;
   text-align: center;
   padding: 2rem;
   position: relative;
@@ -137,12 +148,14 @@ h1, .button, .hero-text {
   height: 100%;
   z-index: 1;
 }
+
 blockquote {
   font-size: 1.5em;
   font-family: var(--font-family);
   text-align: center;
   margin-top: 45px;
 }
+
 .content {
   position: relative;
   z-index: 2;
@@ -210,11 +223,18 @@ h1 {
   font-weight: 400;
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    background-position: top;
+  }
+}
+
 /* Media Queries for Additional Adjustments */
 @media (max-width: 576px) {
   .navbar-brand img {
     height: 35px;
     /* Smaller logo on very small screens */
+
   }
 
   .navbar-brand span {
@@ -232,5 +252,9 @@ h1 {
 
   .sm-icons .nav-link {
     font-size: 18px;
+  }
+
+  .hero-section {
+    background-position: top;
   }
 }
