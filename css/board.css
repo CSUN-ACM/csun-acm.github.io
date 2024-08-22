@@ -1,0 +1,82 @@
+/* Adjust the card deck for grid layout */
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* Spread the cards evenly */
+  gap: 20px;
+  /* Space between cards */
+}
+
+/* Maintain smaller card sizes */
+.card {
+  flex: 1 1 calc(25% - 40px);
+  /* Four cards per row, adjust as needed */
+  max-width: calc(25% - 40px);
+  min-width: 200px;
+  margin-bottom: 20px;
+  height: auto;
+  /* Ensure height adjusts to content */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  word-wrap: break-word;
+}
+
+/* Consistent image sizes */
+.card-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Prevent text cutoff */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.card-title,
+.card-text {
+  margin-bottom: 0.5rem;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* Adjust footer alignment */
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 992px) {
+  .card {
+    flex: 1 1 calc(33.33% - 40px);
+    /* Three cards per row on medium screens */
+    max-width: calc(33.33% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 40px);
+    /* Two cards per row on small screens */
+    max-width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    flex: 1 1 100%;
+    /* One card per row on very small screens */
+    max-width: 100%;
+  }
+}
