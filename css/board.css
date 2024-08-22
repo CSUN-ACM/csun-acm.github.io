@@ -3,20 +3,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* Spread the cards evenly */
   gap: 20px;
-  /* Space between cards */
 }
 
 /* Maintain smaller card sizes */
 .card {
   flex: 1 1 calc(25% - 40px);
-  /* Four cards per row, adjust as needed */
   max-width: calc(25% - 40px);
   min-width: 200px;
   margin-bottom: 20px;
   height: auto;
-  /* Ensure height adjusts to content */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,8 +21,8 @@
 
 /* Consistent image sizes */
 .card-img {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   object-position: center;
 }
@@ -46,6 +42,8 @@
   margin-bottom: 0.5rem;
   white-space: normal;
   overflow-wrap: break-word;
+  hyphens: auto;
+  font-size: 1rem;
 }
 
 /* Adjust footer alignment */
@@ -68,7 +66,6 @@
 @media (max-width: 768px) {
   .card {
     flex: 1 1 calc(50% - 40px);
-    /* Two cards per row on small screens */
     max-width: calc(50% - 40px);
   }
 }
