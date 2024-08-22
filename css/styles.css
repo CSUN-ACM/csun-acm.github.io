@@ -115,11 +115,24 @@ h1,
 .button,
 p {
   font-family: var(--font-family);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.5;
   color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.card-title,
+.card-text {
+  font-family: var(--font-family);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: black;
   text-align: center;
   padding: 2rem;
   position: relative;
@@ -146,7 +159,7 @@ blockquote {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 0;
 }
 
 blockquote {
