@@ -104,7 +104,17 @@ p {
 .form-label {
   text-align: center;
 }
+.btn {
 
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-align: center;
+  color: white;
+  background-color: #dc3545;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
 .faq-container {
   margin-left: 20px !important;
   font-family: var(--font-family);

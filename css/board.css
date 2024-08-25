@@ -4,6 +4,50 @@ body {
   height: 100%;
   font-family: var(--font-family);
 }
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand span {
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+/* General Navbar Styling */
+.navbar {
+  padding: 0.5rem 1rem;
+}
+
+/* Ensure dropdowns take full width on mobile */
+.nav-item.dropdown .dropdown-menu {
+  width: 100%;
+}
+
+/* Navbar Links */
+.nav-link {
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+/* Centered Navigation Items */
+.navbar-nav {
+  text-align: center;
+}
+
+/* Social Media Icons */
+.sm-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.sm-icons .nav-link {
+  font-size: 20px;
+  padding: 0 0.5rem;
+}
 /* Scrolling banner */
 .scrolling-banner {
   width: 100%;
