@@ -33,12 +33,9 @@
     content="Information about the Association for Computing Machinery (ACM) Student Chapter at California State University, Northridge." />
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/about.css" />
 
 
@@ -56,67 +53,36 @@
 <body>
   <!-- Navbar -->
   <header class="bg-header">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-danger">
-      <div class="container-fluid">
-        <a class="navbar-brand logo d-flex align-items-center" href="index.html">
-          <img src="img/acm_logo.png" alt="ACM Logo" class="img-fluid" style="height: 55px;">
-          <span class="ms-2" style="font-family: 'Times New Roman', Times, serif;">ACM (CSUN)</span>
-        </a>
-
+    <nav class="navbar navbar-expand-lg bg-danger ">
+      <div class="container">
+        <a class="navbar-brand text-white" href="#home"><img class="img-responsive " width="100px" height="100px"
+            src="./img/acm_logo.png" />CSUN Chapter</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 " style="font-family: 'Times New Roman', Times, serif;">
-            <li class="nav-item dropdown">
-              <a class="nav-link  text-white dropdown-toggle" href="#" id="navbarDropdownAbout" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">About</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
-                <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                <li><a class="dropdown-item" href="board.html">Board</a></li>
-                <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
-                <li><a class="dropdown-item"
-                    href="Association_for_Computing_Machinery_ACM_08.01.2023_EO_1068.pdf">Constitution</a></li>
-              </ul>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <li class="nav-item px-2 ">
+              <a class="nav-link text-white" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link  text-white dropdown-toggle" href="#" id="navbarDropdownEvents" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">Events</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownEvents">
-                <li><a class="dropdown-item" href="index.html#events">Upcoming Events</a></li>
-                <li><a class="dropdown-item" href="index.html#events">Coding</a></li>
-                <li><a class="dropdown-item" href="index.html#events">Workshops</a></li>
-              </ul>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="#features">How it Works</a>
             </li>
-            <li class="nav-item"><a class="nav-link  text-white" href="contact.html">Contact&nbsp;Us</a></li>
-            <li class="nav-item"><a class="nav-link  text-white"
-                href="https://csun.campuslabs.com/engage/organization/association-for-computing-machinery-acm"
-                target="_blank">Join&nbsp;Today</a></li>
-          </ul>
-
-          <ul class="navbar-nav sm-icons" style="font-size: 23px;">
-            <li><a class="nav-link  text-white" href="https://discord.gg/upxNx7U" target="_blank"
-                aria-label="Discord"><i class="bi bi-discord"></i></a></li>
-            <li><a class="nav-link  text-white" href="https://github.com/CSUN-ACM/" target="_blank"
-                aria-label="GitHub"><i class="bi bi-github"></i></a></li>
-            <li><a class="nav-link  text-white" href="https://twitter.com/acmcsun/" target="_blank"
-                aria-label="Twitter"><i class="bi bi-twitter"></i></a></li>
-            <li><a class="nav-link  text-white" href="https://www.linkedin.com/company/acm-csun/mycompany/"
-                target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="./board.html">Meet our Board</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="#events">Events & Announcements</a>
+            </li>
+    
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="contact.html">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-    <!-- Scrolling banner -->
-    <div class="scrolling-banner">
-      <p>Congratulations to our new officers: Param Desai (President), Taguhi Yenokyan (Vice President), Nicholas
-        Rodriguez Weda (Treasurer), Charishma Challurubadri (Secretary), Juan Rodriguez (Web Master), Sherifat Solebo
-        (Web
-        Master), Ridham Patel (Web Master), Guna Yaswanth Gadde (Community Lead), Bernadette Panganiban (Public
-        Relations).</p>
-    </div>
 
   </header>
 
@@ -134,8 +100,8 @@
         <img src="./img/acm_logo.png" class="img-fluid rounded" alt="ACM Logo">
       </div>
       <div class="col-md-8">
-        <h2>What is ACM?</h2>
-        <p>The <strong>Association for Computing Machinery (ACM)</strong> is the world's leading educational and
+        <h2 class="text-center py-5">What is ACM?</h2>
+        <p class="py-5">The <strong>Association for Computing Machinery (ACM)</strong> is the world's leading educational and
           scientific computing society. With cutting-edge publications, conferences, and
           career resources, ACM provides its members with opportunities to lead and excel in the exciting field of
           computer
@@ -215,43 +181,43 @@
 
   </div>
   <!-- Footer -->
-  <footer class="text-center bg-danger text-white">
-    <!-- Grid container -->
-    <div class="container pt-4">
-      <section class="mb-4">
-        <h3 class="footer-text">Connect with CSUN ACM </h3>
-        <div class="social-media">
-          <!-- Facebook -->
-          <!-- <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"
-                            data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a> -->
+<footer class="bg-danger py-5 text-white">
+  <div class="container py-5" id="contact">
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <h3 class="fw-bold pb-3 text-center">Visit us</h3>
+        <p class="text-center">
+          CSUN, Northridge,<br />
+          California<br />
+          <a href="mailto:acm.sc@my.csun.edu" class="text-white">acm.sc@my.csun.edu</a>
+        </p>
 
-          <!-- Discord -->
-          <a class="btn btn-link btn-floating btn-lg text-white m-1" href="https://discord.gg/upxNx7U"
-            target="_blank"><i class="bi bi-discord"></i>
-
-            <!-- Google -->
-            <!-- <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"
-                              data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a> -->
-
-            <!-- GitHub -->
-            <a class="btn btn-link btn-floating btn-lg text-white m-1" href="https://github.com/CSUN-ACM/"
-              target="_blank"><i class="bi bi-github"></i>
-
-              <!-- X -->
-              <a class="btn btn-link btn-floating btn-lg text-white m-1" href="https://twitter.com/acmcsun/"
-                target="_blank"><i class="bi bi-twitter-x"></i>
-
-                <!-- LinkedIn -->
-                <a class="btn btn-link btn-floating btn-lg text-white m-1"
-                  href="https://www.linkedin.com/company/acm-csun/mycompany/" target="_blank"><i
-                    class="bi bi-linkedin"></i></a>
-                <h5>© 2024 Association for
-                  Computing Machinery (CSUN)</h5>CSUN | ACM
+      </div>
+      <!-- <div class="col-12 col-lg-4" id="helpful-links">
+          <h3 class="fw-bold pb-3">Helpful Links</h3>
+          <div class="d-flex flex-column ">
+            <a href="#" class="text-dark text-white">Link 1</a>
+            <a href="#" class="text-dark text-white">Link 2</a>
+            <a href="#" class="text-dark text-white">Link 3</a>
+            <a href="#" class="text-dark text-white">Link 4</a>
+          </div>
+        </div> -->
+      <div class="col-12 col-lg-4 text-center">
+        <h3 class="fw-bold pb-3">Connect with Us!</h3>
+        <div class="d-flex justify-content-center ">
+          <a href="#" class="text-white px-3"><i class="fab fa-discord icon"></i></i></a>
+          <a href="#" class="text-white px-3"><i class="fab fa-github icon"></i></ion-icon></a>
+          <a href="#" class="text-white px-3"><i class="fab fa-x-twitter icon"></i></ion-icon></a>
+          <a href="#" class="text-white px-3"><i class="fab fa-linkedin icon"></i></i></ion-icon></a>
         </div>
-      </section>
+      </div>
     </div>
-    <!-- Grid container -->
-  </footer>
+  </div>
+  <p class="text-center copyright">
+    &copy; 2024 all right reserved CSUN ACM
+  </p>
+</footer>
+
 
   <!-- custom scripts -->
   <script src="main.js"></script>

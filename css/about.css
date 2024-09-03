@@ -1,151 +1,120 @@
 /* about.css */
-
-/* Import custom font */
-@import url('./styles.css');
-
 :root {
-    --main-bg-color: #DC3545;
-    --font-family: 'Times New Roman', Times, serif;
-    --white-color: #fff;
+    /* Primary Color */
+    --primary-color: #1756a3;
+
+    --background-color: #ffffff;
+
+    /* Background */
+    --white-color: #ffffff;
+
+    /* Accent Gray */
+    --heading-text: #000;
+
+    /* Text and Secondary Elements */
+    --text-color: #333;
+
+    /* Divider Lines */
 }
 
-html,
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: var(--font-family);
+
+}
+
 body {
-    width: 100%;
-    height: 100%;
+    color: #333;
+    font-size: 1.8rem;
+    line-height: 1.6;
     font-family: var(--font-family);
 }
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.bg-header {
+    background: var(--background-color);
+}
+
+
+nav {
+    height: 10rem;
+}
+
+
+.navbar-brand {
+    font-size: 2.4rem;
+}
+
+.navbar-brand:hover {
+    color: var(--text-color);
+}
+
+.nav-link:link,
+.nav-link:visited {
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+
+.nav-link:hover,
+.nav-link:active {
+    color: var(--primary-color);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.nav-link.cta {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    display: inline-block;
+    padding: 0.5rem 2rem !important;
+    border-radius: 4px;
+}
+
+.nav-link.cta:hover {
+    background-color: #297fea;
+    color: #fff;
+}
+
 
 h1 {
-    color: black;
+    font-size: 5.2rem;
+    letter-spacing: -0.4px;
+    line-height: 1.2;
+    color: var(--text-color);
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* Navbar */
-.navbar-brand {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
+h2 {
+    font-size: 3rem;
+    line-height: 1.3;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.navbar-brand span {
-    font-size: 1.2rem;
-    white-space: nowrap;
+h3 {
+    font-family: 'Times New Roman', Times, serif;
 }
-
-/* General Navbar Styling */
-.navbar {
-    padding: 0.5rem 1rem;
-}
-
-/* Ensure dropdowns take full width on mobile */
-.nav-item.dropdown .dropdown-menu {
-    width: 100%;
-}
-
-/* Navbar Links */
-.nav-link {
-    font-size: 18px;
-    padding: 0.5rem 1rem;
-    color: white;
-}
-
-/* Centered Navigation Items */
-.navbar-nav {
-    text-align: center;
-}
-
-/* Social Media Icons */
-.sm-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5rem;
-}
-
-.sm-icons .nav-link {
-    font-size: 20px;
-    padding: 0 0.5rem;
-}
-
-/* Scrolling banner */
-.scrolling-banner {
-    width: 100%;
-    height: 30px;
-    margin-top: 81px;
-    overflow: hidden;
-    background-color: var(--main-bg-color);
-    white-space: nowrap;
-
-}
-
-.scrolling-banner p {
-    font-size: medium;
-    display: inline-block;
-    animation: scroll-left 55s linear infinite;
-    color: var(--white-color);
-    font-family: var(--font-family);
-}
-
-@keyframes scroll-left {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.btn {
- 
-    margin: 0 auto;
-    padding: 10px 20px;
-    text-align: center;
-    color: white;
-    background-color: #dc3545;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-/* Footer styles */
-footer {
-    font-family: var(--font-family);
-    color: var(--white-color);
-}
-
-footer .bi {
-    color: var(--white-color);
-    font-size: 1em;
-    font-family: var(--font-family);
-}
-
-.social-media {
-    color: white !important;
-}
-
-.copyright {
-    color: white !important;
-    font-size: 1em;
-    text-decoration: none;
-    margin-right: 35px !important;
-}
-
-
-
-h1,
-h2,
-p {
-    font-family: var(--font-family);
-    font-size: 1.25rem;
-    font-weight: 500;
-    line-height: 1.5;
-    color: black;
-    text-align: center;
-    padding: 2rem;
-    position: relative;
-    z-index: 2;
-}
-
 /* Accordion styles*/
 .accordion {
     margin-top: 3rem;
