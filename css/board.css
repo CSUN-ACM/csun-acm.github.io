@@ -1,14 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700;900&display=swap');
-
-
-/*
-SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-
-FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-*/
-
 :root {
   /* Primary Color */
   --primary-color: #1756a3;
@@ -24,7 +13,6 @@ FONT SIZE SYSTEM (px)
   /* Text and Secondary Elements */
   --text-color: #333;
 
-  /* Divider Lines */
 }
 
 
@@ -37,9 +25,8 @@ FONT SIZE SYSTEM (px)
 }
 
 html {
-  font-size: 70%;
+  font-size: 62.5%;
   scroll-behavior: smooth;
-  font-family: var(--font-family);
 
 }
 
@@ -47,7 +34,7 @@ body {
   color: #333;
   font-size: 1.8rem;
   line-height: 1.6;
-  font-family: var(--font-family);
+  font-family: 'Times New Roman', Times, serif;
 }
 
 ul {
@@ -62,9 +49,14 @@ a {
 .bg-header {
   background: var(--background-color);
 }
+
+
 nav {
-  height: 10rem;
+  height: 11rem;
+  font-family: 'Times New Roman', Times, serif !important;
 }
+
+
 .navbar-brand {
   font-size: 2.4rem;
 }
@@ -88,8 +80,18 @@ nav {
   color: var(--primary-color);
   font-family: 'Times New Roman', Times, serif;
 }
+
+
+.nav-link.cta {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  display: inline-block;
+  padding: 0.5rem 2rem !important;
+  border-radius: 4px;
+}
+
 .nav-link.cta:hover {
-  /* background-color: #297fea; */
+  background-color: #297fea;
   color: #fff;
 }
 h1,
@@ -159,7 +161,16 @@ p {
   align-items: center;
   height: auto;
 }
+footer {
+  font-family: var(--font-family);
+  color: var(--white-color);
+}
 
+footer .bi {
+  color: var(--white-color);
+  font-size: 1em;
+  font-family: var(--font-family);
+}
 /* Responsive adjustments for smaller screens */
 @media (max-width: 992px) {
   .card {
