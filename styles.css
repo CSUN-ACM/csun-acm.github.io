@@ -201,6 +201,9 @@ span.navbar-toggler-icon {
     backdrop-filter: blur(5px);
 
   }
+    .hero-img {
+      display: none;
+    }
 
   .card {
     flex: 1 1 calc(50% - 40px);
