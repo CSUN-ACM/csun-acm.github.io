@@ -159,16 +159,7 @@ p {
   align-items: center;
   height: auto;
 }
-footer {
-  font-family: var(--font-family);
-  color: var(--white-color);
-}
 
-footer .bi {
-  color: var(--white-color);
-  font-size: 1em;
-  font-family: var(--font-family);
-}
 /* Responsive adjustments for smaller screens */
 @media (max-width: 992px) {
   .card {
