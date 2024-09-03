@@ -171,20 +171,59 @@ span.navbar-toggler-icon {
 
 
 /* change navbar background on collapse */
+
+
 @media (max-width: 982px) {
   nav .navbar-nav {
     background-color: whitesmoke;
     padding: 2rem;
     backdrop-filter: blur(5px);
+
   }
 
-  .hero-section {
-    text-align: center;
+  .card {
+    flex: 1 1 calc(33.33% - 40px);
+    /* Three cards per row on medium screens */
+    max-width: calc(33.33% - 40px);
+    z-index: -1000;
   }
 
   h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav .navbar-nav {
+    background-color: whitesmoke;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 40px);
+    max-width: calc(50% - 40px);
+    z-index: -1000;
+  }
+}
+
+@media (max-width: 576px) {
+  nav .navbar-nav {
+    background-color: whitesmoke;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+  }
+.hero-img{
+  display: none;
+}
+  .card {
+    flex: 1 1 100%;
+    /* One card per row on very small screens */
+    max-width: 100%;
+    z-index: -1000;
   }
 }
 
