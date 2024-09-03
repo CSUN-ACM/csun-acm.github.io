@@ -96,80 +96,35 @@ nav {
   color: #fff;
 }
 
+.faq-container {
+  margin-left: 20px !important;
+  font-family: var(--font-family);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 h1 {
-  font-size: 5.2rem;
-  letter-spacing: -0.4px;
-  line-height: 1.2;
+  font-family: var(--font-family);
+  font-weight: 500;
+  line-height: 1.5;
+  color: black;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
-h2 {
-  font-size: 4.4rem;
-  line-height: 1.3;
+p {
+  font-family: var(--font-family);
+  font-size: 1.5rem;
 }
-
-/* Adjust the card deck for grid layout */
-.card-deck {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 20px;
-}
-
-/* Maintain smaller card sizes */
-.card {
-  flex: 1 1 calc(25% - 40px);
-  max-width: calc(25% - 40px);
-  min-width: 200px;
-  margin-bottom: 20px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  word-wrap: break-word;
-}
-
-/* Consistent image sizes */
-.card-img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Prevent text cutoff */
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  flex-grow: 1;
-}
-
-.card-title,
-.card-text {
-  margin-bottom: 0.5rem;
-  white-space: normal;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  font-size: 1rem;
-}
-
-/* Adjust footer alignment */
-.card-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-}
-
 
 span.navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   color: white;
 }
-
 
 
 /* change navbar background on collapse */
@@ -224,7 +179,6 @@ span.navbar-toggler-icon {
     z-index: -1000;
   }
 }
-
 
 
 .copyright {

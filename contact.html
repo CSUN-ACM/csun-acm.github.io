@@ -2,156 +2,131 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Official Website of the Association for Computing Machinery (ACM) Student Chapter at California State University, Northridge." />
-  <meta property="og:title" content="ACM (CSUN)" />
-  <meta property="og:description"
-    content="Official Website of the Association for Computing Machinery (ACM) Student Chapter at California State University, Northridge." />
-  <meta property="og:url" content="https://https://csun-acm.github.io/index.htm" />
-
-  <meta name="twitter:title" content="ACM (CSUN)" />
-  <meta name="twitter:description"
-    content="Official Website of the Association for Computing Machinery (ACM) Student Chapter at California State University, Northridge." />
-  <!-- Bootstrap and CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/ef5359af4d.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/contact.css" />
   <title>ACM (CSUN)</title>
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Fjalla+One:400,700" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,800" rel="stylesheet" />
-  <!-- Font Awesome kit's code -->
-  <script src="https://kit.fontawesome.com/420aa36862.js" crossorigin="anonymous"></script>
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q95Z5QB13"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-4Q95Z5QB13");
-  </script>
 </head>
+
 <body>
-  <!-- Navbar -->
+  <!-- navigation bar -->
+
   <header class="bg-header">
-    <nav class="navbar navbar-expand-lg bg-danger ">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand text-white" href="index.html"><img class="img-responsive " width="100px" height="100px"
-            src="./img/acm_logo.png" />CSUN Chapter</a>
+        <a class="navbar-brand text-dark fw-bold" href="index.html" data-bs-toggle="tooltip" data-bs-title="CSUN ACM"
+          data-bs-placement="bottom">CSUN ACM</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-            <li class="nav-item px-2 ">
-              <a class="nav-link text-white" aria-current="page" href="/">Home</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item px-2">
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link text-white" href="#features">How it Works</a>
+              <a class="nav-link" href="about.html">About Us</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link text-white" href="./board.html">Meet our Board</a>
+              <a class="nav-link" href="index.html#how">How it works</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link text-white" href="#events">Events & Announcements</a>
+              <a class="nav-link" href="index.html#events">Events</a>
             </li>
-    
             <li class="nav-item px-2">
-              <a class="nav-link text-white" href="contact.html">Contact</a>
+              <a class="nav-link" href="board.html">Meet our Board</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="FAQ.html">FAQs</a>
+            </li>
+            <li class="nav-item  ">
+              <a class="nav-link cta text-white" aria-current="page"  href="/">Contact Us</a>
             </li>
           </ul>
         </div>
       </div>
-    </nav>  
+    </nav>
+
+
   </header>
-
-
-<!-- contact us section -->
+  <main>
   <div class="container pt-xl-4 mt-5 pb-5">
-    <div class="row">
-
+    <div class="row">  
     </div>
     <div class="row align-items-center">
       <div class="col-md-4 text-center">
         <img src="./img/acm_logo.png" class="img-fluid rounded" alt="contact-form">
       </div>
       <div class="col-md-8">
-              <div class="col-md-12 text-center mt-5 py-5">
-                <h1>Contact Us</h1>
-              </div>
-        <p class="text-center">Looking to learn more? Don't hesitate to reach out to us.<br> Simply send us a message, and we will respond to you
-          as soon as we can!</p>
-          <!-- <div class=" form-container d-flex align-items-center mb-lg-3 mt-0" id="contact">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your email address">
-          </div> -->
-          <div class="mb-3">
-            <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type your message here"></textarea> -->
-            <div class="d-flex justify-content-center">
-            <a class="btn bg-danger text-white btn-lg px-4 rounded-pill mx-2 mt-3 " href="mailto:acm.sc@my.csun.edu" target="_blank">Send&nbsp;Message!</a>
-            </div>
-
-          </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-<footer class="bg-danger py-5 text-white">
-  <div class="container py-5" id="contact">
-    <div class="row">
-      <div class="col-12 col-lg-4">
-        <h3 class="fw-bold pb-3 text-center">Visit us</h3>
+        <div class="col-md-12 text-center py-5">
+          <h1>Contact Us</h1>
+        </div>
         <p class="text-center">
-          CSUN, Northridge,<br />
-          California<br />
-          <a href="mailto:acm.sc@my.csun.edu" class="text-white">acm.sc@my.csun.edu</a>
-        </p>
-
-      </div>
-      <!-- <div class="col-12 col-lg-4" id="helpful-links">
-          <h3 class="fw-bold pb-3">Helpful Links</h3>
-          <div class="d-flex flex-column ">
-            <a href="#" class="text-dark text-white">Link 1</a>
-            <a href="#" class="text-dark text-white">Link 2</a>
-            <a href="#" class="text-dark text-white">Link 3</a>
-            <a href="#" class="text-dark text-white">Link 4</a>
+          Looking to learn more? Don't hesitate to reach out to us.<br> Simply send us a message, and
+          we will respond to you
+          as soon as we can!</p>
+        <!-- <div class=" form-container d-flex align-items-center mb-lg-3 mt-0" id="contact">
+              <label for="exampleFormControlInput1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your email address">
+            </div> -->
+        <div class="mb-3">
+          <!-- <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type your message here"></textarea> -->
+          <div class="d-flex justify-content-center">
+            <a class="btn bg-danger text-white btn-lg px-4 rounded-pill mx-2 mt-3 " href="mailto:acm.sc@my.csun.edu"
+              target="_blank">Send&nbsp;Message!</a>
           </div>
-        </div> -->
-      <div class="col-12 col-lg-4 text-center">
-        <h3 class="fw-bold pb-3">Connect with Us!</h3>
-        <div class="d-flex justify-content-center ">
-          <a href="#" class="text-white px-3"><i class="fab fa-discord icon"></i></i></a>
-          <a href="#" class="text-white px-3"><i class="fab fa-github icon"></i></ion-icon></a>
-          <a href="#" class="text-white px-3"><i class="fab fa-x-twitter icon"></i></ion-icon></a>
-          <a href="#" class="text-white px-3"><i class="fab fa-linkedin icon"></i></i></ion-icon></a>
+  
         </div>
       </div>
     </div>
   </div>
-  <p class="text-center copyright">
-    &copy; 2024 all right reserved CSUN ACM
-  </p>
-</footer>
+  </main>
+
+  <footer class="bg-danger py-5">
+    <div class="container py-5" id="contact">
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          <h3 class="fw-bold pb-3 text-white">Visit us</h3>
+          <p class="text-white">
+            CSUN, Northridge <br />
+            California
+          </p>
+          <a href="mailto:acm.sc@my.csun.edu" class="text-white">acm.sc@my.csun.edu</a>
+        </div>
+        <!-- <div class="col-12 col-lg-4">
+          <h3 class="fw-bold pb-3 text-white">Helpful Links</h3>
+          <div class="d-flex flex-column">
+            <a href="#" class="text-white">Home</a>
+            <a href="#" class="text-white">How it works</a>
+            <a href="#" class="text-white">events</a>
+            <a href="#" class="text-white">Contact</a>
+          </div>
+        </div> -->
+        <div class="col-12 col-lg-4">
+          <h3 class="fw-bold pb-3 text-white">Connect With Us</h3>
+          <div class="d-flex">
+            <a href="#" class="text-white"><i class="fab fa-github fa-2x"></i></a>
+            <a href="#" class="text-white px-3"><i class="fab fa-discord fa-2x"></i></a>
+            <a href="#" class="text-white px-3"><i class="fab fa-x-twitter fa-2x"></i></a>
+            <a href="#" class="text-white px-3"><i class="fab fa-linkedin fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center copyright text-white"> &copy; 2024 all right reserved CSUN ACM</p>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <!-- custom scripts -->
-  <script src="main.js"></script>
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   <script>
     const tooltipTriggerList = document.querySelectorAll(
       '[data-bs-toggle="tooltip"]'

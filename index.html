@@ -2,74 +2,49 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Official Website of the Association for Computing Machinery (ACM) Student Chapter at California State University, Northridge." />
-  <meta property="og:title" content="ACM (CSUN)" />
-  <meta property="og:description"
-    content="Official Website of the Association for Computing Machinery (ACM) Student Chapter at California State University, Northridge." />
-  <meta property="og:url" content="https://https://csun-acm.github.io/index.htm" />
-
-  <meta name="twitter:title" content="ACM (CSUN)" />
-  <meta name="twitter:description"
-    content="Official Website of the Association for Computing Machinery (ACM) Student Chapter at California State University, Northridge." />
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Fjalla+One:400,700" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,800" rel="stylesheet" />
-  <!-- Bootstrap and CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/ef5359af4d.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
   <link rel="stylesheet" href="styles.css" />
   <title>ACM (CSUN)</title>
-
-  <!-- Font Awesome kit's code -->
-  <script src="https://kit.fontawesome.com/420aa36862.js" crossorigin="anonymous"></script>
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q95Z5QB13"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-4Q95Z5QB13");
-  </script>
 </head>
 
 <body>
   <!-- navigation bar -->
+
   <header class="bg-header">
-    <nav class="navbar navbar-expand-lg bg-danger ">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand text-white" href="#home"><img class="img-responsive " width="100px" height="100px"
-            src="./img/acm_logo.png" />CSUN Chapter</a>
+        <a class="navbar-brand text-dark fw-bold" href="index.html" data-bs-toggle="tooltip" data-bs-title="CSUN ACM"
+          data-bs-placement="bottom">CSUN ACM</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-            <li class="nav-item px-2 ">
-              <a class="nav-link text-white" aria-current="page" href="/">Home</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item px-2">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link text-white" href="#features">How it Works</a>
+              <a class="nav-link" href="about.html">About Us</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link text-white" href="./board.html">Meet our Board</a>
+              <a class="nav-link" href="#how">How it works</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link text-white" href="#events">Events & Announcements</a>
+              <a class="nav-link" href="#events">Events</a>
             </li>
-
             <li class="nav-item px-2">
-              <a class="nav-link text-white" href="contact.html">Contact</a>
+              <a class="nav-link" href="board.html">Meet our Board</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="FAQ.html">FAQs</a>
+            </li>
+            <li class="nav-item  ">
+              <a class="nav-link cta text-white" href="contact.html">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -80,25 +55,24 @@
       <div class="container py-3">
         <div class="row g-5">
           <div class="d-flex align-items-center justify-content-between">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 py-5">
               <h1 class="text-dark fw-bold">
                 Welcome to the Association of Computer Machinery (ACM), CSUN Chapter
               </h1>
               <p class="text-dark pt-4">
                 Find ways to grow, connect with others, and take on leadership roles in our engineering and computing
-                community.<br> Whether
-                you're thinking about joining ACM, attending events, or just need some resources to guide you, we're
-                here to support you
-                throughout your time at CSUN.
+                community.
+                Whether you're thinking about joining ACM, attending events, or just need some resources to guide you,
+                we're here to
+                support you throughout your time at CSUN.
               </p>
               <a href="about.html">
-                <button class="btn mt-5 bg-danger text-white">Learn More</button>
+                <button class="btn mt-5">Learn More</button>
               </a>
             </div>
             <div class="col-12 col-lg-6">
               <div class="d-flex justify-content-end">
-                <img src="./img/acm_logo.png" class="hero-img img-fluid d-none d-md-block d-lg-block"
-                  style="height: auto; width: 450px;" alt="acm-logo" />
+                <img src="img/acm_logo.png" class="hero-img" alt="" />
               </div>
             </div>
           </div>
@@ -107,215 +81,151 @@
     </section>
   </header>
   <main>
-    <section class="featured py-5" id="features">
-      <section class="how-it-works" id="how">
-        <div class="container">
-          <h2 class="text-dark fw-bold text-center pt-5 pb-3">
-            How ACM CSUN Chapter Supports You
-          </h2>
+    <section class="how-it-works" id="how">
+      <div class="container">
+        <h2 class="text-dark fw-bold text-center pt-5 pb-3">
+          How CSUN ACM Supports You
+        </h2>
 
-          <div class="container py-5">
-            <div class="row g-5">
-              <div class="col-12 col-lg-6">
-                <div class="p-4 d-flex shadow-lg section-how-card flex-column justify-content-center rounded">
-                  <span><ion-icon class="icon" name="people-outline"></ion-icon></span>
-                  <h3 class="fw-bold text-dark how-it-works-title">
-                    Become Part of Our Community
-                  </h3>
-                  <p class="how-it-works-text">
-                    At ACM CSUN, we believe in fostering a strong community where every member feels welcome. Whether
-                    you're just starting
-                    at CSUN or have been here for a while, you'll find a supportive environment where you can connect
-                    with peers and grow
-                    together in the field of computing.
-                  </p>
-                </div>
+        <div class="container py-5">
+          <div class="row g-5">
+            <div class="col-12 col-lg-6">
+              <div class="p-4 d-flex shadow-lg section-how-card flex-column justify-content-center rounded">
+                <span><i class="fas fa-users"></i>
+                </span>
+                <h3 class="fw-bold text-dark how-it-works-title">
+                  Become Part of Our Community
+                </h3>
+                <p class="how-it-works-text">
+                  At ACM CSUN, we believe in fostering a strong community where every member feels welcome. Whether
+                  you're just starting
+                  at CSUN or have been here for a while, you'll find a supportive environment where you can connect with
+                  peers and grow
+                  together in the field of computing.
+                </p>
               </div>
-              <div class="col-12 col-lg-6">
-                <div class="d-flex p-4 shadow-lg section-how-card flex-column justify-content-center rounded">
-                  <span><ion-icon class="icon" name="calendar-outline"></ion-icon></span>
-                  <h3 class="fw-bold text-dark how-it-works-title">
-                    Get Involved in Events
-                  </h3>
-                  <p class="how-it-works-text">
-                    We host a wide range of events throughout the year, from coding workshops and hackathons to industry
-                    talks and social
-                    meetups. These events are designed to help you learn new skills, share ideas, and build lasting
-                    friendships that extend
-                    beyond your time at CSUN.
-                  </p>
-                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="d-flex p-4 shadow-lg section-how-card flex-column justify-content-center rounded">
+                <span><i class="fas fa-calendar-alt"></i></span>
+                <h3 class="fw-bold text-dark how-it-works-title">
+                  Get Involved in Events
+                </h3>
+                <p class="how-it-works-text">
+                  We host a wide range of events throughout the year, from coding workshops and hackathons to industry
+                  talks and social
+                  meetups. These events are designed to help you learn new skills, share ideas, and build lasting
+                  friendships that extend
+                  beyond your time at CSUN.
+                </p>
               </div>
-              <div class="col-12 col-lg-6">
-                <div class="d-flex p-4 shadow-lg section-how-card flex-column justify-content-center rounded">
-                  <span><ion-icon class="icon" name="library-outline"></ion-icon></span>
-                  <h3 class="fw-bold text-dark how-it-works-title">
-                    Access Valuable Resources
-                  </h3>
-                  <p class="how-it-works-text">
-                    Navigating your academic and professional journey can be challenging, but you don't have to do it
-                    alone. ACM CSUN
-                    provides resources like study groups, mentoring programs, and career advice to help you succeed in
-                    the ever-evolving
-                    field of computer science.
-                  </p>
-                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="d-flex p-4 shadow-lg section-how-card flex-column justify-content-center rounded">
+                <span><i class="fas fa-book"></i>
+</span>
+                <h3 class="fw-bold text-dark how-it-works-title">
+                  Access Valuable Resources
+                </h3>
+                <p class="how-it-works-text">
+                  Navigating your academic and professional journey can be challenging, but you don't have to do it
+                  alone. ACM CSUN
+                  provides resources like study groups, mentoring programs, and career advice to help you succeed in the
+                  ever-evolving
+                  field of computer science.
+                </p>
               </div>
-              <div class="col-12 col-lg-6">
-                <div class="d-flex p-4 shadow-lg section-how-card flex-column justify-content-center rounded">
-                  <span><ion-icon class="icon" name="ribbon-outline"></ion-icon></span>
-                  <h3 class="fw-bold text-dark how-it-works-title">
-                    Take on Leadership Roles
-                  </h3>
-                  <p class="how-it-works-text">
-                    Looking to make a difference? ACM CSUN offers plenty of opportunities for you to step up and lead.
-                    Whether it's
-                    organizing events, mentoring peers, or spearheading new initiatives, there are numerous ways to
-                    develop your leadership
-                    skills and make an impact.
-                  </p>
-                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="d-flex p-4 shadow-lg section-how-card flex-column justify-content-center rounded">
+                <span><i class="fas fa-flag"></i></span>
+                <h3 class="fw-bold text-dark how-it-works-title">
+                  Take on Leadership Roles
+                </h3>
+                <p class="how-it-works-text">
+                  Looking to make a difference? ACM CSUN offers plenty of opportunities for you to step up and lead.
+                  Whether it's
+                  organizing events, mentoring peers, or spearheading new initiatives, there are numerous ways to
+                  develop your leadership
+                  skills and make an impact.
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+    <section class="featured py-5" id="events">
+      <div class="container">
+        <h2 class="text-dark fw-bold text-center pt-5 pb-5">
+          Upcoming Events & Announcements
+        </h2>
+      </div>
 
-      <section class="events bg-gradient-custom">
-        <!-- <h2 class="text-dark fw-bold text-center pt-5 pb-3">
-          lorem
-        </h2> -->
-        <!-- <div class="container">
-          <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="container py-5">
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="event-card">
-                          <img src="img/event1.jpg" width="100%" class="pb-4" alt="event-image" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="container py-5">
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="event-card">
-                          <img src="img/event2.jpeg" width="100%" class="pb-4" alt="event-image" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div> -->
-      </section>
-      <!-- events start -->
-      <div class="container" id="events">
-        <div class="container">
-          <h2 class="text-dark fw-bold text-center pt-5 pb-5">
-            Upcoming Events & Announcements
-          </h2>
-        </div>
+      <div class="container">
         <div class="row g-5">
           <div class="col-12 col-lg-3">
-            <div class="card shadow-lg border-1 rounded">
-              <img src="./img/IMG_2696.jpg" class="card-top" alt="events">
+            <div class="card shadow-lg border-0 rounded">
+              <img src="img/IMG_2696.jpg" class="card-img-top" alt="" />
               <div class="card-body">
-                <h2 class="card-title">
-                  2024 Meet the Clubs for Pathways to Excellence
-                </h2>
+                <h3 class="card-title">2024 Meet the Clubs for Pathways to Excellence</h3>
                 <p class="card-text">
                   The College of Engineering and Computer Science is hosting a <strong>Meet the Clubs</strong> event as
                   part of the
                   <strong>Pathways to Excellence</strong> program. Approximately 50-60 first-time freshmen will be
                   participating. We'll
-                  have our own table there, and it's a fantastic opportunity to connect with fellow students.<br> We
-                  highly
+                  have our own table there, and it's a fantastic opportunity to connect with fellow students. We highly
                   encourage you to
                   join us!
                 </p>
               </div>
             </div>
           </div>
-          <!-- <div class="col-12 col-lg-3">
-            <div class="card shadow-lg border-1 rounded">
-              <img src="#" class="card-top" alt="events">
-              <div class="card-body">
-                <h3 class="card-title">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h3>
-                <p class="card-text">
-                  Iste sit ad velit perferendis suscipit animi
-                  eaque quia labore.Assumenda numquam odit harum iusto qui? Sequi sunt architecto delectus suscipit a?
-                </p>
-              </div>
-            </div>
-          </div> -->
-
+        </div>
+      </div>
     </section>
   </main>
-  <footer class="bg-danger py-5 text-white">
+
+  <footer class="bg-danger py-5">
     <div class="container py-5" id="contact">
       <div class="row">
         <div class="col-12 col-lg-4">
-          <h3 class="fw-bold pb-3 text-center">Visit us</h3>
-          <p class="text-center">
-            CSUN, Northridge,<br />
-            California<br />
-            <a href="mailto:acm.sc@my.csun.edu" class="text-white">acm.sc@my.csun.edu</a>
+          <h3 class="fw-bold pb-3 text-white">Visit us</h3>
+          <p class="text-white">
+            CSUN, Northridge <br />
+            California
           </p>
-
+          <a href="mailto:acm.sc@my.csun.edu" class="text-white">acm.sc@my.csun.edu</a>
         </div>
-        <!-- <div class="col-12 col-lg-4" id="helpful-links">
-          <h3 class="fw-bold pb-3">Helpful Links</h3>
-          <div class="d-flex flex-column ">
-            <a href="#" class="text-dark text-white">Link 1</a>
-            <a href="#" class="text-dark text-white">Link 2</a>
-            <a href="#" class="text-dark text-white">Link 3</a>
-            <a href="#" class="text-dark text-white">Link 4</a>
+        <!-- <div class="col-12 col-lg-4">
+          <h3 class="fw-bold pb-3 text-white">Helpful Links</h3>
+          <div class="d-flex flex-column">
+            <a href="#" class="text-white">Home</a>
+            <a href="#" class="text-white">How it works</a>
+            <a href="#" class="text-white">events</a>
+            <a href="#" class="text-white">Contact</a>
           </div>
         </div> -->
-        <div class="col-12 col-lg-4 text-center">
-          <h3 class="fw-bold pb-3">Connect with Us!</h3>
-          <div class="d-flex justify-content-center ">
-            <a href="#" class="text-white px-3"><i class="fab fa-discord icon"></i></i></a>
-            <a href="#" class="text-white px-3"><i class="fab fa-github icon"></i></ion-icon></a>
-            <a href="#" class="text-white px-3"><i class="fab fa-x-twitter icon"></i></ion-icon></a>
-            <a href="#" class="text-white px-3"><i class="fab fa-linkedin icon"></i></i></ion-icon></a>
+        <div class="col-12 col-lg-4">
+          <h3 class="fw-bold pb-3 text-white">Connect With Us</h3>
+          <div class="d-flex">
+            <a href="#" class="text-white"><i class="fab fa-github fa-2x"></i></a>
+            <a href="#" class="text-white px-3"><i class="fab fa-discord fa-2x"></i></a>
+            <a href="#" class="text-white px-3"><i class="fab fa-x-twitter fa-2x"></i></a>
+            <a href="#" class="text-white px-3"><i class="fab fa-linkedin fa-2x"></i></a>
           </div>
         </div>
       </div>
     </div>
-    <p class="text-center copyright">
-      &copy; 2024 all right reserved CSUN ACM
-    </p>
+    <p class="text-center copyright text-white"> &copy; 2024 all right reserved CSUN ACM</p>
   </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
     integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
     crossorigin="anonymous"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   <script>
     const tooltipTriggerList = document.querySelectorAll(
       '[data-bs-toggle="tooltip"]'
