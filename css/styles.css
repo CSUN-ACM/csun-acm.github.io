@@ -93,7 +93,10 @@ h6,
   font-weight: 600 !important;
   font-family: 'Times New Roman', Times, serif;
 }
-
+p, .accordion-button{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.3rem !important;
+}
 
 /*** Button ***/
 .btn {
