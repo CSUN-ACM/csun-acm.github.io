@@ -84,114 +84,84 @@
     </nav>
     <!-- Navbar End -->
     <!-- Carousel Start -->
-    <div id="header-carousel" class="carousel slide carousel-fade pointer-event" data-bs-ride="carousel"
-      data-bs-interval="3500" style="height: 100vh;">
-      <div class="carousel-inner" style="height: 100%;">
-      <div class="carousel-item active" style="height: 100%;">
-        <img class="w-100 h-100 img-fluid" src="img/hero1.webp" alt="Image" style="object-fit: cover;">
-        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
-        <div class="py-5" style="max-width: 900px;">
-          <h1 class="display-4 text-white mb-md-4 animated zoomIn">Welcome to ACM, CSUN Student Chapter</h1>
-          <a href="about.html" class="btn btn-primary py-2 px-4 me-3 animated slideInLeft"
-          style="background-color: #dc3545; border-color: #dc3545;">Learn More</a>
-          <a href="mailto:acm.sc@my.csun.edu"
-          class="btn btn-outline-light py-2 px-4 animated slideInRight">Contact Us</a>
-        </div>
-        </div>
-      </div>
-      <div class="carousel-item" style="height: 100%;">
-        <img class="w-100 h-100 img-fluid" src="img/hero2.webp" alt="Image" style="object-fit: cover;">
-        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
-        <div class="p-3" style="max-width: 900px;">
-          <h1 class="display-4 text-white mb-md-4 animated zoomIn">Together we build knowledge and support each
-          other's growth.</h1>
-          <a href="about.html" class="btn btn-primary py-2 px-4 me-3 animated slideInLeft"
-          style="background-color: #dc3545; border-color: #dc3545;">Learn More</a>
-          <a href="mailto:acm.sc@my.csun.edu"
-          class="btn btn-outline-light py-2 px-4 animated slideInRight">Contact Us</a>
-        </div>
+<section class="vh-100 d-flex align-items-center text-white"
+  style="background: url('img/hero1.webp') center center / cover no-repeat;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-11 col-md-10 col-lg-8 text-center">
+        <div class="bg-dark bg-opacity-50 p-4 p-md-5 rounded-4 shadow-lg">
+          <!-- Optional logo -->
+          <h1 class="display-5 fw-bold mb-3">Welcome to ACM, CSUN Student Chapter</h1>
+          <p class="lead mb-4">Empowering students through computing, connection, and community.</p>
+
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <a href="about.html" class="btn btn-danger btn-lg px-4">Learn More</a>
+            <a href="mailto:acm.sc@my.csun.edu" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
+          </div>
         </div>
       </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-      </button>
     </div>
+  </div>
+</section>
+
     <!-- Carousel End -->
   </header>
   <main>
     <section class="how-it-works" id="how">
-      <div class="container">
-        <h2 class="text-dark fw-bold text-center pt-5 pb-3">
-          &#x22;We can only see a short distance ahead, but we can see plenty there that needs to be done.&#x22;
-          <br>-Alan Turing
-        </h2>
-        <div class="container py-5">
-          <div class="row g-5">
-            <div class="col-12 col-lg-6">
-              <div class="p-4 d-flex shadow-lg section-how-card flex-column justify-content-center rounded">
-                <span><i class="fas fa-users"></i>
-                </span>
-                <h3 class="fw-bold text-dark how-it-works-title">
-                  Become Part of Our Community
-                </h3>
-                <p class="how-it-works-text">
-                  At ACM CSUN, we believe in fostering a strong community where every member feels welcome. Whether
-                  you're just starting
-                  at CSUN or have been here for a while, you'll find a supportive environment where you can connect with
-                  peers and grow
-                  together in the field of computing.
+      <div class="container py-5"></div>
+      <h2 class="text-dark fw-bold text-center pb-3 mb-5">
+        &#x22;We can only see a short distance ahead, but we can see plenty there that needs to be done.&#x22;
+        <br><span class="text-muted">- Alan Turing</span>
+      </h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-3">
+        <div class="card shadow-lg border-0 h-100 text-center mx-2">
+          <div class="card-body d-flex flex-column align-items-center">
+          <div class="icon mb-3">
+            <i class="fas fa-users fa-3x text-danger"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-3">Become Part of Our Community</h3>
+          <p class="text-muted">
+            Join a welcoming environment where you can connect with peers, share ideas, and grow together in the field of computing.
+          </p>
+          </div>
+        </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+        <div class="card shadow-lg border-0 h-100 text-center mx-2 ms-5">
+          <div class="card-body d-flex flex-column align-items-center">
+          <div class="icon mb-3">
+            <i class="fas fa-calendar-alt fa-3x text-danger"></i>
+          </div>
+          <h3 class="fw-bold text-dark mb-3">Get Involved in Events</h3>
+          <p class="text-muted">
+            Participate in coding workshops, hackathons, industry talks, and social meetups to learn, share, and build lasting friendships.
+          </p>
+          </div>
+        </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+        <div class="card shadow-lg border-0 h-100 text-center mx-2">
+              <div class="card-body d-flex flex-column align-items-center">
+                <div class="icon mb-3">
+                  <i class="fas fa-book fa-3x text-danger"></i>
+                </div>
+                <h3 class="fw-bold text-dark mb-3">Access Valuable Resources</h3>
+                <p class="text-muted">
+                  Take advantage of study groups, mentoring programs, and career advice to navigate your academic and professional journey.
                 </p>
               </div>
             </div>
-            <div class="col-12 col-lg-6">
-              <div class="d-flex p-4 shadow-lg section-how-card flex-column justify-content-center rounded">
-                <span><i class="fas fa-calendar-alt"></i></span>
-                <h3 class="fw-bold text-dark how-it-works-title">
-                  Get Involved in Events
-                </h3>
-                <p class="how-it-works-text">
-                  We host a wide range of events throughout the year, from coding workshops and hackathons to industry
-                  talks and social
-                  meetups. These events are designed to help you learn new skills, share ideas, and build lasting
-                  friendships that extend
-                  beyond your time at CSUN.
-                </p>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <div class="d-flex p-4 shadow-lg section-how-card flex-column justify-content-center rounded">
-                <span><i class="fas fa-book"></i>
-                </span>
-                <h3 class="fw-bold text-dark how-it-works-title">
-                  Access Valuable Resources
-                </h3>
-                <p class="how-it-works-text">
-                  Navigating your academic and professional journey can be challenging, but you don't have to do it
-                  alone. ACM CSUN
-                  provides resources like study groups, mentoring programs, and career advice to help you succeed in the
-                  ever-evolving
-                  field of computer science.
-                </p>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <div class="d-flex p-4 shadow-lg section-how-card flex-column justify-content-center rounded">
-                <span><i class="fas fa-flag"></i></span>
-                <h3 class="fw-bold text-dark how-it-works-title">
-                  Take on Leadership Roles
-                </h3>
-                <p class="how-it-works-text">
-                  Looking to make a difference? ACM CSUN offers plenty of opportunities for you to step up and lead.
-                  Whether it's
-                  organizing events, mentoring peers, or spearheading new initiatives, there are numerous ways to
-                  develop your leadership
-                  skills and make an impact.
+          </div>
+          <div class="col-12 col-md-6 col-lg-3 ">
+            <div class="card shadow-lg border-0 h-100 text-center">
+              <div class="card-body d-flex flex-column align-items-center">
+                <div class="icon mb-3">
+                  <i class="fas fa-flag fa-3x text-danger"></i>
+                </div>
+                <h3 class="fw-bold text-dark mb-3">Take on Leadership Roles</h3>
+                <p class="text-muted">
+                  Step up and lead by organizing events, mentoring peers, or spearheading initiatives to develop your leadership skills.
                 </p>
               </div>
             </div>
