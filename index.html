@@ -27,6 +27,10 @@
       box-sizing: border-box;
     }
 
+    body {
+      overflow-x: hidden;
+    }
+
     .btn-acm {
       background-color: #c62828;
       color: white;
@@ -62,10 +66,12 @@
     }
 
     .typewriter-heading {
-      white-space: nowrap;
+      white-space: normal;
       overflow: hidden;
       display: inline-block;
       font-family: monospace;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     .blinking-cursor {
@@ -158,9 +164,10 @@
   </style>
 </head>
 
+
 <body>
   <!-- Hero Background Wrapper -->
-  <div class="bg-hero-section text-light" id="hero">
+  <div class="bg-hero-section text-light pt-3" id="hero">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top border rounded-5 shadow mx-3 py-2 py-lg-3 ps-4 pe-2"
       style="font-family: 'Times New Roman', Times, serif; font-size: 1rem;" data-aos="fade-down">
