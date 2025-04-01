@@ -61,6 +61,35 @@
       margin-left: auto;
     }
 
+.typewriter-heading {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  font-family: monospace; /* optional, gives terminal feel */
+}
+
+.blinking-cursor {
+  font-weight: bold;
+  font-size: 1em;
+  color: white;
+  animation: blink 0.75s steps(1) infinite;
+  visibility: hidden; /* hidden at first */
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
     @media (max-width: 767.98px) {
       .navbar {
         padding-left: 1rem;
@@ -113,9 +142,9 @@
 
 <body>
   <!-- Hero Background Wrapper -->
-  <div class="bg-hero-section text-light px-3 pt-5" id="hero">
+  <div class="bg-hero-section text-light px-3 pt-4" id="hero">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top border rounded-5 shadow mx-3 py-4 ps-4 pe-2"
+    <nav class="navbar navbar-expand-lg sticky-top border rounded-5 shadow mx-3 py-2 py-lg-3 ps-4 pe-2"
       style="font-family: 'Times New Roman', Times, serif; font-size: 1rem;">
       <div class="container-fluid">
         <!-- Brand Left -->
@@ -168,10 +197,10 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-12 col-md-6 mb-4 mb-md-0" data-aos="fade-right">
-            <img src="./img/acm_logo.png" alt="ACM CSUN Official Logo" class="img-fluid" style="max-height: 300px;">
+            <img src="./img/acm_logo.png" alt="ACM CSUN Official Logo" class="img-fluid" style="max-height: 500px;">
           </div>
-          <div class="col-12 col-md-6" data-aos="fade-left" data-aos-delay="200">
-            <h1 class="display-4">Welcome to ACM @ CSUN</h1>
+          <div class="col-12 col-md-6 " data-aos="fade-left" data-aos-delay="200">
+            <h1 class="display-4 typewriter-heading"><span id="typewriter-text"></span><span class="blinking-cursor">|</span></h1>
             <p class="lead">Empowering students through computing, connection, and community.</p>
             <a href="#join" class="btn btn-acm btn-lg mt-3" data-aos="zoom-in" data-aos-delay="400">Join Now</a>
           </div>
@@ -307,6 +336,43 @@
       once: true,
     });
   </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const text = "Welcome to ACM @ CSUN";
+    const typewriter = document.getElementById("typewriter-text");
+    const cursor = document.querySelector(".blinking-cursor");
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        typewriter.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 80); // typing speed
+      } else {
+        cursor.style.visibility = "visible"; // Show cursor after typing
+      }
+    }
+
+    type();
+  });
+</script>
+  
+    <script>
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+  
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+
+
+
+
 </body>
 
 </html>
