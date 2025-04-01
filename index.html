@@ -161,6 +161,18 @@
     header .container {
       padding-top: 1rem;
     }
+    .grayscale-logo {
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+.grayscale-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 
@@ -234,7 +246,6 @@
     </header>
   </div>
 
-  <!-- About Section -->
 <!-- About Section -->
 <section class="py-5 bg-light" id="about" data-aos="fade-up">
   <div class="container">
@@ -265,7 +276,50 @@
       </div>
     </div>
   </div>
+  <div class="row text-center mt-5">
+    <div class="col-6 col-md-3">
+      <h3 class="fw-bold text-danger">150+</h3>
+      <p class="small text-muted">Active Members</p>
+    </div>
+    <div class="col-6 col-md-3">
+      <h3 class="fw-bold text-danger">20+</h3>
+      <p class="small text-muted">Events Per Year</p>
+    </div>
+    <div class="col-6 col-md-3 mt-4 mt-md-0">
+      <h3 class="fw-bold text-danger">10+</h3>
+      <p class="small text-muted">Tech Workshops</p>
+    </div>
+    <div class="col-6 col-md-3 mt-4 mt-md-0">
+      <h3 class="fw-bold text-danger">100%</h3>
+      <p class="small text-muted">Open to All Majors</p>
+    </div>
+  </div>
+  <div class="container text-center mt-5">
+    <h4 class="mb-4 fw-bold">Recognized & Respected By Industry Leaders</h4>
+    <p class="text-muted mb-5">ACM is respected by top organizations and companies across the tech world. Being involved
+      opens doors to internships, mentorships, and job opportunities.</p>
+  
+    <div class="row justify-content-center align-items-center g-4">
+      <div class="col-4 col-md-2">
+        <img src="./img/crowdstrike.jpg" alt="crowdstrike" class="img-fluid grayscale-logo">
+      </div>
+      <div class="col-4 col-md-2">
+        <img src="./img/basho-logo.png" alt="basho" class="img-fluid grayscale-logo">
+      </div>
+      <div class="col-4 col-md-2">
+        <img src="./img/bbsakura_475x70.png" alt="bbsakura" class="img-fluid grayscale-logo">
+      </div>
+      <div class="col-4 col-md-2">
+        <img src="./img/ss8-logo.jpg" alt="ss8" class="img-fluid grayscale-logo">
+      </div>
+      <div class="col-4 col-md-2">
+        <img src="./img/fm-logo-rgb_266x65.png" alt="fm-logo" class="img-fluid grayscale-logo">
+      </div>
+    </div>
+  </div>
 </section>
+
+
 
 
 <!-- Events Section -->
@@ -383,9 +437,9 @@
       <!-- Social Media -->
       <div class="col-md-4 text-center text-md-end">
         <h6 class="text-uppercase fw-bold mb-3">Connect With Us</h6>
-        <a href="#" class="text-light fs-5 me-3"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="text-light fs-5 me-3"><i class="fab fa-github"></i></a>
-        <a href="#" class="text-light fs-5"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/acmcsun/" class="text-light fs-5 me-3"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/CSUN-ACM/" class="text-light fs-5 me-3"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/acm-csun-007367205" class="text-light fs-5"><i class="fab fa-linkedin"></i></a>
         <p class="small text-muted mt-3 mb-0">&copy; 2025 ACM CSUN Chapter</p>
       </div>
     </div>
