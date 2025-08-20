@@ -5,22 +5,19 @@
     "major": "Department of Computer Science",
     "grad": "",
     "email": "alex.rivera@my.csun.edu",
-    "photo": "assets/officers/2025/alex-rivera.jpg",
-    "links": {
-      "linkedin": "#",
-      "github": "#"
-    }
+    "photo": "assets/images/officers/profile-xj.png",
+    "linkedin": "#"
   },
   {
     "name": "Param Desai",
     "role": "President",
     "major": "Computer Science",
     "grad": "2026",
-    "email": "jamie.chen@my.csun.edu",
-    "photo": "assets/officers/2025/jamie-chen.jpg",
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/jamiechen"
-    }
+    "email": "param-ridham.desai.167@my.csun.edu",
+    "photo": "assets/images/officers/profile-pd.jpg",
+    "linkedin": "https://www.linkedin.com/in/param-desai-39791b1b9/",
+    "github": "https://github.com/paramdesai321"
+    
   },
   {
     "name": "Ridham Patel",
@@ -28,11 +25,10 @@
     "major": "Computer Science",
     "grad": "2026",
     "email": "jamie.chen@my.csun.edu",
-    "photo": "assets/officers/2025/jamie-chen.jpg",
-    "links": {
-      "linkedin": "https://github.com/ridhampatel23",
-      "github": "https://www.linkedin.com/in/ridhampatel23"
-    }
+    "photo": "assets/images/officers/profile-rp.jpg",
+    "linkedin": "https://www.linkedin.com/in/ridhampatel23",
+    "github": "https://github.com/ridhampatel23"
+   
   },
   {
     "name": "Kousha Salimkhan",
@@ -40,11 +36,9 @@
     "major": "Computer Science",
     "grad": "2026",
     "email": "jamie.chen@my.csun.edu",
-    "photo": "assets/officers/2025/jamie-chen.jpg",
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/kousha-salimkhan-21aaa31a2",
-      "github": "https://github.com/ksalimkhan"
-    }
+    "photo": "assets/images/officers/profile-ks.jpeg",
+    "linkedin": "https://www.linkedin.com/in/kousha-salimkhan-21aaa31a2",
+    "github": "https://github.com/ksalimkhan"
   },
   {
     "name": "Juan Rodriguez",
@@ -52,11 +46,9 @@
     "major": "Computer Science",
     "grad": "2026",
     "email": "jamie.chen@my.csun.edu",
-    "photo": "assets/officers/2025/jamie-chen.jpg",
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/juan-rodriguez-26b39427a",
-      "github":"https://github.com/gtech29"
-    }
+    "photo": "assets/images/officers/profile-jr.jpg",
+    "linkedin": "https://www.linkedin.com/in/juan-rodriguez-26b39427a",
+    "github":"https://github.com/gtech29"
   },
     {
     "name": "Guna Yaswanth Gadde",
@@ -64,11 +56,9 @@
     "major": "Community Lead",
     "grad": "2026",
     "email": "jamie.chen@my.csun.edu",
-    "photo": "assets/officers/2025/jamie-chen.jpg",
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/gadde-guna-yaswanth/",
-      "github":"https://github.com/yashu510"
-    }
+    "photo": "assets/images/officers/profile-gy.jpg",
+    "linkedin": "https://www.linkedin.com/in/gadde-guna-yaswanth/",
+    "github":"https://github.com/yashu510"
   },
     {
     "name": "Bernadette Panganiban",
@@ -76,9 +66,8 @@
     "major": "Computer Science",
     "grad": "2025",
     "email": "jamie.chen@my.csun.edu",
-    "photo": "assets/officers/2025/jamie-chen.jpg",
-    "links": {
-      "linkedin": "https://www.linkedin.com/in/bernadette-panganiban-10b6291b5/"
-    }
+    "photo": "assets/images/officers/profile-bp.jpg",
+    "linkedin": "https://www.linkedin.com/in/bernadette-panganiban-10b6291b5/"
+    
   }
 ]
