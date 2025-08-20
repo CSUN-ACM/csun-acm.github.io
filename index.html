@@ -90,7 +90,7 @@
 
               <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center justify-content-lg-start">
                 <a class="btn btn-primary btn-lg" href="#join">Become a member</a>
-                <a class="btn btn-outline-light btn-lg" href="#events">See upcoming events</a>
+                <a class="btn btn-outline-light btn-lg" href="#about">About Us</a>
               </div>
 
               <ul class="hero-highlights list-unstyled d-grid gap-2 gap-sm-1 mt-4 text-white">
@@ -108,6 +108,117 @@
         </div>
       </div>
     </header>
+
+
+    <!-- About -->
+    <section id="about" class="py-5 bg-white border-top">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <!-- Copy / value prop -->
+          <div class="col-12 col-lg-6">
+            <h2 class="h1 mb-3">Build skills. Find your people.</h2>
+            <p class="text-muted section-intro mb-3">
+              Join weekly workshops, get feedback from peers and alumni, and connect with industry guests. Leave with real experience,
+              demo-ready work, and a community to grow with.
+            </p>
+    
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span class="stat-pill">Workshops</span>
+              <span class="stat-pill">Project teams</span>
+              <span class="stat-pill">Tech talks</span>
+              <span class="stat-pill">Mentorship</span>
+            </div>
+    
+            <!-- Tracks (small cards) -->
+            <div class="row g-3 mb-4 about-tracks" role="list">
+              <div class="col-12 col-sm-6" role="listitem">
+                <article class="track-card h-100">
+                  <div class="track-emoji" aria-hidden="true">🕸️</div>
+                  <h3 class="h6 mb-1">Web & Apps</h3>
+                  <p class="small text-muted mb-0">HTML/CSS/JS, React, design systems, deploys.</p>
+                </article>
+              </div>
+              <div class="col-12 col-sm-6" role="listitem">
+                <article class="track-card h-100">
+                  <div class="track-emoji" aria-hidden="true">🧠</div>
+                  <h3 class="h6 mb-1">AI & Data</h3>
+                  <p class="small text-muted mb-0">Python, ML, LLMs, data pipelines, model demos.</p>
+                </article>
+              </div>
+              <div class="col-12 col-sm-6" role="listitem">
+                <article class="track-card h-100">
+                  <div class="track-emoji" aria-hidden="true">📅</div>
+                  <h3 class="h6 mb-1">Workshops & Tech Talks</h3>
+                  <p class="small text-muted mb-0">
+                    Weekly tutorials, lightning talks, and Q&As—practical topics you can use in projects and interviews.
+                  </p>
+                </article>
+              </div>
+
+              <div class="col-12 col-sm-6" role="listitem">
+                <article class="track-card h-100">
+                  <div class="track-emoji" aria-hidden="true">🤝</div>
+                  <h3 class="h6 mb-1">Career & Community</h3>
+                  <p class="small text-muted mb-0">Resume reviews, mock interviews, alumni nights.</p>
+                </article>
+              </div>
+            </div>
+    
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-primary" href="#join">Join the club</a>
+              <a class="btn btn-outline-secondary" href="#events">See events</a>
+            </div>
+          </div>
+    
+          <!-- Visual / collage (works with or without real photos) -->
+          <div class="col-12 col-lg-6">
+            <div class="about-collage">
+              <figure class="about-img about-img--a">
+                <img src="assets/images/acm-logo.png" alt="Students collaborating at an ACM workshop" loading="lazy"
+                  decoding="async">
+              </figure>
+              <figure class="about-img about-img--b">
+                <img src="assets/images/collaboration2.png" alt="Project team working on a demo" loading="lazy"
+                  decoding="async">
+              </figure>
+              <figure class="about-img about-img--c">
+                <img src="assets/images/about/club-3.jpg" alt="Speaker session with Q&A" loading="lazy" decoding="async">
+              </figure>
+            </div>
+            <!-- <p class="small text-muted mt-2 mb-0">No photos yet? Keep the placeholders; the gradient frame still looks
+              polished.</p> -->
+          </div>
+        </div>
+    
+        <!-- Optional “by the numbers” (edit copy or remove entirely) -->
+        <div class="row g-3 mt-4 about-kpis">
+          <div class="col-6 col-md-3">
+            <div class="kpi">
+              <div class="kpi-num">Weekly</div>
+              <div class="kpi-label text-muted">workshops</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="kpi">
+              <div class="kpi-num">Project</div>
+              <div class="kpi-label text-muted">team tracks</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="kpi">
+              <div class="kpi-num">Mentors</div>
+              <div class="kpi-label text-muted">peer & alumni</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="kpi">
+              <div class="kpi-num">Talks</div>
+              <div class="kpi-label text-muted">guest speakers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 
@@ -192,82 +303,27 @@
         <!-- Screen reader status -->
         <p id="projects-status" class="visually-hidden" aria-live="polite">Showing all projects.</p>
 
-        <!-- Card grid -->
-        <div class="row g-4" id="projects-grid">
-          <!-- Project 1 (ongoing) -->
-          <div class="col-12 col-md-6 col-lg-4 project-item" data-status="ongoing">
-            <article class="card h-100" aria-labelledby="proj1-title">
-              <div class="card-body">
-                <h3 id="proj1-title" class="h5 card-title mb-2">ACM Website Revamp</h3>
-                <p class="card-text mb-3">
-                  Clean, accessible site for events, projects, and membership, built with HTML, CSS, and Bootstrap.
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-3">
-                  <span class="badge text-bg-light">HTML</span>
-                  <span class="badge text-bg-light">CSS</span>
-                  <span class="badge text-bg-light">Bootstrap</span>
-                  <span class="badge text-bg-light">GitHub Pages</span>
-                </div>
-                <div class="d-flex gap-2">
-                  <a class="btn btn-sm btn-primary" href="#" target="_blank" rel="noopener">View repo</a>
-                  <a class="btn btn-sm btn-outline-secondary" href="#home">Live site</a>
-                </div>
-              </div>
-              <div class="card-footer bg-white">
-                <small class="text-muted">Status: Ongoing</small>
-              </div>
-            </article>
+      <section id="projects" class="py-5 bg-white" data-projects-src="assets/projects.json">
+        <div class="container">
+          <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-3">
+            <h2 class="h1 mb-0">Projects</h2>
+      
+            <!-- Filters already in your page? Keep them.
+                 Example:
+            <div class="btn-group" role="group" aria-label="Filter projects">
+              <button class="btn btn-outline-secondary active" data-filter="all" aria-pressed="true">All</button>
+              <button class="btn btn-outline-secondary" data-filter="ongoing" aria-pressed="false">Ongoing</button>
+              <button class="btn btn-outline-secondary" data-filter="past" aria-pressed="false">Past</button>
+            </div> -->
           </div>
-
-          <!-- Project 2 (ongoing) -->
-          <!-- <div class="col-12 col-md-6 col-lg-4 project-item" data-status="ongoing">
-            <article class="card h-100" aria-labelledby="proj2-title">
-              <div class="card-body">
-                <h3 id="proj2-title" class="h5 card-title mb-2">Hackathon Toolkit</h3>
-                <p class="card-text mb-3">
-                  Starter templates, sample APIs, and docs to help teams ship a demo in under 24 hours.
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-3">
-                  <span class="badge text-bg-light">JavaScript</span>
-                  <span class="badge text-bg-light">Bootstrap</span>
-                  <span class="badge text-bg-light">API</span>
-                  <span class="badge text-bg-light">Docs</span>
-                </div>
-                <div class="d-flex gap-2">
-                  <a class="btn btn-sm btn-primary" href="#" target="_blank" rel="noopener">View repo</a>
-                  <a class="btn btn-sm btn-outline-secondary" href="#" target="_blank" rel="noopener">Project brief</a>
-                </div>
-              </div>
-              <div class="card-footer bg-white">
-                <small class="text-muted">Status: Ongoing</small>
-              </div>
-            </article>
-          </div> -->
-
-          <!-- Project 3 (past) -->
-          <!-- <div class="col-12 col-md-6 col-lg-4 project-item" data-status="past">
-            <article class="card h-100" aria-labelledby="proj3-title">
-              <div class="card-body">
-                <h3 id="proj3-title" class="h5 card-title mb-2">CSUN Maps Helper</h3>
-                <p class="card-text mb-3">
-                  Lightweight campus map helper with quick links to buildings, parking, and student services.
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-3">
-                  <span class="badge text-bg-light">HTML</span>
-                  <span class="badge text-bg-light">CSS</span>
-                  <span class="badge text-bg-light">Vanilla JS</span>
-                </div>
-                <div class="d-flex gap-2">
-                  <a class="btn btn-sm btn-primary" href="#" target="_blank" rel="noopener">View repo</a>
-                  <a class="btn btn-sm btn-outline-secondary" href="#" target="_blank" rel="noopener">Write-up</a>
-                </div>
-              </div>
-              <div class="card-footer bg-white">
-                <small class="text-muted">Status: Past</small>
-              </div>
-            </article>
-          </div> -->
+      
+          <p id="projects-status" class="text-muted mb-4" aria-live="polite"></p>
+      
+          <!-- Dynamic grid -->
+          <div id="projects-grid" class="row g-4" aria-live="polite" aria-busy="false"></div>
         </div>
+      </section>
+
       </div>
     </section>
 
@@ -283,67 +339,114 @@
     </section>
 
 
-
     <!-- Join -->
-    <section id="join" class="py-5 bg-light">
+    <section id="join" class="py-5 bg-light" data-discord-invite="https://discord.gg/YOUR_INVITE"
+      data-portal-url="https://YOUR_SCHOOL_PORTAL_LINK">
       <div class="container">
         <h2 class="h1 mb-3">Join</h2>
         <p class="text-muted mb-4">
-          Choose a sign-up method. You can fill out a short Google Form or email us directly.
+          Most members join our Discord. You can also sign up through the CSUN clubs portal, or use the form/email below.
         </p>
-
-        <!-- Method selector -->
-        <fieldset class="mb-3">
-          <legend class="visually-hidden">Select join method</legend>
-          <div class="btn-group" role="group" aria-label="Join method">
-            <input type="radio" class="btn-check" name="joinMethod" id="joinForm" autocomplete="off" checked>
-            <label class="btn btn-outline-secondary" for="joinForm">Google Form</label>
-
-            <input type="radio" class="btn-check" name="joinMethod" id="joinEmail" autocomplete="off">
-            <label class="btn btn-outline-secondary" for="joinEmail">Email</label>
+    
+        <!-- Primary actions -->
+        <div class="row g-4 mb-4">
+          <!-- Discord -->
+          <div class="col-12 col-lg-6">
+            <article class="card h-100 join-card">
+              <div class="card-body d-flex flex-column">
+                <h3 class="h5">Join our Discord</h3>
+                <p class="text-muted mb-3">Meet officers, get event reminders, and find project teams.</p>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <a id="discord-join" class="btn btn-discord btn-lg" href="#" target="_blank" rel="noopener">
+                    Join Discord
+                  </a>
+                  <!-- <button id="discord-copy" class="btn btn-outline-secondary btn-lg" type="button">
+                    Copy invite
+                  </button>
+                  <button id="discord-qr-toggle" class="btn btn-outline-secondary btn-lg" type="button"
+                    aria-expanded="false" aria-controls="discord-qr">
+                    Show QR
+                  </button> -->
+                </div>
+                <!-- <div id="discord-qr" class="qr-wrap d-none">
+                  <img id="discord-qr-img" alt="Discord invite QR" loading="lazy" decoding="async" width="220"
+                    height="220" />
+                  <div class="small text-muted mt-2">Scan to join</div>
+                </div> -->
+              </div>
+            </article>
           </div>
-        </fieldset>
-
-        <!-- Google Form embed (shown by default) -->
-        <div id="join-form-wrap" class="mb-4" aria-live="polite">
-          <div class="ratio ratio-4x3 border rounded-3 bg-white">
-            <iframe title="ACM at CSUN Membership Form"
-              src="https://docs.google.com/forms/d/e/YOUR_PUBLIC_FORM_ID/viewform?embedded=true" loading="lazy"
-              style="border:0"></iframe>
+    
+          <!-- CSUN portal -->
+          <div class="col-12 col-lg-6">
+            <article class="card h-100 join-card">
+              <div class="card-body d-flex flex-column">
+                <h3 class="h5">CSUN Clubs Portal</h3>
+                <p class="text-muted mb-3">Prefer the official campus portal? Join and follow ACM there.</p>
+                <a id="portal-link" class="btn btn-outline-primary btn-lg" href="#" target="_blank" rel="noopener">
+                  Open portal
+                </a>
+              </div>
+            </article>
           </div>
-          <p class="small text-muted mt-2">If the form doesn't load, try the Email option below or open the form in a
-            new tab.</p>
         </div>
-
-        <!-- Email option (hidden initially) -->
-        <div id="join-email-wrap" class="mb-4 d-none" aria-live="polite">
-          <p class="mb-3">Prefer email? Send us your name, major, expected grad year, and interests.</p>
-          <div class="d-flex flex-wrap gap-2">
-            <a id="join-email-link" class="btn btn-primary obf-email" data-user="acmchapter" data-domain="csun.edu"
-              data-subject="Join%20ACM%20at%20CSUN"
-              data-body="Hi%20ACM%20CSUN%20Team%2C%0A%0AName%3A%20%0AMajor%3A%20%0AExpected%20Graduation%3A%20%0AInterests%3A%20%0A%0AThanks!"
-              aria-label="Email ACM CSUN to join" href="#">
-              Email to Join
-            </a>
-            <a id="join-email-web" class="btn btn-outline-secondary d-none" href="#" target="_blank" rel="noopener">
-              Open in Webmail
-            </a>
-          </div>
-          <p class="small text-muted mt-2">We reply with next steps and upcoming event details.</p>
-        </div>
-
+    
+        <!-- Other ways -->
+        <!-- <details class="mb-4"> -->
+          <!-- <summary class="h6 mb-2">Other ways to join (Form / Email)</summary> -->
+    
+          <!-- Method selector -->
+          <!-- <fieldset class="mb-3">
+            <legend class="visually-hidden">Select join method</legend>
+            <div class="btn-group" role="group" aria-label="Join method">
+              <input type="radio" class="btn-check" name="joinMethod" id="joinForm" autocomplete="off" checked>
+              <label class="btn btn-outline-secondary" for="joinForm">Google Form</label>
+    
+              <input type="radio" class="btn-check" name="joinMethod" id="joinEmail" autocomplete="off">
+              <label class="btn btn-outline-secondary" for="joinEmail">Email</label>
+            </div>
+          </fieldset> -->
+    
+          <!-- Google Form embed (shown by default) -->
+          <!-- <div id="join-form-wrap" class="mb-4" aria-live="polite">
+            <div class="ratio ratio-4x3 border rounded-3 bg-white">
+              <iframe title="ACM at CSUN Membership Form"
+                src="https://docs.google.com/forms/d/e/YOUR_PUBLIC_FORM_ID/viewform?embedded=true" loading="lazy"
+                style="border:0"></iframe>
+            </div>
+            <p class="small text-muted mt-2">If the form doesn't load, try Email below or open the form in a new tab.</p>
+          </div> -->
+    
+          <!-- Email option (hidden initially) -->
+          <!-- <div id="join-email-wrap" class="mb-4 d-none" aria-live="polite">
+            <p class="mb-3">Prefer email? Send your name, major, expected grad year, and interests.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a id="join-email-link" class="btn btn-primary obf-email" data-user="acmchapter" data-domain="csun.edu"
+                data-subject="Join ACM at CSUN"
+                data-body="Hi ACM CSUN Team,%0A%0AName:%0AMajor:%0AExpected Graduation:%0AInterests:%0A%0AThanks!"
+                aria-label="Email ACM CSUN to join" href="#">
+                Email to Join
+              </a>
+              <a id="join-email-web" class="btn btn-outline-secondary d-none" href="#" target="_blank" rel="noopener">
+                Open in Webmail
+              </a>
+            </div>
+          </div> -->
+        <!-- </details> -->
+    
         <!-- Privacy note -->
         <div class="border rounded-3 p-3 bg-white">
           <p class="mb-1"><strong>Privacy</strong></p>
           <p class="mb-0 small text-muted">
-            This website does not store membership data. If you use the Google Form,
-            your responses are collected by Google on behalf of the ACM CSUN chapter.
-            If you email us, your message is handled by your email provider and our campus email.
-            Do not include sensitive information.
+            This site doesn&#39;t store membership data. Discord membership is managed by Discord.
+            The campus portal is managed by CSUN. Google Forms data is collected by Google on ACM&#39;s behalf.
+            Email is handled by your provider and our campus email. Please don&#39;t include sensitive info.
           </p>
         </div>
       </div>
     </section>
+
+    
   </main>
 
   <!-- Footer -->
