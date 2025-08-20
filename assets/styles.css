@@ -1,0 +1,556 @@
+/* assets/styles.css
+   Full-viewport hero, centered responsive logo, mobile sticky-navbar offsets,
+   Bootstrap primary buttons set to CSUN red, plus glass-card + retina hero. */
+
+/* ===== Globals & color theme ===== */
+:root {
+  --mobile-navbar-h: 56px;
+  /* default Bootstrap navbar height on mobile */
+  scroll-behavior: smooth;
+
+  /* CSUN red theme mapped onto Bootstrap "primary" */
+  --csun-red: #CE1126;
+  --csun-red-rgb: 206, 17, 44;
+
+  /* Make Bootstrap primary = CSUN red */
+  --bs-primary: var(--csun-red);
+  --bs-primary-rgb: var(--csun-red-rgb);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===== Buttons: ensure primary variants use CSUN red ===== */
+.btn-primary {
+  --bs-btn-bg: var(--csun-red);
+  --bs-btn-border-color: var(--csun-red);
+  --bs-btn-hover-bg: #b90f24;
+  --bs-btn-hover-border-color: #b90f24;
+  --bs-btn-focus-shadow-rgb: var(--csun-red-rgb);
+  --bs-btn-active-bg: #a50e1f;
+  --bs-btn-active-border-color: #a50e1f;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--csun-red);
+  --bs-btn-border-color: var(--csun-red);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--csun-red);
+  --bs-btn-hover-border-color: var(--csun-red);
+  --bs-btn-focus-shadow-rgb: var(--csun-red-rgb);
+  --bs-btn-active-bg: #a50e1f;
+  --bs-btn-active-border-color: #a50e1f;
+}
+
+/* Secondary CTA that stays readable over photos */
+.btn-outline-light {
+  --bs-btn-color: #fff;
+  --bs-btn-border-color: rgba(255, 255, 255, .85);
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+  --bs-btn-focus-shadow-rgb: 255, 255, 255;
+}
+
+/* Subtle lift on hover/focus for all buttons */
+.btn {
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .12);
+}
+
+/* ===== Hero fills viewport ===== */
+#home,
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+}
+
+@supports (height: 100dvh) {
+
+  #home,
+  .hero-section {
+    min-height: 100dvh;
+  }
+}
+
+/* Below lg, subtract sticky mobile navbar height */
+@media (max-width: 991.98px) {
+
+  #home,
+  .hero-section {
+    min-height: calc(100vh - var(--mobile-navbar-h));
+  }
+
+  @supports (height: 100dvh) {
+
+    #home,
+    .hero-section {
+      min-height: calc(100dvh - var(--mobile-navbar-h));
+    }
+  }
+
+  /* Keep in-page anchors visible under sticky navbar */
+  header[id],
+  section[id] {
+    scroll-margin-top: calc(var(--mobile-navbar-h) + 8px);
+  }
+}
+
+/* ===== Full-bleed hero background ===== */
+/* Path is relative to this CSS file in /assets/ */
+.hero-section {
+  background-image: url('./images/hero2.png');
+  background-size: cover;
+  background-position: 50% 32%;
+  /* lift focal point slightly */
+  background-repeat: no-repeat;
+}
+
+/* Hi-DPI override only if supported (prevents blank bg edge cases) */
+@supports (background-image: image-set(url("x.png") 1x)) {
+  .hero-section {
+    /* use the same file for 1x/2x until you add a real @2x asset */
+    background-image: image-set(url('./images/hero2.png') 1x,
+        url('./images/hero2.png') 2x);
+  }
+}
+
+/* Tunable directional scrim: darker left for copy, lighter right near logo */
+.hero-section {
+  --scrim-a: .46;
+  --scrim-b: .36;
+  --scrim-c: .22;
+  --scrim-d: .10;
+}
+
+.hero-section.hero--dense {
+  --scrim-a: .58;
+  --scrim-b: .46;
+  --scrim-c: .30;
+  --scrim-d: .16;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(0, 0, 0, var(--scrim-a)) 0%,
+      rgba(0, 0, 0, var(--scrim-b)) 36%,
+      rgba(0, 0, 0, var(--scrim-c)) 60%,
+      rgba(0, 0, 0, var(--scrim-d)) 100%),
+    radial-gradient(36rem 20rem at 78% 58%, rgba(255, 255, 255, .08), transparent 62%),
+    rgba(0, 0, 0, .10);
+  pointer-events: none;
+}
+
+.hero-section>.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Comfortable top/left breathing room so the card isn’t glued to corners */
+.hero-section .container {
+  padding-top: clamp(16px, 8vh, 96px);
+}
+
+@media (min-width: 1200px) {
+  .hero-section .container {
+    padding-left: clamp(12px, 4vw, 64px);
+  }
+}
+
+/* ===== Hero typography ===== */
+.hero-section .display-5 {
+  font-size: clamp(1.8rem, 3.4vw + .6rem, 2.45rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: .75rem;
+}
+
+.hero-section .lead {
+  font-size: clamp(1rem, 1.2vw + 0.6rem, 1.25rem);
+  line-height: 1.55;
+  color: #fff;
+  opacity: .96;
+  max-width: 62ch;
+  margin-bottom: 1.25rem;
+}
+
+/* Optional helper if wrapping copy in a container */
+.hero-copy {
+  max-width: 62ch;
+}
+
+/* Small eyebrow label above H1 */
+.hero-eyebrow {
+  letter-spacing: .08em;
+  color: #fff;
+}
+
+/* ===== Optional: glass card for the copy column ===== */
+.hero--card .hero-copy {
+  margin-top: .25rem;
+  padding: clamp(.75rem, 1.4vw, 1.25rem) clamp(.9rem, 1.6vw, 1.5rem);
+  border-radius: 18px;
+  background: rgba(0, 0, 0, .28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  outline: 1px solid rgba(255, 255, 255, .14);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .22);
+}
+
+.hero--card .hero-copy .display-5,
+.hero--card .hero-copy .lead {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+}
+
+/* ===== Centered, responsive hero logo with polished "figure" look ===== */
+.hero-img {
+  width: clamp(112px, 22vw, 176px);
+  aspect-ratio: 1 / 1;
+  border-radius: 1rem;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background:
+    radial-gradient(80% 80% at 50% 40%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.35)),
+    rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  margin-inline: auto;
+  animation: hero-float 7.5s ease-in-out infinite;
+}
+
+.hero-img img {
+  display: block;
+  width: 84%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-img {
+    animation: none;
+  }
+}
+
+@keyframes hero-float {
+
+  0%,
+  100% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-4px)
+  }
+}
+
+/* ===== Quick facts pills (optional) ===== */
+.hero-stats {
+  margin-top: .25rem;
+}
+
+.stat-pill {
+  font-size: 0.9rem;
+  padding: .5rem .75rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(3px);
+  color: #212529;
+}
+
+/* ===== Highlights list with custom dots (optional) ===== */
+.hero-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+  .hero-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.hero-dot {
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--csun-red);
+  flex: 0 0 auto;
+  box-shadow: 0 0 0 3px rgba(206, 17, 44, 0.15);
+}
+
+/* ===== Scroll cue (optional) ===== */
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(12px, 3.5vh, 28px);
+  translate: -50% 0;
+  width: 28px;
+  height: 46px;
+  border: 2px solid rgba(255, 255, 255, .75);
+  border-radius: 999px;
+  opacity: .9;
+}
+
+.scroll-cue::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 9px;
+  width: 4px;
+  height: 10px;
+  translate: -50% 0;
+  border-radius: 2px;
+  background: #fff;
+  animation: cue-bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes cue-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: .9
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: .6
+  }
+}
+
+/* ===== Small-screen tuning ===== */
+@media (max-width: 991.98px) {
+  .hero-section::before {
+    background:
+      linear-gradient(180deg,
+        rgba(0, 0, 0, calc(var(--scrim-a) + .02)) 0%,
+        rgba(0, 0, 0, calc(var(--scrim-b) - .06)) 40%,
+        rgba(0, 0, 0, calc(var(--scrim-c) - .10)) 100%),
+      rgba(0, 0, 0, .10);
+  }
+
+  .hero-img {
+    width: clamp(100px, 34vw, 150px);
+  }
+}
+
+/* ===== Dark mode respect ===== */
+@media (prefers-color-scheme: dark) {
+  .hero-img {
+    background:
+      radial-gradient(80% 80% at 50% 40%, rgba(33, 37, 41, 0.7), rgba(33, 37, 41, 0.4)),
+      rgba(33, 37, 41, 0.45);
+    box-shadow:
+      0 2px 16px rgba(0, 0, 0, 0.35),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  }
+
+  .stat-pill {
+    background-color: rgba(33, 37, 41, 0.65);
+    color: #f8f9fa;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .hero-section::before {
+    background:
+      linear-gradient(90deg,
+        rgba(0, 0, 0, .62) 0%,
+        rgba(0, 0, 0, .52) 36%,
+        rgba(0, 0, 0, .32) 60%,
+        rgba(0, 0, 0, .18) 100%),
+      radial-gradient(38rem 22rem at 78% 58%, rgba(255, 255, 255, .08), transparent 62%),
+      rgba(0, 0, 0, 0.28);
+  }
+}
+
+/* Local readability patch just behind the text block */
+.hero-copy {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-copy--soft::before {
+  content: "";
+  position: absolute;
+  inset: -12px -16px -14px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .34), rgba(0, 0, 0, .26));
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  outline: 1px solid rgba(255, 255, 255, .12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+  z-index: -1;
+}
+
+.hero-section .display-5,
+.hero-section .lead {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+}
+
+.hero-highlights {
+  color: rgba(255, 255, 255, .95);
+}
+
+/* === Center the hero content perfectly (both axes) ===================== */
+.hero--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero--center>.container {
+  flex: 1 1 auto;
+  display: grid;
+  place-items: center;
+  padding-top: 0 !important;
+}
+
+.hero--center .row {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero--center .col-12.col-lg-7 {
+  display: flex;
+  justify-content: center;
+}
+
+.hero--center .hero-copy {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 62ch;
+}
+
+.hero--center .d-flex.justify-content-lg-start {
+  justify-content: center !important;
+}
+
+.hero--center .hero-highlights {
+  justify-items: center;
+}
+
+@media (min-width: 1200px) {
+
+  .hero--center .col-12.col-lg-5,
+  .hero--center .col-12.col-lg-7 {
+    flex: 0 1 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero--center .text-lg-start {
+    text-align: center !important;
+  }
+}
+
+/* ===== EVENTS SECTION POLISH =========================================== */
+#events .section-intro {
+  max-width: 68ch;
+}
+
+.event-card {
+  border-left: 4px solid rgba(var(--csun-red-rgb), .8);
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+
+.event-card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
+  transform: translateY(-1px);
+}
+
+.event-card .card-title {
+  letter-spacing: -0.01em;
+}
+
+/* === Officers cards ===================================================== */
+.officer-card {
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+
+.officer-card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .10);
+  transform: translateY(-1px);
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background: var(--avatar-bg, #ddd);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .6);
+  display: grid;
+  place-items: center;
+}
+
+@media (min-width: 768px) {
+  .avatar {
+    width: 84px;
+    height: 84px;
+  }
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.avatar .avatar-fallback {
+  font-weight: 700;
+  color: rgba(255, 255, 255, .95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+  letter-spacing: .02em;
+  font-size: 1.1rem;
+}
+
+.avatar:not(.no-img) .avatar-fallback {
+  display: none;
+}
+
+.avatar.no-img .avatar-img {
+  display: none;
+}
+
+/* History accordion */
+.officers-year summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.officers-year summary::-webkit-details-marker {
+  display: none;
+}
+
+.officers-year summary::after {
+  content: "▸";
+  margin-left: .5rem;
+  transition: transform .2s ease;
+  display: inline-block;
+}
+
+.officers-year[open] summary::after {
+  transform: rotate(90deg);
+}
