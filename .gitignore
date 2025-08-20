@@ -1,12 +1,7 @@
 #misc
 .DS_Store
 
-# test css
-test.css
-test.html
 
-assets/images/
-assets/images/officers
+
+
 .vscode
-img/
-officers.tsv

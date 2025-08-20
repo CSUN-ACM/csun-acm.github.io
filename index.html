@@ -68,22 +68,15 @@
             <figure class="hero-figure mb-3 mb-lg-4">
               <img src="assets/images/acm-logo.png" class="img-fluid" alt="ACM at CSUN logo" />
             </figure>
-
-            <!-- quick facts -->
-            <div class="hero-stats d-flex flex-wrap justify-content-center gap-2">
-              <span class="stat-pill">Weekly workshops</span>
-              <span class="stat-pill">Peer mentorship</span>
-              <span class="stat-pill">Project teams</span>
-            </div>
           </div>
 
           <div class="col-12 col-lg-7 order-2 order-lg-1 text-center text-lg-start">
             <div class="hero-copy hero-copy--soft">
               <span class="hero-eyebrow text-primary fw-semibold small text-uppercase">CSUN Chapter</span>
               <h1 class="display-5 fw-bold mt-1 mb-3">Association for Computing Machinery at CSUN</h1>
-              <p class="lead mb-4">ACM at CSUN is a student-led community for curious builders. We host hands-on workshops, industry talks, and peer
-              mentorship to help members sharpen their skills and build standout portfolios. Whether you're just starting out or
-              preparing for internships, you'll find teammates, guidance, and real opportunities to create.</p>
+              <p class="lead mb-4">We&#39;re a student-led community for curious builders.<br>Through workshops, talks,
+                and mentorship, members grow skills,
+                prepare for internships, and create together.</p>
 
               <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center justify-content-lg-start">
                 <a class="btn btn-primary btn-lg" href="#join">Become a member</a>
@@ -105,23 +98,25 @@
           <div class="col-12 col-lg-6">
             <h2 class="h1 mb-3">Build skills. Find your people.</h2>
             <p class="text-muted section-intro mb-3">
-              Join weekly workshops, get feedback from peers and alumni, and connect with industry guests. Leave with real experience,
+              Join weekly workshops, get feedback from peers and alumni, and connect with industry guests. Leave with
+              real experience,
               demo-ready work, and a community to grow with.
             </p>
-    
+
             <div class="d-flex flex-wrap gap-2 mb-4">
               <span class="stat-pill">Workshops</span>
               <span class="stat-pill">Project teams</span>
               <span class="stat-pill">Tech talks</span>
               <span class="stat-pill">Mentorship</span>
             </div>
-    
+
             <!-- Tracks (small cards) -->
             <div class="row g-3 mb-4 about-tracks" role="list">
               <div class="col-12 col-sm-6" role="listitem">
                 <article class="track-card h-100">
                   <h3 class="h6 mb-1">Web & Apps</h3>
-                  <p class="small text-muted mb-0">Build modern apps with HTML/CSS/JS, React, design systems, and deployments.</p>
+                  <p class="small text-muted mb-0">Build modern apps with HTML/CSS/JS, React, design systems, and
+                    deployments.</p>
                 </article>
               </div>
               <div class="col-12 col-sm-6" role="listitem">
@@ -134,7 +129,7 @@
                 <article class="track-card h-100">
                   <h3 class="h6 mb-1">Workshops & Tech Talks</h3>
                   <p class="small text-muted mb-0">
-                  Weekly tutorials, lightning talks, and Q&As on skills you can apply in projects and interviews.
+                    Weekly tutorials, lightning talks, and Q&As on skills you can apply in projects and interviews.
                   </p>
                 </article>
               </div>
@@ -142,18 +137,19 @@
               <div class="col-12 col-sm-6" role="listitem">
                 <article class="track-card h-100">
                   <h3 class="h6 mb-1">Career & Community</h3>
-                  <p class="small text-muted mb-0">Join resume reviews, mock interviews, and alumni nights to gain hands-on experience, expert feedback, and support from
-                  mentors</p>
+                  <p class="small text-muted mb-0">Join resume reviews, mock interviews, and alumni nights to gain
+                    hands-on experience, expert feedback, and support from
+                    mentors</p>
                 </article>
               </div>
             </div>
-    
+
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-primary" href="#join">Join the club</a>
               <a class="btn btn-outline-secondary" href="#events">See events</a>
             </div>
           </div>
-    
+
           <!-- Visual / collage (works with or without real photos) -->
           <div class="col-12 col-lg-6">
             <div class="about-collage">
@@ -173,7 +169,7 @@
               polished.</p> -->
           </div>
         </div>
-    
+
         <!-- Optional “by the numbers” (edit copy or remove entirely) -->
         <div class="row g-3 mt-4 about-kpis">
           <div class="col-6 col-md-3">
@@ -287,34 +283,32 @@
         <!-- Screen reader status -->
         <p id="projects-status" class="visually-hidden" aria-live="polite">Showing all projects.</p>
 
-      <section id="projects" class="py-5 bg-white" data-projects-src="assets/projects.json">
-        <div class="container">
-          <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-3">
-            <h2 class="h1 mb-0">Projects</h2>
-      
-            <!-- Filters already in your page? Keep them.
+        <section id="projects" class="py-5 bg-white" data-projects-src="assets/projects.json">
+          <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-3">
+              <h2 class="h1 mb-0">Projects</h2>
+
+              <!-- Filters already in your page? Keep them.
                  Example:
             <div class="btn-group" role="group" aria-label="Filter projects">
               <button class="btn btn-outline-secondary active" data-filter="all" aria-pressed="true">All</button>
               <button class="btn btn-outline-secondary" data-filter="ongoing" aria-pressed="false">Ongoing</button>
               <button class="btn btn-outline-secondary" data-filter="past" aria-pressed="false">Past</button>
             </div> -->
+            </div>
+
+            <p id="projects-status" class="text-muted mb-4" aria-live="polite"></p>
+
+            <!-- Dynamic grid -->
+            <div id="projects-grid" class="row g-4" aria-live="polite" aria-busy="false"></div>
           </div>
-      
-          <p id="projects-status" class="text-muted mb-4" aria-live="polite"></p>
-      
-          <!-- Dynamic grid -->
-          <div id="projects-grid" class="row g-4" aria-live="polite" aria-busy="false"></div>
-        </div>
-      </section>
+        </section>
 
       </div>
     </section>
 
     <!-- Officers -->
-    <section id="officers"
-      class="py-5" 
-      data-officers-tsv="assets/officers.tsv"
+    <section id="officers" class="py-5" data-officers-tsv="assets/officers.tsv"
       data-officers-src="assets/officers.json">
       <div class="container">
         <div id="officers-grid" class="row g-4"></div>
@@ -329,9 +323,10 @@
       <div class="container">
         <h2 class="h1 mb-3">Join</h2>
         <p class="text-muted mb-4">
-          Most members join our Discord. You can also sign up through the CSUN clubs portal, or use the form/email below.
+          Most members join our Discord. You can also sign up through the CSUN clubs portal, or use the form/email
+          below.
         </p>
-    
+
         <!-- Primary actions -->
         <div class="row g-4 mb-4">
           <!-- Discord -->
@@ -360,7 +355,7 @@
               </div>
             </article>
           </div>
-    
+
           <!-- CSUN portal -->
           <div class="col-12 col-lg-6">
             <article class="card h-100 join-card">
@@ -374,13 +369,13 @@
             </article>
           </div>
         </div>
-    
+
         <!-- Other ways -->
         <!-- <details class="mb-4"> -->
-          <!-- <summary class="h6 mb-2">Other ways to join (Form / Email)</summary> -->
-    
-          <!-- Method selector -->
-          <!-- <fieldset class="mb-3">
+        <!-- <summary class="h6 mb-2">Other ways to join (Form / Email)</summary> -->
+
+        <!-- Method selector -->
+        <!-- <fieldset class="mb-3">
             <legend class="visually-hidden">Select join method</legend>
             <div class="btn-group" role="group" aria-label="Join method">
               <input type="radio" class="btn-check" name="joinMethod" id="joinForm" autocomplete="off" checked>
@@ -390,9 +385,9 @@
               <label class="btn btn-outline-secondary" for="joinEmail">Email</label>
             </div>
           </fieldset> -->
-    
-          <!-- Google Form embed (shown by default) -->
-          <!-- <div id="join-form-wrap" class="mb-4" aria-live="polite">
+
+        <!-- Google Form embed (shown by default) -->
+        <!-- <div id="join-form-wrap" class="mb-4" aria-live="polite">
             <div class="ratio ratio-4x3 border rounded-3 bg-white">
               <iframe title="ACM at CSUN Membership Form"
                 src="https://docs.google.com/forms/d/e/YOUR_PUBLIC_FORM_ID/viewform?embedded=true" loading="lazy"
@@ -400,9 +395,9 @@
             </div>
             <p class="small text-muted mt-2">If the form doesn't load, try Email below or open the form in a new tab.</p>
           </div> -->
-    
-          <!-- Email option (hidden initially) -->
-          <!-- <div id="join-email-wrap" class="mb-4 d-none" aria-live="polite">
+
+        <!-- Email option (hidden initially) -->
+        <!-- <div id="join-email-wrap" class="mb-4 d-none" aria-live="polite">
             <p class="mb-3">Prefer email? Send your name, major, expected grad year, and interests.</p>
             <div class="d-flex flex-wrap gap-2">
               <a id="join-email-link" class="btn btn-primary obf-email" data-user="acmchapter" data-domain="csun.edu"
@@ -417,7 +412,7 @@
             </div>
           </div> -->
         <!-- </details> -->
-    
+
         <!-- Privacy note -->
         <div class="border rounded-3 p-3 bg-white">
           <p class="mb-1"><strong>Privacy</strong></p>
@@ -430,7 +425,7 @@
       </div>
     </section>
 
-    
+
   </main>
 
   <!-- Footer -->
