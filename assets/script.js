@@ -5,10 +5,12 @@
   document.addEventListener("DOMContentLoaded", () => {
     initYear();
     initCalendarToggle();
+    initProjectsFromJSON();
     initProjectsFilter();
     initObfuscatedEmails();
     initJoinToggle();
     initEventsFromCalendar(); // render events + RSVP
+    initJoinSection();
   });
 
   function initYear() {
@@ -30,6 +32,96 @@
       setState(on);
       if (on) embed.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+  }
+
+  function initProjectsFromJSON() {
+    const section = document.getElementById("projects");
+    if (!section) return;
+
+    const src = section.dataset.projectsSrc || "assets/projects.json";
+    const grid = section.querySelector("#projects-grid");
+    const status = document.getElementById("projects-status");
+    if (!grid) return;
+
+    const setBusy = (on) => grid.setAttribute("aria-busy", String(!!on));
+
+    const badge = (t) =>
+      `<span class="badge rounded-pill text-bg-light">${t}</span>`;
+    const linkBtn = (href, label, outline = true) =>
+      href
+        ? `<a class="btn btn-sm ${
+            outline ? "btn-outline-secondary" : "btn-secondary"
+          }" href="${href}" target="_blank" rel="noopener">${label}</a>`
+        : "";
+
+    const card = (p, i) => {
+      const id = `proj-${i}`;
+      const img = p.image
+        ? `<img class="card-img-top project-thumb" src="${p.image}" alt="${p.title}">`
+        : `<div class="project-thumb placeholder-wave"></div>`;
+      const tags = (p.tags || []).map(badge).join(" ");
+      const repo = linkBtn(p.links?.repo, "Repo");
+      const demo = linkBtn(p.links?.demo, "Demo");
+      const slides = linkBtn(p.links?.slides, "Slides");
+
+      return `
+      <div class="col-12 col-md-6 col-lg-4">
+        <article class="card h-100 project-item" data-status="${
+          p.status || "ongoing"
+        }" aria-labelledby="${id}-title">
+          ${img}
+          <div class="card-body d-flex flex-column">
+            <h3 id="${id}-title" class="h5 card-title mb-1">${
+        p.title || "Project"
+      }</h3>
+            <div class="mb-2 small text-muted">
+              ${p.team && p.team.length ? p.team.join(", ") : ""}
+            </div>
+            <p class="card-text flex-grow-1">${p.summary || ""}</p>
+            ${
+              tags
+                ? `<div class="d-flex flex-wrap gap-1 mb-2">${tags}</div>`
+                : ""
+            }
+            <div class="d-flex flex-wrap gap-2 mt-1">
+              ${repo}${demo}${slides}
+            </div>
+          </div>
+        </article>
+      </div>`;
+    };
+
+    const renderError = (msg) => {
+      grid.innerHTML = `<div class="col-12"><div class="alert alert-danger mb-0">${msg}</div></div>`;
+      if (status) status.textContent = "";
+    };
+
+    (async () => {
+      setBusy(true);
+      try {
+        const res = await fetch(src, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        const list = Array.isArray(data) ? data : data.projects || [];
+        if (!list.length) {
+          grid.innerHTML = `<div class="col-12"><div class="alert alert-secondary mb-0">No projects yet.</div></div>`;
+          if (status) status.textContent = "No projects to show.";
+          return;
+        }
+        grid.innerHTML = list.map(card).join("");
+
+        // Optional: announce
+        if (status) {
+          const ongoing = list.filter((p) => p.status === "ongoing").length;
+          status.textContent = `Loaded ${list.length} projects (${ongoing} ongoing).`;
+        }
+      } catch (e) {
+        console.error(e);
+        renderError("Couldn’t load projects.");
+      } finally {
+        setBusy(false);
+      }
+    })();
   }
 
   function initProjectsFilter() {
@@ -426,6 +518,53 @@
 
     load();
   }
+
+  function initJoinSection() {
+    const sec = document.getElementById("join");
+    if (!sec) return;
+
+    const invite = sec.dataset.discordInvite || "";
+    const portal = sec.dataset.portalUrl || "";
+    const joinBtn = document.getElementById("discord-join");
+    const copyBtn = document.getElementById("discord-copy");
+    const qrBtn = document.getElementById("discord-qr-toggle");
+    const qrBox = document.getElementById("discord-qr");
+    const qrImg = document.getElementById("discord-qr-img");
+    const portalA = document.getElementById("portal-link");
+
+    // Wire primary links
+    if (invite && joinBtn) joinBtn.href = invite;
+    if (portal && portalA) portalA.href = portal;
+
+    // Copy invite
+    if (copyBtn && invite) {
+      copyBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(invite);
+          copyBtn.textContent = "Copied!";
+          setTimeout(() => (copyBtn.textContent = "Copy invite"), 1400);
+        } catch {
+          copyBtn.textContent = "Copy failed";
+          setTimeout(() => (copyBtn.textContent = "Copy invite"), 1400);
+        }
+      });
+    }
+
+    // QR toggle (uses a public QR service; replace with on-site generator later if desired)
+    if (qrBtn && qrBox && qrImg && invite) {
+      const makeQR = (url) =>
+        `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(
+          url
+        )}`;
+      let open = false;
+      qrBtn.addEventListener("click", () => {
+        open = !open;
+        qrBox.classList.toggle("d-none", !open);
+        qrBtn.setAttribute("aria-expanded", String(open));
+        if (open && !qrImg.src) qrImg.src = makeQR(invite);
+      });
+    }
+  }
 })();
 
 /* === Officers: keep CURRENT as-is; load PAST from TSV ===================== */
@@ -435,12 +574,13 @@ function initOfficers() {
   const section = document.getElementById("officers");
   if (!section) return;
 
-  const SRC_TSV     = section.dataset.officersTsv || "assets/officers.tsv";           // PAST source
-  const SRC_CURRENT = section.dataset.officersSrc || "assets/officers.json";          // optional fallback for CURRENT if grid empty
-  const SRC_HIST_F  = section.dataset.historySrc  || "assets/officers_history.json";  // fallback for PAST if TSV missing
+  const SRC_TSV = section.dataset.officersTsv || "assets/officers.tsv"; // PAST source
+  const SRC_CURRENT = section.dataset.officersSrc || "assets/officers.json"; // optional fallback for CURRENT if grid empty
+  const SRC_HIST_F =
+    section.dataset.historySrc || "assets/officers_history.json"; // fallback for PAST if TSV missing
 
   const $grid = section.querySelector("#officers-grid");
-  let   $history = section.querySelector("#officers-history");
+  let $history = section.querySelector("#officers-history");
   if (!$grid) return;
   if (!$history) {
     $history = document.createElement("div");
@@ -466,45 +606,80 @@ function initOfficers() {
   const parseTSV = (text) => {
     const lines = text.trim().split(/\r?\n/);
     if (!lines.length) return [];
-    const headers = lines[0].split("\t").map(h => h.trim());
-    return lines.slice(1).map(line => {
+    const headers = lines[0].split("\t").map((h) => h.trim());
+    return lines.slice(1).map((line) => {
       const cells = line.split("\t");
       const row = {};
-      headers.forEach((h, i) => row[h] = (cells[i] || "").trim());
+      headers.forEach((h, i) => (row[h] = (cells[i] || "").trim()));
       return row;
     });
   };
 
-  const initialsOf = (name="") => {
+  const initialsOf = (name = "") => {
     const p = name.trim().split(/\s+/);
     const f = p[0]?.[0] || "";
-    const l = p.length > 1 ? p[p.length-1][0] : "";
-    return (f+l).toUpperCase();
+    const l = p.length > 1 ? p[p.length - 1][0] : "";
+    return (f + l).toUpperCase();
   };
-  const palette = ["#E57373","#64B5F6","#81C784","#FFD54F","#BA68C8","#4DB6AC","#FF8A65","#A1887F"];
-  const colorFor = (name="") => {
-    let h = 0; for (let i=0;i<name.length;i++) h = (h*31 + name.charCodeAt(i)) >>> 0;
+  const palette = [
+    "#E57373",
+    "#64B5F6",
+    "#81C784",
+    "#FFD54F",
+    "#BA68C8",
+    "#4DB6AC",
+    "#FF8A65",
+    "#A1887F",
+  ];
+  const colorFor = (name = "") => {
+    let h = 0;
+    for (let i = 0; i < name.length; i++)
+      h = (h * 31 + name.charCodeAt(i)) >>> 0;
     return palette[h % palette.length];
   };
 
-  const socialLinks = (o={}) => {
+  const socialLinks = (o = {}) => {
     const out = [];
-    if (o.linkedin) out.push(`<a class="link-secondary me-2" href="${o.linkedin}" target="_blank" rel="noopener">LinkedIn</a>`);
-    if (o.github)   out.push(`<a class="link-secondary me-2" href="${o.github}"   target="_blank" rel="noopener">GitHub</a>`);
-    if (o.website)  out.push(`<a class="link-secondary me-2" href="${o.website}"  target="_blank" rel="noopener">Website</a>`);
+    if (o.linkedin)
+      out.push(
+        `<a class="link-secondary me-2" href="${o.linkedin}" target="_blank" rel="noopener">LinkedIn</a>`
+      );
+    if (o.github)
+      out.push(
+        `<a class="link-secondary me-2" href="${o.github}"   target="_blank" rel="noopener">GitHub</a>`
+      );
+    if (o.website)
+      out.push(
+        `<a class="link-secondary me-2" href="${o.website}"  target="_blank" rel="noopener">Website</a>`
+      );
     return out.join("");
   };
-  const emailLink = (email) => email ? `<a class="btn btn-sm btn-outline-secondary" href="mailto:${encodeURIComponent(email)}">Email</a>` : "";
+  const emailLink = (email) =>
+    email
+      ? `<a class="btn btn-sm btn-outline-secondary" href="mailto:${encodeURIComponent(
+          email
+        )}">Email</a>`
+      : "";
 
-  const cardHTML = (o, key="") => {
-    const name  = o.name || "Officer";
-    const role  = o.role || "";
-    const major = o.major ? `<div class="text-muted small">${o.major}${o.grad ? ` • ${o.grad}` : ""}</div>` : "";
-    const links = socialLinks({ linkedin:o.linkedin, github:o.github, website:o.website });
-    const img   = o.photo || "";
+  const cardHTML = (o, key = "") => {
+    const name = o.name || "Officer";
+    const role = o.role || "";
+    const major = o.major
+      ? `<div class="text-muted small">${o.major}${
+          o.grad ? ` • ${o.grad}` : ""
+        }</div>`
+      : "";
+    const links = socialLinks({
+      linkedin: o.linkedin,
+      github: o.github,
+      website: o.website,
+    });
+    const img = o.photo || "";
     const inits = initialsOf(name);
-    const bg    = colorFor(name);
-    const imgTag= img ? `<img class="avatar-img" src="${img}" alt="Photo of ${name}" loading="lazy" decoding="async">` : "";
+    const bg = colorFor(name);
+    const imgTag = img
+      ? `<img class="avatar-img" src="${img}" alt="Photo of ${name}" loading="lazy" decoding="async">`
+      : "";
 
     return `
       <div class="col-12 col-sm-6 col-lg-4">
@@ -528,27 +703,38 @@ function initOfficers() {
   };
 
   const wireAvatarFallbacks = (root) => {
-    root.querySelectorAll(".avatar-img").forEach(img => {
-      img.addEventListener("error", () => img.parentElement.classList.add("no-img"));
+    root.querySelectorAll(".avatar-img").forEach((img) => {
+      img.addEventListener("error", () =>
+        img.parentElement.classList.add("no-img")
+      );
     });
   };
 
-  const renderCurrent = (list=[]) => {
+  const renderCurrent = (list = []) => {
     if (!list.length) return; // leave whatever is already in the grid
-    $grid.innerHTML = list.map((o,i)=>cardHTML(o, `c${i}`)).join("");
+    $grid.innerHTML = list.map((o, i) => cardHTML(o, `c${i}`)).join("");
     wireAvatarFallbacks($grid);
   };
 
-  const renderHistory = (groups=[]) => {
-    if (!groups.length) { $history.innerHTML = ""; return; }
-    const html = groups.map((g,gi) => {
-      const cards = (g.officers||[]).map((o,i)=>cardHTML(o, `h${gi}-${i}`)).join("");
-      return `
+  const renderHistory = (groups = []) => {
+    if (!groups.length) {
+      $history.innerHTML = "";
+      return;
+    }
+    const html = groups
+      .map((g, gi) => {
+        const cards = (g.officers || [])
+          .map((o, i) => cardHTML(o, `h${gi}-${i}`))
+          .join("");
+        return `
         <details class="officers-year mt-3">
-          <summary class="h6 mb-2">${g.year} <span class="text-muted">(${(g.officers||[]).length})</span></summary>
+          <summary class="h6 mb-2">${g.year} <span class="text-muted">(${
+          (g.officers || []).length
+        })</span></summary>
           <div class="row g-4">${cards}</div>
         </details>`;
-    }).join("");
+      })
+      .join("");
     $history.innerHTML = `<h3 class="h4 mt-4">Past Officers</h3>${html}`;
     wireAvatarFallbacks($history);
   };
@@ -563,35 +749,37 @@ function initOfficers() {
         try {
           const current = await fetchJSON(SRC_CURRENT);
           if (Array.isArray(current) && current.length) renderCurrent(current);
-        } catch { /* ignore if missing */ }
+        } catch {
+          /* ignore if missing */
+        }
       }
 
       // 2) Past: prefer TSV
       try {
         const tsv = await fetchText(SRC_TSV);
-        const rows = parseTSV(tsv).map(r => ({
-          year:  r.year || "",
-          name:  r.name || "",
-          role:  r.role || "",
+        const rows = parseTSV(tsv).map((r) => ({
+          year: r.year || "",
+          name: r.name || "",
+          role: r.role || "",
           email: r.email || "",
           major: r.major || "",
-          grad:  r.grad  || "",
+          grad: r.grad || "",
           photo: r.photo || "",
           linkedin: r.linkedin || "",
-          github:   r.github   || "",
-          website:  r.website  || "",
-          current:  /^(yes|true|1)$/i.test(r.current || "")
+          github: r.github || "",
+          website: r.website || "",
+          current: /^(yes|true|1)$/i.test(r.current || ""),
         }));
 
         // take ONLY non-current rows (i.e., past)
-        const past = rows.filter(r => !r.current && r.year);
+        const past = rows.filter((r) => !r.current && r.year);
         const byYear = new Map();
-        past.forEach(r => {
+        past.forEach((r) => {
           if (!byYear.has(r.year)) byYear.set(r.year, []);
           byYear.get(r.year).push(r);
         });
         const groups = Array.from(byYear.entries())
-          .sort((a,b) => String(b[0]).localeCompare(String(a[0])))
+          .sort((a, b) => String(b[0]).localeCompare(String(a[0])))
           .map(([year, officers]) => ({ year, officers }));
 
         renderHistory(groups);

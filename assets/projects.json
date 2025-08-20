@@ -1,0 +1,17 @@
+[
+  {
+    "title": "ACM Website Revamp",
+    "status": "ongoing",
+    "summary": "Rebuilding the chapter site with Bootstrap + Google Calendar feed.",
+    "image": "assets/images/site-revamp.jpg",
+    "tags": ["Web Development", "Cybersecurity", "ACM"],
+    "links": {
+      "repo": "https://github.com/CSUN-ACM/csun-acm.github.io",
+      "demo": false,
+      "slides": ""
+    },
+    "team": ["ACM Web Development Team"],
+    "start": "2024-08-01",
+    "end": null
+  }
+]

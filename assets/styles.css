@@ -1,4 +1,4 @@
-/* assets/styles.css
+/* assets/styles.css 
    Full-viewport hero, centered responsive logo, mobile sticky-navbar offsets,
    Bootstrap primary buttons set to CSUN red, plus glass-card + retina hero. */
 
@@ -117,9 +117,8 @@
 /* Hi-DPI override only if supported (prevents blank bg edge cases) */
 @supports (background-image: image-set(url("x.png") 1x)) {
   .hero-section {
-    /* use the same file for 1x/2x until you add a real @2x asset */
-    background-image: image-set(url('./images/hero2.png') 1x,
-        url('./images/hero2.png') 2x);
+    /* same file for 1x/2x until you add a real @2x asset */
+    background-image: image-set(url('./images/hero2.png') 1x, url('./images/hero2.png') 2x);
   }
 }
 
@@ -142,6 +141,7 @@
   content: "";
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background:
     linear-gradient(90deg,
       rgba(0, 0, 0, var(--scrim-a)) 0%,
@@ -150,7 +150,6 @@
       rgba(0, 0, 0, var(--scrim-d)) 100%),
     radial-gradient(36rem 20rem at 78% 58%, rgba(255, 255, 255, .08), transparent 62%),
     rgba(0, 0, 0, .10);
-  pointer-events: none;
 }
 
 .hero-section>.container {
@@ -218,17 +217,15 @@
 /* ===== Centered, responsive hero logo with polished "figure" look ===== */
 .hero-img {
   width: clamp(112px, 22vw, 176px);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
   border-radius: 1rem;
   display: grid;
   place-items: center;
   padding: 1rem;
   background:
-    radial-gradient(80% 80% at 50% 40%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.35)),
-    rgba(255, 255, 255, 0.25);
-  box-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.08),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+    radial-gradient(80% 80% at 50% 40%, rgba(255, 255, 255, .75), rgba(255, 255, 255, .35)),
+    rgba(255, 255, 255, .25);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .08), inset 0 0 0 1px rgba(255, 255, 255, .35);
   backdrop-filter: blur(6px);
   margin-inline: auto;
   animation: hero-float 7.5s ease-in-out infinite;
@@ -265,12 +262,12 @@
 }
 
 .stat-pill {
-  font-size: 0.9rem;
+  font-size: .9rem;
   padding: .5rem .75rem;
   border-radius: 999px;
-  background-color: rgba(255, 255, 255, 0.55);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, .55);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .06);
+  border: 1px solid rgba(0, 0, 0, .06);
   backdrop-filter: blur(3px);
   color: #212529;
 }
@@ -293,7 +290,7 @@
   border-radius: 50%;
   background: var(--csun-red);
   flex: 0 0 auto;
-  box-shadow: 0 0 0 3px rgba(206, 17, 44, 0.15);
+  box-shadow: 0 0 0 3px rgba(206, 17, 44, .15);
 }
 
 /* ===== Scroll cue (optional) ===== */
@@ -341,9 +338,9 @@
   .hero-section::before {
     background:
       linear-gradient(180deg,
-        rgba(0, 0, 0, calc(var(--scrim-a) + .02)) 0%,
-        rgba(0, 0, 0, calc(var(--scrim-b) - .06)) 40%,
-        rgba(0, 0, 0, calc(var(--scrim-c) - .10)) 100%),
+        rgba(0, 0, 0, calc(var(--scrim-a)+.02)) 0%,
+        rgba(0, 0, 0, calc(var(--scrim-b)-.06)) 40%,
+        rgba(0, 0, 0, calc(var(--scrim-c)-.10)) 100%),
       rgba(0, 0, 0, .10);
   }
 
@@ -356,17 +353,15 @@
 @media (prefers-color-scheme: dark) {
   .hero-img {
     background:
-      radial-gradient(80% 80% at 50% 40%, rgba(33, 37, 41, 0.7), rgba(33, 37, 41, 0.4)),
-      rgba(33, 37, 41, 0.45);
-    box-shadow:
-      0 2px 16px rgba(0, 0, 0, 0.35),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+      radial-gradient(80% 80% at 50% 40%, rgba(33, 37, 41, .7), rgba(33, 37, 41, .4)),
+      rgba(33, 37, 41, .45);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, .35), inset 0 0 0 1px rgba(255, 255, 255, .06);
   }
 
   .stat-pill {
-    background-color: rgba(33, 37, 41, 0.65);
+    background-color: rgba(33, 37, 41, .65);
     color: #f8f9fa;
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, .08);
   }
 
   .hero-section::before {
@@ -377,7 +372,7 @@
         rgba(0, 0, 0, .32) 60%,
         rgba(0, 0, 0, .18) 100%),
       radial-gradient(38rem 22rem at 78% 58%, rgba(255, 255, 255, .08), transparent 62%),
-      rgba(0, 0, 0, 0.28);
+      rgba(0, 0, 0, .28);
   }
 }
 
@@ -467,6 +462,7 @@
   max-width: 68ch;
 }
 
+/* scoped intro width */
 .event-card {
   border-left: 4px solid rgba(var(--csun-red-rgb), .8);
   transition: box-shadow .15s ease, transform .15s ease;
@@ -479,6 +475,29 @@
 
 .event-card .card-title {
   letter-spacing: -0.01em;
+}
+
+/* ===== PROJECTS SECTION POLISH ========================================= */
+.project-thumb {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: linear-gradient(135deg, rgba(0, 0, 0, .06), rgba(0, 0, 0, .02));
+}
+
+.placeholder-wave {
+  animation: shimmer 1.2s linear infinite;
+  background: linear-gradient(90deg, rgba(0, 0, 0, .06) 25%, rgba(0, 0, 0, .10) 37%, rgba(0, 0, 0, .06) 63%);
+  background-size: 400% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0
+  }
+
+  100% {
+    background-position: -100% 0
+  }
 }
 
 /* === Officers cards ===================================================== */
@@ -553,4 +572,209 @@
 
 .officers-year[open] summary::after {
   transform: rotate(90deg);
+}
+
+/* Discord brand button + QR frame */
+.btn-discord {
+  --btn: #5865F2;
+  --btn-hover: #4752C4;
+  color: #fff;
+  background: var(--btn);
+  border-color: var(--btn);
+}
+
+.btn-discord:hover,
+.btn-discord:focus-visible {
+  background: var(--btn-hover);
+  border-color: var(--btn-hover);
+  color: #fff;
+}
+
+.join-card .qr-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, .04);
+  border: 1px solid rgba(0, 0, 0, .08);
+}
+
+.join-card .qr-wrap img {
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+}
+
+/* ===== About section enhancements ====================================== */
+/* Generic intro width (used in About too) */
+.section-intro {
+  max-width: 68ch;
+}
+
+/* About list bullets (clean, accessible, no external icons) */
+.about-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: .5rem;
+}
+
+.about-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .5rem;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--csun-red);
+  box-shadow: 0 0 0 3px rgba(206, 17, 44, .15);
+}
+
+/* Tracks (small cards) */
+.about-tracks .track-card {
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-left: 4px solid var(--csun-red);
+  border-radius: 14px;
+  padding: .9rem .9rem .8rem;
+  background: #fff;
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.about-tracks .track-card:hover,
+.about-tracks .track-card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .08);
+  border-left-color: #b90f24;
+  /* hover shade */
+}
+
+.track-emoji {
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-bottom: .35rem;
+}
+
+/* Collage grid */
+.about-collage {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  grid-template-rows: 1fr 1fr;
+  gap: .8rem;
+}
+
+.about-img {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 180px;
+  background:
+    radial-gradient(80% 80% at 50% 40%, rgba(255, 255, 255, .6), rgba(255, 255, 255, .25)),
+    linear-gradient(135deg, rgba(0, 0, 0, .08), rgba(0, 0, 0, .02));
+  outline: 1px solid rgba(0, 0, 0, .06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .10);
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.0);
+  transition: transform .5s ease;
+}
+
+.about-img:hover img {
+  transform: scale(1.03);
+}
+
+.about-img--a {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  aspect-ratio: 4/5;
+}
+
+.about-img--b {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  aspect-ratio: 4/3;
+}
+
+.about-img--c {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  aspect-ratio: 4/3;
+}
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-img img {
+    transition: none;
+  }
+
+  .about-tracks .track-card {
+    transition: none;
+  }
+}
+
+/* KPIs */
+.about-kpis .kpi {
+  border: 1px dashed rgba(0, 0, 0, .12);
+  border-radius: 12px;
+  padding: .9rem .9rem .8rem;
+  background: #fff;
+}
+
+.kpi-num {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.15rem, 1.25vw + 1rem, 1.6rem);
+}
+
+.kpi-label {
+  font-size: .95rem;
+}
+
+/* Dark mode tweaks for About */
+@media (prefers-color-scheme: dark) {
+
+  .about-tracks .track-card,
+  .about-kpis .kpi {
+    background: rgba(33, 37, 41, .6);
+    border-color: rgba(255, 255, 255, .12);
+  }
+
+  .about-img {
+    outline-color: rgba(255, 255, 255, .10);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .35);
+  }
+}
+/* === About: compact mobile layout ======================================= */
+@media (max-width: 767.98px) {
+  /* Stack collage into a single column */
+  .about-collage{
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: .6rem;
+  }
+  /* Make each tile full-width, same aspect, in a clear order */
+  .about-img--a,
+  .about-img--b,
+  .about-img--c{
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+    min-height: 180px; /* keeps tiles from collapsing on very narrow screens */
+  }
+  .about-img--a{ order: 1; }
+  .about-img--b{ order: 2; }
+  .about-img--c{ order: 3; }
+
+  /* Slightly tighter cards on mobile */
+  .about-tracks .track-card{ padding: .8rem .85rem; }
+  .about-kpis .kpi{ padding: .8rem .85rem; }
+
+  /* Scale KPI numbers a touch for smaller screens */
+  .kpi-num{ font-size: clamp(1rem, 2.2vw + .9rem, 1.35rem); }
 }
