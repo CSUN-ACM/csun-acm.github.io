@@ -1,0 +1,15 @@
+[
+  {
+    "year": "2024–2025",
+    "officers": [
+      { "name": "Taylor Singh", "role": "President", "photo": "assets/officers/2024/taylor-singh.jpg" },
+      { "name": "Mia Lopez",    "role": "Vice President", "photo": "assets/officers/2024/mia-lopez.jpg" }
+    ]
+  },
+  {
+    "year": "2023–2024",
+    "officers": [
+      { "name": "Jordan Patel", "role": "President", "photo": "assets/officers/2023/jordan-patel.jpg" }
+    ]
+  }
+]

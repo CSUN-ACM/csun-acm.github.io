@@ -1,0 +1,84 @@
+[
+  {
+    "name": "Dr. Xunfei Jiang",
+    "role": "Faculty Advisor",
+    "major": "Department of Computer Science",
+    "grad": "",
+    "email": "alex.rivera@my.csun.edu",
+    "photo": "assets/officers/2025/alex-rivera.jpg",
+    "links": {
+      "linkedin": "#",
+      "github": "#"
+    }
+  },
+  {
+    "name": "Param Desai",
+    "role": "President",
+    "major": "Computer Science",
+    "grad": "2026",
+    "email": "jamie.chen@my.csun.edu",
+    "photo": "assets/officers/2025/jamie-chen.jpg",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/jamiechen"
+    }
+  },
+  {
+    "name": "Ridham Patel",
+    "role": "Vice President",
+    "major": "Computer Science",
+    "grad": "2026",
+    "email": "jamie.chen@my.csun.edu",
+    "photo": "assets/officers/2025/jamie-chen.jpg",
+    "links": {
+      "linkedin": "https://github.com/ridhampatel23",
+      "github": "https://www.linkedin.com/in/ridhampatel23"
+    }
+  },
+  {
+    "name": "Kousha Salimkhan",
+    "role": "Treasurer",
+    "major": "Computer Science",
+    "grad": "2026",
+    "email": "jamie.chen@my.csun.edu",
+    "photo": "assets/officers/2025/jamie-chen.jpg",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/kousha-salimkhan-21aaa31a2",
+      "github": "https://github.com/ksalimkhan"
+    }
+  },
+  {
+    "name": "Juan Rodriguez",
+    "role": "Web Developer",
+    "major": "Computer Science",
+    "grad": "2026",
+    "email": "jamie.chen@my.csun.edu",
+    "photo": "assets/officers/2025/jamie-chen.jpg",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/juan-rodriguez-26b39427a",
+      "github":"https://github.com/gtech29"
+    }
+  },
+    {
+    "name": "Guna Yaswanth Gadde",
+    "role": "Web Developer",
+    "major": "Community Lead",
+    "grad": "2026",
+    "email": "jamie.chen@my.csun.edu",
+    "photo": "assets/officers/2025/jamie-chen.jpg",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/gadde-guna-yaswanth/",
+      "github":"https://github.com/yashu510"
+    }
+  },
+    {
+    "name": "Bernadette Panganiban",
+    "role": "Public Relations",
+    "major": "Computer Science",
+    "grad": "2025",
+    "email": "jamie.chen@my.csun.edu",
+    "photo": "assets/officers/2025/jamie-chen.jpg",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/bernadette-panganiban-10b6291b5/"
+    }
+  }
+]
