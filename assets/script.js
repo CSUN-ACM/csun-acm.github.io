@@ -428,154 +428,127 @@
   }
 })();
 
-/* === Officers (current + history) ========================================== */
+/* === Officers: keep CURRENT as-is; load PAST from TSV ===================== */
 document.addEventListener("DOMContentLoaded", initOfficers);
 
 function initOfficers() {
   const section = document.getElementById("officers");
   if (!section) return;
 
-  const SRC_CURRENT = section.dataset.officersSrc || "assets/officers.json";
-  const SRC_HISTORY =
-    section.dataset.historySrc || "assets/officers_history.json";
+  const SRC_TSV     = section.dataset.officersTsv || "assets/officers.tsv";           // PAST source
+  const SRC_CURRENT = section.dataset.officersSrc || "assets/officers.json";          // optional fallback for CURRENT if grid empty
+  const SRC_HIST_F  = section.dataset.historySrc  || "assets/officers_history.json";  // fallback for PAST if TSV missing
 
   const $grid = section.querySelector("#officers-grid");
-  const $history = section.querySelector("#officers-history");
+  let   $history = section.querySelector("#officers-history");
   if (!$grid) return;
+  if (!$history) {
+    $history = document.createElement("div");
+    $history.id = "officers-history";
+    $history.className = "mt-4";
+    section.querySelector(".container")?.appendChild($history);
+  }
 
   const setBusy = (on) => $grid.setAttribute("aria-busy", String(!!on));
 
+  const fetchText = async (url) => {
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok) throw new Error(`HTTP ${r.status} loading ${url}`);
+    return r.text();
+  };
   const fetchJSON = async (url) => {
     const r = await fetch(url, { cache: "no-store" });
     if (!r.ok) throw new Error(`HTTP ${r.status} loading ${url}`);
     return r.json();
   };
 
-  const initialsOf = (name = "") => {
-    const parts = name.trim().split(/\s+/);
-    const first = parts[0]?.[0] || "";
-    const last = parts.length > 1 ? parts[parts.length - 1][0] : "";
-    return (first + last).toUpperCase();
+  // Parse TSV (first line = headers, tab-separated)
+  const parseTSV = (text) => {
+    const lines = text.trim().split(/\r?\n/);
+    if (!lines.length) return [];
+    const headers = lines[0].split("\t").map(h => h.trim());
+    return lines.slice(1).map(line => {
+      const cells = line.split("\t");
+      const row = {};
+      headers.forEach((h, i) => row[h] = (cells[i] || "").trim());
+      return row;
+    });
   };
 
-  const palette = [
-    "#E57373",
-    "#64B5F6",
-    "#81C784",
-    "#FFD54F",
-    "#BA68C8",
-    "#4DB6AC",
-    "#FF8A65",
-    "#A1887F",
-  ];
-  const colorFor = (name = "") => {
-    let h = 0;
-    for (let i = 0; i < name.length; i++)
-      h = (h * 31 + name.charCodeAt(i)) >>> 0;
+  const initialsOf = (name="") => {
+    const p = name.trim().split(/\s+/);
+    const f = p[0]?.[0] || "";
+    const l = p.length > 1 ? p[p.length-1][0] : "";
+    return (f+l).toUpperCase();
+  };
+  const palette = ["#E57373","#64B5F6","#81C784","#FFD54F","#BA68C8","#4DB6AC","#FF8A65","#A1887F"];
+  const colorFor = (name="") => {
+    let h = 0; for (let i=0;i<name.length;i++) h = (h*31 + name.charCodeAt(i)) >>> 0;
     return palette[h % palette.length];
   };
 
-  const socialLinks = (links = {}) => {
-    const items = [];
-    if (links.linkedin)
-      items.push(
-        `<a class="link-secondary me-2" href="${links.linkedin}" target="_blank" rel="noopener">LinkedIn</a>`
-      );
-    if (links.github)
-      items.push(
-        `<a class="link-secondary me-2" href="${links.github}" target="_blank" rel="noopener">GitHub</a>`
-      );
-    if (links.website)
-      items.push(
-        `<a class="link-secondary me-2" href="${links.website}" target="_blank" rel="noopener">Website</a>`
-      );
-    return items.join("");
+  const socialLinks = (o={}) => {
+    const out = [];
+    if (o.linkedin) out.push(`<a class="link-secondary me-2" href="${o.linkedin}" target="_blank" rel="noopener">LinkedIn</a>`);
+    if (o.github)   out.push(`<a class="link-secondary me-2" href="${o.github}"   target="_blank" rel="noopener">GitHub</a>`);
+    if (o.website)  out.push(`<a class="link-secondary me-2" href="${o.website}"  target="_blank" rel="noopener">Website</a>`);
+    return out.join("");
   };
+  const emailLink = (email) => email ? `<a class="btn btn-sm btn-outline-secondary" href="mailto:${encodeURIComponent(email)}">Email</a>` : "";
 
-  const emailLink = (email) => {
-    if (!email) return "";
-    const safe = encodeURIComponent(email);
-    return `<a class="btn btn-sm btn-outline-secondary" href="mailto:${safe}">Email</a>`;
-  };
-
-  const cardHTML = (o, idx = 0) => {
-    const name = o.name || "Officer";
-    const role = o.role || "";
-    const major = o.major
-      ? `<div class="text-muted small">${o.major}${
-          o.grad ? ` • ${o.grad}` : ""
-        }</div>`
-      : "";
-    const links = socialLinks(o.links || {});
-    const img = o.photo || "";
+  const cardHTML = (o, key="") => {
+    const name  = o.name || "Officer";
+    const role  = o.role || "";
+    const major = o.major ? `<div class="text-muted small">${o.major}${o.grad ? ` • ${o.grad}` : ""}</div>` : "";
+    const links = socialLinks({ linkedin:o.linkedin, github:o.github, website:o.website });
+    const img   = o.photo || "";
     const inits = initialsOf(name);
-    const bg = colorFor(name);
-    const imgTag = img
-      ? `<img class="avatar-img" src="${img}" alt="Photo of ${name}" loading="lazy" decoding="async">`
-      : "";
+    const bg    = colorFor(name);
+    const imgTag= img ? `<img class="avatar-img" src="${img}" alt="Photo of ${name}" loading="lazy" decoding="async">` : "";
+
     return `
       <div class="col-12 col-sm-6 col-lg-4">
-        <article class="card h-100 officer-card" aria-labelledby="off-${idx}-title">
+        <article class="card h-100 officer-card" aria-labelledby="off-${key}-title">
           <div class="card-body d-flex gap-3">
             <div class="avatar" style="--avatar-bg:${bg}">
               ${imgTag}
               <span class="avatar-fallback" aria-hidden="true">${inits}</span>
             </div>
             <div class="flex-grow-1">
-              <h3 id="off-${idx}-title" class="h5 mb-1">${name}</h3>
+              <h3 id="off-${key}-title" class="h5 mb-1">${name}</h3>
               <div class="fw-semibold mb-1">${role}</div>
               ${major}
               <div class="mt-2 d-flex flex-wrap gap-2">
-                ${emailLink(o.email)}
-                ${links}
+                ${emailLink(o.email)} ${links}
               </div>
             </div>
           </div>
         </article>
-      </div>
-    `;
+      </div>`;
   };
 
-  const wireAvatarFallbacks = (container) => {
-    container.querySelectorAll(".avatar-img").forEach((img) => {
-      img.addEventListener("error", () => {
-        img.parentElement.classList.add("no-img");
-      });
+  const wireAvatarFallbacks = (root) => {
+    root.querySelectorAll(".avatar-img").forEach(img => {
+      img.addEventListener("error", () => img.parentElement.classList.add("no-img"));
     });
   };
 
-  const renderCurrent = (list = []) => {
-    if (!list.length) {
-      $grid.innerHTML = `<div class="col-12"><div class="alert alert-secondary">Officer roster coming soon.</div></div>`;
-      return;
-    }
-    $grid.innerHTML = list.map(cardHTML).join("");
+  const renderCurrent = (list=[]) => {
+    if (!list.length) return; // leave whatever is already in the grid
+    $grid.innerHTML = list.map((o,i)=>cardHTML(o, `c${i}`)).join("");
     wireAvatarFallbacks($grid);
   };
 
-  const renderHistory = (groups = []) => {
-    if (!$history) return;
-    if (!groups.length) {
-      $history.innerHTML = "";
-      return;
-    }
-
-    const html = groups
-      .map((g, gi) => {
-        const cards = (g.officers || [])
-          .map((o, i) => cardHTML(o, `h${gi}-${i}`))
-          .join("");
-        return `
+  const renderHistory = (groups=[]) => {
+    if (!groups.length) { $history.innerHTML = ""; return; }
+    const html = groups.map((g,gi) => {
+      const cards = (g.officers||[]).map((o,i)=>cardHTML(o, `h${gi}-${i}`)).join("");
+      return `
         <details class="officers-year mt-3">
-          <summary class="h6 mb-2">${g.year} <span class="text-muted">(${
-          (g.officers || []).length
-        })</span></summary>
+          <summary class="h6 mb-2">${g.year} <span class="text-muted">(${(g.officers||[]).length})</span></summary>
           <div class="row g-4">${cards}</div>
-        </details>
-      `;
-      })
-      .join("");
-
+        </details>`;
+    }).join("");
     $history.innerHTML = `<h3 class="h4 mt-4">Past Officers</h3>${html}`;
     wireAvatarFallbacks($history);
   };
@@ -583,18 +556,55 @@ function initOfficers() {
   (async () => {
     setBusy(true);
     try {
-      const [current, history] = await Promise.allSettled([
-        fetchJSON(SRC_CURRENT),
-        fetchJSON(SRC_HISTORY),
-      ]);
-      if (current.status === "fulfilled") renderCurrent(current.value);
-      else renderCurrent([]);
-      if (history.status === "fulfilled") renderHistory(history.value);
-      else renderHistory([]);
-    } catch (e) {
-      console.error(e);
-      renderCurrent([]);
-      renderHistory([]);
+      // 1) Current: if grid already has children, DON'T touch it.
+      const gridHasContent = $grid.children.length > 0;
+      if (!gridHasContent) {
+        // Optional convenience: try to load current from JSON if provided
+        try {
+          const current = await fetchJSON(SRC_CURRENT);
+          if (Array.isArray(current) && current.length) renderCurrent(current);
+        } catch { /* ignore if missing */ }
+      }
+
+      // 2) Past: prefer TSV
+      try {
+        const tsv = await fetchText(SRC_TSV);
+        const rows = parseTSV(tsv).map(r => ({
+          year:  r.year || "",
+          name:  r.name || "",
+          role:  r.role || "",
+          email: r.email || "",
+          major: r.major || "",
+          grad:  r.grad  || "",
+          photo: r.photo || "",
+          linkedin: r.linkedin || "",
+          github:   r.github   || "",
+          website:  r.website  || "",
+          current:  /^(yes|true|1)$/i.test(r.current || "")
+        }));
+
+        // take ONLY non-current rows (i.e., past)
+        const past = rows.filter(r => !r.current && r.year);
+        const byYear = new Map();
+        past.forEach(r => {
+          if (!byYear.has(r.year)) byYear.set(r.year, []);
+          byYear.get(r.year).push(r);
+        });
+        const groups = Array.from(byYear.entries())
+          .sort((a,b) => String(b[0]).localeCompare(String(a[0])))
+          .map(([year, officers]) => ({ year, officers }));
+
+        renderHistory(groups);
+      } catch (e) {
+        // TSV missing? fallback to the old JSON history
+        try {
+          const hist = await fetchJSON(SRC_HIST_F);
+          if (Array.isArray(hist)) renderHistory(hist);
+          else renderHistory([]);
+        } catch {
+          renderHistory([]);
+        }
+      }
     } finally {
       setBusy(false);
     }

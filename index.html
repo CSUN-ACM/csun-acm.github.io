@@ -200,7 +200,7 @@
               <div class="card-body">
                 <h3 id="proj1-title" class="h5 card-title mb-2">ACM Website Revamp</h3>
                 <p class="card-text mb-3">
-                  Clean, accessible site for events, projects, and membership — built with HTML, CSS, and Bootstrap.
+                  Clean, accessible site for events, projects, and membership, built with HTML, CSS, and Bootstrap.
                 </p>
                 <div class="d-flex flex-wrap gap-2 mb-3">
                   <span class="badge text-bg-light">HTML</span>
@@ -272,19 +272,16 @@
     </section>
 
     <!-- Officers -->
-    <section id="officers" class="py-5" data-officers-src="assets/officers.json"
-      data-history-src="assets/officers_history.json">
+    <section id="officers"
+      class="py-5" 
+      data-officers-tsv="assets/officers.tsv"
+      data-officers-src="assets/officers.json">
       <div class="container">
-        <h2 class="h1 mb-3">Officers</h2>
-        <p class="text-muted mb-4">Current team and recent alumni leaders.</p>
-
-        <!-- Current officers grid will be injected here -->
-        <div id="officers-grid" class="row g-4" aria-live="polite" aria-busy="false"></div>
-
-        <!-- History will appear here -->
+        <div id="officers-grid" class="row g-4"></div>
         <div id="officers-history" class="mt-4"></div>
       </div>
     </section>
+
 
 
     <!-- Join -->
