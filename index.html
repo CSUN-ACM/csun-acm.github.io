@@ -30,80 +30,75 @@
   <!-- Skip link for keyboard users -->
   <a class="visually-hidden-focusable skip-link" href="#main">Skip to main content</a>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-semibold" href="#home">ACM | CSUN Student Chapter</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#home">ACM | CSUN Student Chapter</a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-      aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div id="mainNav" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
 
-        <!-- Compact group -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#about" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            About
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="aboutDropdown">
-            <li><a class="dropdown-item" href="#about">About Us</a></li>
-            <li><a class="dropdown-item" href="#officers">Officers</a></li>
-            <!-- <li><a class="dropdown-item" href="#faq">FAQ</a></li> -->
-            <!-- <li><a class="dropdown-item" href="#contact">Contact</a></li> -->
-          </ul>
-        </li>
-      </ul>
+          <!-- Compact group -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#about" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="#about">About Us</a></li>
+              <li><a class="dropdown-item" href="#officers">Officers</a></li>
+              <!-- <li><a class="dropdown-item" href="#faq">FAQ</a></li> -->
+              <!-- <li><a class="dropdown-item" href="#contact">Contact</a></li> -->
+            </ul>
+          </li>
+        </ul>
 
-      <div class="ms-lg-3">
-        <a class="btn btn-primary" href="#join">Join</a>
+        <div class="ms-lg-3">
+          <a class="btn btn-primary" href="#join">Join</a>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- Main -->
   <main id="main" tabindex="-1">
     <!-- Hero -->
-    <header id="home" class="hero-section py-5 border-bottom bg-white" aria-labelledby="site-hero-title">
+    <header id="home" class="hero-section hero--center border-bottom" aria-labelledby="site-hero-title">
       <div class="container">
         <div class="row align-items-center g-5">
-    
-          <!-- Logo -->
-          <div class="hero-img bg-light rounded-3 p-4" role="img" aria-label="ACM at CSUN logo">
-            <img src="assets/images/acm-logo.png" width="256" height="256" alt="ACM at CSUN logo" loading="lazy"
-              decoding="async" />
+
+          <!-- Logo (now in a proper grid column) -->
+          <div class="col-12 col-lg-5 order-1 order-lg-2 d-flex justify-content-center">
+            <div class="hero-img rounded-3 p-4 justify-content-center" role="img" aria-label="ACM at CSUN logo">
+              <img src="assets/images/acm-logo.png" width="256" height="256" alt="ACM at CSUN logo" loading="lazy"
+                decoding="async" />
+            </div>
           </div>
 
-    
           <!-- Copy -->
           <div class="col-12 col-lg-7 order-2 order-lg-1 text-center text-lg-start">
             <div class="hero-copy mx-auto">
               <span class="hero-eyebrow text-primary fw-semibold small text-uppercase">CSUN Chapter</span>
-              <h1 id="site-hero-title" class="display-5 fw-bold mt-1 mb-3 text-dark">Build skills. Ship together.</h1>
+              <h1 id="site-hero-title" class="display-5 fw-bold mt-1 mb-3">Build skills. Ship together.</h1>
               <p class="lead mb-4 text-muted">
                 Hands-on workshops, project teams, and mentorship that prepare you for internships and real-world work.
               </p>
-    
+
               <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center justify-content-lg-start">
                 <a class="btn btn-primary btn-lg" href="#join" aria-label="Join ACM at CSUN">Join the club</a>
-                <a class="btn btn-outline-primary btn-lg" href="#events" aria-label="View upcoming events">See events</a>
-              </div>
-    
-              <!-- Quick facts -->
-              <div class="hero-stats d-flex flex-wrap gap-2 mt-3">
-                <span class="stat-pill">Weekly workshops</span>
-                <span class="stat-pill">Project teams</span>
-                <span class="stat-pill">Mentorship</span>
+                <a class="btn btn-outline-primary btn-lg" href="#events" aria-label="View upcoming events">See
+                  events</a>
               </div>
             </div>
           </div>
-    
+
         </div>
       </div>
     </header>
@@ -338,8 +333,8 @@
 
 
     <!-- Join -->
-    <section id="join" class="py-5 bg-light" data-discord-invite="https://discord.gg/YOUR_INVITE"
-      data-portal-url="https://YOUR_SCHOOL_PORTAL_LINK">
+    <section id="join" class="py-5 bg-light" data-discord-invite="https://discord.com/invite/MEKNYxdyye"
+      data-portal-url="https://csun.campuslabs.com/engage/organization/association-for-computing-machinery-acm">
       <div class="container">
         <h2 class="h1 mb-3">Join</h2>
         <p class="text-muted mb-4">
@@ -356,7 +351,8 @@
                 <h3 class="h5">Join our Discord</h3>
                 <p class="text-muted mb-3">Meet officers, get event reminders, and find project teams.</p>
                 <div class="d-flex flex-wrap gap-2 mb-3">
-                  <a id="discord-join" class="btn btn-discord btn-lg" href="#" target="_blank" rel="noopener">
+                  <a id="discord-join" class="btn btn-discord btn-lg" href="https://discord.gg/MEKNYxdyye"
+                    target="_blank" rel="noopener">
                     Join Discord
                   </a>
                   <!-- <button id="discord-copy" class="btn btn-outline-secondary btn-lg" type="button">
@@ -382,7 +378,9 @@
               <div class="card-body d-flex flex-column">
                 <h3 class="h5">CSUN Clubs Portal</h3>
                 <p class="text-muted mb-3">Prefer the official campus portal? Join and follow ACM there.</p>
-                <a id="portal-link" class="btn btn-outline-primary btn-lg" href="https://csun.campuslabs.com/engage/organization/association-for-computing-machinery-acm" target="_blank" rel="noopener">
+                <a id="portal-link" class="btn btn-outline-primary btn-lg"
+                  href="https://csun.campuslabs.com/engage/organization/association-for-computing-machinery-acm"
+                  target="_blank" rel="noopener">
                   Open Portal
                 </a>
               </div>
@@ -454,8 +452,8 @@
       <p class="mb-0 small text-muted">© <span id="year"></span> ACM at CSUN</p>
       <ul class="list-inline mb-0">
         <li class="list-inline-item">
-          <a class="link-secondary d-inline-flex align-items-center gap-1" href="https://github.com/CSUN-ACM/csun-acm.github.io"
-            target="_blank" rel="noopener">
+          <a class="link-secondary d-inline-flex align-items-center gap-1"
+            href="https://github.com/CSUN-ACM/csun-acm.github.io" target="_blank" rel="noopener">
             <i class="bi bi-github" aria-hidden="true"></i>
             <span class="visually-hidden">GitHub</span> GitHub
           </a>

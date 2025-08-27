@@ -1,6 +1,6 @@
 /* assets/styles.css
    Theme: CSUN red mapped to Bootstrap primary
-   Clean hero (light), responsive sections, lightweight polish
+   Clean hero (theme-aware), responsive sections, lightweight polish
 */
 
 /* ===== Globals & theme ===== */
@@ -70,31 +70,19 @@
 /* ===== Anchor offsets (sticky navbar) & hero min-height ===== */
 #home,
 .hero-section {
-  min-height: 100vh;
+  min-height: 50vh;
+  /* smaller hero size */
   position: relative;
-}
-
-@supports (height: 100dvh) {
-
-  #home,
-  .hero-section {
-    min-height: 100dvh;
-  }
 }
 
 @media (max-width: 991.98px) {
 
   #home,
   .hero-section {
-    min-height: calc(100vh - var(--mobile-navbar-h));
-  }
-
-  @supports (height: 100dvh) {
-
-    #home,
-    .hero-section {
-      min-height: calc(100dvh - var(--mobile-navbar-h));
-    }
+    min-height: auto;
+    /* let content + padding control size */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   /* Keep in-page anchors visible beneath the sticky navbar */
@@ -105,134 +93,100 @@
 }
 
 /* ======================================================================= */
-/*                                HERO (LIGHT)                             */
+/*                                HERO (THEME-AWARE)                       */
 /* ======================================================================= */
-
-/* White hero with CSUN red underline, matching the navbar */
+/* Background image (use relative path) + overlay for readability */
 .hero-section {
-  background: #fff;
+  background: var(--bs-body-bg);
   border-bottom: 4px solid var(--csun-red);
   position: relative;
   padding-top: clamp(2rem, 6vh, 4rem);
   padding-bottom: clamp(2rem, 6vh, 4rem);
+  background-image: url("/assets/images/hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Container spacing retained for comfortable composition */
-.hero-section .container {
-  padding-top: clamp(16px, 8vh, 96px);
+/* Soft overlay that adapts to light/dark for better text contrast */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* light: subtle white veil; dark: subtle black veil */
+  background: linear-gradient(to right,
+      color-mix(in oklab, var(--bs-body-bg) 85%, transparent),
+      color-mix(in oklab, var(--bs-body-bg) 60%, transparent));
+  pointer-events: none;
 }
 
-.hero-section .hero-eyebrow {
-  letter-spacing: .08em;
-  color: var(--csun-red);
+/* Ensure the content sits above the overlay */
+.hero-section>.container {
+  position: relative;
+  z-index: 1;
 }
 
+/* Headline now theme-aware (no forced text-dark class needed) */
 .hero-section .display-5 {
   font-size: clamp(1.8rem, 3.4vw + .6rem, 2.45rem);
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: #212529;
+  color: var(--bs-body-color);
   margin-bottom: .75rem;
   text-shadow: none;
 }
 
-.hero-section .lead {
-  font-size: clamp(1rem, 1.2vw + 0.6rem, 1.25rem);
-  line-height: 1.55;
-  color: #6c757d;
-  /* Bootstrap muted */
-  max-width: 62ch;
-  margin-bottom: 1.25rem;
-  text-shadow: none;
-}
-
-.hero-copy {
-  max-width: 62ch;
-}
-
-/* Logo tile: simple, clean card */
+/* Keep your existing hero-img sizing; remove hard bg so the logo floats cleanly */
 .hero-img {
-  width: clamp(340px,
-      26vw,
-      320px);
+  width: clamp(340px, 26vw, 320px);
   aspect-ratio: 1 / 1;
-  border-radius: 1rem;
   display: grid;
   place-items: center;
   padding: 1.25rem;
   background: transparent !important;
   margin-inline: auto;
-  animation: none;
-  /* remove float */
-  backdrop-filter: none;
-  /* remove glass */
+  border-radius: 1rem;
 }
-
-.hero-img img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Quick facts */
-.hero-stats {
-  margin-top: .5rem;
-}
-
-.stat-pill {
-  font-size: .9rem;
-  padding: .5rem .9rem;
-  border-radius: 999px;
-  background-color: rgba(var(--csun-red-rgb), .08);
-  color: var(--csun-red);
-  border: 1px solid rgba(var(--csun-red-rgb), .25);
-  font-weight: 500;
-  box-shadow: none;
-  backdrop-filter: none;
-}
-
-/* Centered variant support (if header has .hero--center) */
 .hero--center {
   display: flex;
   align-items: center;
+  /* vertical centering */
   justify-content: center;
+  /* horizontal centering */
+  text-align: center;
 }
 
 .hero--center>.container {
   flex: 1 1 auto;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* ensures full screen centering */
   padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .hero--center .row {
   width: 100%;
-  align-items: center;
   justify-content: center;
 }
 
-.hero--center .col-12.col-lg-7 {
+.hero--center .col-12 {
   display: flex;
-  justify-content: center;
-}
-
-.hero--center .hero-copy {
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-inline: auto;
-  max-width: 62ch;
-}
-
-.hero--center .d-flex.justify-content-lg-start {
-  justify-content: center !important;
 }
 
 @media (max-width: 991.98px) {
   .hero-img {
     width: clamp(112px, 34vw, 172px);
+    place-items: center;
+    
   }
 }
-
 /* ======================================================================= */
 /*                             EVENTS SECTION                               */
 /* ======================================================================= */
@@ -242,7 +196,8 @@
 }
 
 .event-card {
-  border-left: 4px solid rgba(var(--csun-red-rgb), .8);
+  /* DARK-MODE: keep brand but blend into background for better contrast */
+  border-left: 4px solid color-mix(in oklab, var(--csun-red) 85%, var(--bs-body-bg));
   transition: box-shadow .15s ease, transform .15s ease;
 }
 
@@ -262,12 +217,18 @@
 .project-thumb {
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  background: linear-gradient(135deg, rgba(0, 0, 0, .06), rgba(0, 0, 0, .02));
+  /* DARK-MODE: neutral shimmer that adapts to body color */
+  background: linear-gradient(135deg,
+      color-mix(in oklab, var(--bs-body-color) 8%, transparent),
+      color-mix(in oklab, var(--bs-body-color) 3%, transparent));
 }
 
 .placeholder-wave {
   animation: shimmer 1.2s linear infinite;
-  background: linear-gradient(90deg, rgba(0, 0, 0, .06) 25%, rgba(0, 0, 0, .10) 37%, rgba(0, 0, 0, .06) 63%);
+  background: linear-gradient(90deg,
+      color-mix(in oklab, var(--bs-body-color) 8%, transparent) 25%,
+      color-mix(in oklab, var(--bs-body-color) 14%, transparent) 37%,
+      color-mix(in oklab, var(--bs-body-color) 8%, transparent) 63%);
   background-size: 400% 100%;
 }
 
@@ -377,14 +338,15 @@
   color: #fff;
 }
 
+/* DARK-MODE: neutralize QR frame using Bootstrap tokens */
 .join-card .qr-wrap {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   padding: 12px;
   border-radius: 12px;
-  background: rgba(0, 0, 0, .04);
-  border: 1px solid rgba(0, 0, 0, .08);
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
 }
 
 .join-card .qr-wrap img {
@@ -421,13 +383,13 @@
   box-shadow: 0 0 0 3px rgba(206, 17, 44, .15);
 }
 
-/* Track cards */
+/* Track cards - THEME-AWARE */
 .about-tracks .track-card {
-  border: 1px solid rgba(0, 0, 0, .08);
+  border: 1px solid var(--bs-border-color);
   border-left: 4px solid var(--csun-red);
   border-radius: 14px;
   padding: .9rem .9rem .8rem;
-  background: #fff;
+  background: var(--bs-body-bg);
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
 
@@ -446,6 +408,7 @@
   gap: .8rem;
 }
 
+/* THEME-AWARE image frames */
 .about-img {
   position: relative;
   border-radius: 16px;
@@ -453,9 +416,11 @@
   isolation: isolate;
   min-height: 180px;
   background:
-    radial-gradient(80% 80% at 50% 40%, rgba(255, 255, 255, .6), rgba(255, 255, 255, .25)),
-    linear-gradient(135deg, rgba(0, 0, 0, .08), rgba(0, 0, 0, .02));
-  outline: 1px solid rgba(0, 0, 0, .06);
+    radial-gradient(80% 80% at 50% 40%, color-mix(in oklab, var(--bs-body-bg) 30%, #fff), transparent),
+    linear-gradient(135deg,
+      color-mix(in oklab, var(--bs-body-color) 8%, transparent),
+      color-mix(in oklab, var(--bs-body-color) 2%, transparent));
+  outline: 1px solid var(--bs-border-color);
   box-shadow: 0 8px 24px rgba(0, 0, 0, .10);
 }
 
@@ -498,12 +463,12 @@
   }
 }
 
-/* KPIs */
+/* KPIs - THEME-AWARE */
 .about-kpis .kpi {
-  border: 1px dashed rgba(0, 0, 0, .12);
+  border: 1px dashed var(--bs-border-color);
   border-radius: 12px;
   padding: .9rem .9rem .8rem;
-  background: #fff;
+  background: var(--bs-body-bg);
 }
 
 .kpi-num {
@@ -516,17 +481,9 @@
   font-size: .95rem;
 }
 
-/* Dark-mode tweaks for About */
+/* Additional dark polish for About (kept minimal) */
 @media (prefers-color-scheme: dark) {
-
-  .about-tracks .track-card,
-  .about-kpis .kpi {
-    background: rgba(33, 37, 41, .6);
-    border-color: rgba(255, 255, 255, .12);
-  }
-
   .about-img {
-    outline-color: rgba(255, 255, 255, .10);
     box-shadow: 0 8px 30px rgba(0, 0, 0, .35);
   }
 }
