@@ -97,15 +97,13 @@
 /* ======================================================================= */
 /* Background image (use relative path) + overlay for readability */
 .hero-section {
-  background: var(--bs-body-bg);
+  background: url("/assets/images/hero.jpeg") center/cover no-repeat;
   border-bottom: 4px solid var(--csun-red);
   position: relative;
   padding-top: clamp(2rem, 6vh, 4rem);
   padding-bottom: clamp(2rem, 6vh, 4rem);
-  background-image: url("/assets/images/hero.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #fff;  /* fallback if image fails */
+
 }
 
 /* Soft overlay that adapts to light/dark for better text contrast */
@@ -146,14 +144,6 @@
   background: transparent !important;
   margin-inline: auto;
   border-radius: 1rem;
-}
-.hero--center {
-  display: flex;
-  align-items: center;
-  /* vertical centering */
-  justify-content: center;
-  /* horizontal centering */
-  text-align: center;
 }
 
 .hero--center>.container {
