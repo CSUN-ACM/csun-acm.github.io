@@ -97,17 +97,19 @@
 /* ======================================================================= */
 /* Background image (use relative path) + overlay for readability */
 .hero-section {
-  background: url("/assets/images/hero.jpeg") center/cover no-repeat;
   border-bottom: 4px solid var(--csun-red);
   position: relative;
   padding-top: clamp(2rem, 6vh, 4rem);
   padding-bottom: clamp(2rem, 6vh, 4rem);
-  background-color: #fff;  /* fallback if image fails */
+  background-color: #fff;
+  /* fallback if image fails */
 
 }
+
 header.hero-section {
-  background: url("/assets/images/hero.jpeg") center/cover no-repeat;
+  background: url("./images/hero.jpeg") center/cover no-repeat;
 }
+
 /* Soft overlay that adapts to light/dark for better text contrast */
 .hero-section::before {
   content: "";
@@ -176,9 +178,10 @@ header.hero-section {
   .hero-img {
     width: clamp(112px, 34vw, 172px);
     place-items: center;
-    
+
   }
 }
+
 /* ======================================================================= */
 /*                             EVENTS SECTION                               */
 /* ======================================================================= */
