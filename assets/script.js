@@ -798,3 +798,12 @@ function initOfficers() {
     }
   })();
 }
+// Auto-collapse navbar after clicking any link or dropdown item (mobile UX)
+document.addEventListener('click', (e) => {
+  const nav = document.getElementById('mainNav');
+  if (!nav) return;
+  const clicked = e.target.closest('.nav-link, .dropdown-item');
+  if (!clicked) return;
+  const instance = bootstrap.Collapse.getInstance(nav) || new bootstrap.Collapse(nav, { toggle: false });
+  instance.hide();
+});
