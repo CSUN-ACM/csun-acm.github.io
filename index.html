@@ -8,7 +8,7 @@
   <title>ACM | CSUN Student Chapter</title>
   <meta name="description"
     content="Official website for the ACM chapter at California State University, Northridge. Explore events, projects, officers, and how to join." />
-  <link rel="canonical" href="https://your-username.github.io/your-repo/" />
+  <link rel="canonical" href="https://github.com/CSUN-ACM/csun-acm.github.io" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="ACM at CSUN" />
@@ -216,61 +216,40 @@
     </section>
 
 
-
     <!-- Events -->
-    <section id="events" class="py-5"
-      data-feed-url="https://script.google.com/macros/s/AKfycbzrgunuytflmxG4MBaWYNtg05MNXWZEmWnq7t0FqiTDCr-N1eB11crQbnvESUZuRDgS/exec"
-      data-timezone="America/Los_Angeles" data-rsvp-email="acm.sc@my.csun.edu"
-      data-rsvp-form="https://docs.google.com/forms/d/e/1FAIpQLSfPCznVYQT1xuDEcjFkkduDsXeiyB20NMrI4q4C5qgjrkPnRQ/viewform?usp=dialog"
-      data-rsvp-id="entry.804661281" data-rsvp-title="entry.428719041" data-rsvp-startiso="entry.356614051"
-      data-rsvp-location="entry.1224224102">
-      <!-- If/when you use a Google Form RSVP, fill in data-rsvp-form and the three field IDs above. -->
-
+    <section id="events" class="py-5">
       <div class="container">
         <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-2">
           <h2 class="h1 mb-0">Workshop Series</h2>
 
-          <!-- Controls -->
-          <div class="d-flex align-items-center gap-3">
-            <!-- Subscribe buttons (ICS works only if the calendar is public) -->
-            <div class="btn-group btn-group-sm" role="group" aria-label="Subscribe">
-              <a class="btn btn-outline-secondary"
-                href="https://calendar.google.com/calendar/ical/acm.sc%40my.csun.edu/public/basic.ics" target="_blank"
-                rel="noopener">Subscribe (.ics)</a>
-              <a class="btn btn-outline-secondary"
-                href="https://calendar.google.com/calendar/embed?src=acm.sc%40my.csun.edu&ctz=America%2FLos_Angeles"
-                target="_blank" rel="noopener">Open in Google Calendar</a>
-            </div>
-
-            <!-- Calendar toggle -->
-            <div class="form-check form-switch m-0">
-              <input class="form-check-input" type="checkbox" role="switch" id="toggleCalendar"
-                aria-controls="calendar-embed" aria-expanded="false" />
-              <label class="form-check-label" for="toggleCalendar">Show calendar</label>
-            </div>
+          <!-- Subscribe/Open (optional) -->
+          <div class="btn-group btn-group-sm" role="group" aria-label="Subscribe">
+            <!-- .ics works only if calendar is public -->
+            <a class="btn btn-outline-secondary"
+              href="https://calendar.google.com/calendar/ical/acm.sc%40my.csun.edu/public/basic.ics" target="_blank"
+              rel="noopener">Subscribe (.ics)</a>
+            <a class="btn btn-outline-secondary"
+              href="https://calendar.google.com/calendar/embed?src=acm.sc%40my.csun.edu&ctz=America%2FLos_Angeles"
+              target="_blank" rel="noopener">Open in Google Calendar</a>
           </div>
         </div>
 
-        <p class="text-muted mb-4 section-intro">
-          Below are upcoming events. Use the toggle to view the full calendar.
+        <p class="text-muted mb-3">Live calendar view.</p>
+
+        <!-- Calendar embed -->
+        <div class="ratio ratio-16x9 border rounded-3">
+          <iframe title="ACM at CSUN Google Calendar"
+            src="https://calendar.google.com/calendar/embed?src=acm.sc%40my.csun.edu&ctz=America%2FLos_Angeles&mode=MONTH"
+            style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+
+        </div>
+
+        <p class="text-muted small mt-2">
+          If the calendar doesn&#39;t appear, ensure it&#39;s set to be publicly viewable in Google Calendar settings.
         </p>
-
-        <!-- Dynamic event cards injected by script.js -->
-        <div id="events-list" class="row g-4" aria-live="polite" aria-busy="false"></div>
-
-        <!-- Optional Google Calendar Embed (hidden by default) -->
-        <div id="calendar-embed" class="mt-4" hidden>
-          <div class="ratio ratio-16x9 border rounded-3">
-            <iframe title="ACM at CSUN Google Calendar"
-              src="https://calendar.google.com/calendar/embed?src=acm.sc%40my.csun.edu&ctz=America%2FLos_Angeles"
-              style="border:0" loading="lazy"></iframe>
-          </div>
-          <p class="text-muted small mt-2">
-            The embed and .ics subscribe link work only if the ACM calendar is publicly viewable.
-          </p>
-        </div>
       </div>
     </section>
+
 
 
 

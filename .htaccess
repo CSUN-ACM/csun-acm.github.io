@@ -1,0 +1,39 @@
+ErrorDocument 400 /acm/index.html
+ErrorDocument 401 /acm/index.html
+ErrorDocument 402 /acm/index.html
+ErrorDocument 403 /acm/index.html
+ErrorDocument 404 /acm/index.html
+ErrorDocument 405 /acm/index.html
+ErrorDocument 406 /acm/index.html
+ErrorDocument 407 /acm/index.html
+ErrorDocument 408 /acm/index.html
+ErrorDocument 409 /acm/index.html
+ErrorDocument 410 /acm/index.html
+ErrorDocument 411 /acm/index.html
+ErrorDocument 412 /acm/index.html
+ErrorDocument 413 /acm/index.html
+ErrorDocument 414 /acm/index.html
+ErrorDocument 415 /acm/index.html
+ErrorDocument 416 /acm/index.html
+ErrorDocument 417 /acm/index.html
+# ErrorDocument 418 /acm/index.html
+# ErrorDocument 421 /acm/index.html
+ErrorDocument 422 /acm/index.html
+ErrorDocument 423 /acm/index.html
+ErrorDocument 424 /acm/index.html
+ErrorDocument 426 /acm/index.html
+ErrorDocument 428 /acm/index.html
+ErrorDocument 429 /acm/index.html
+ErrorDocument 431 /acm/index.html
+# ErrorDocument 451 /acm/index.html
+ErrorDocument 500 /acm/index.html
+ErrorDocument 501 /acm/index.html
+ErrorDocument 502 /acm/index.html
+ErrorDocument 503 /acm/index.html
+ErrorDocument 504 /acm/index.html
+ErrorDocument 505 /acm/index.html
+ErrorDocument 506 /acm/index.html
+ErrorDocument 507 /acm/index.html
+ErrorDocument 508 /acm/index.html
+ErrorDocument 510 /acm/index.html
+ErrorDocument 511 /acm/index.html
