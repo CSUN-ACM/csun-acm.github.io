@@ -105,7 +105,9 @@
   background-color: #fff;  /* fallback if image fails */
 
 }
-
+header.hero-section {
+  background: url("/assets/images/hero.jpeg") center/cover no-repeat;
+}
 /* Soft overlay that adapts to light/dark for better text contrast */
 .hero-section::before {
   content: "";
