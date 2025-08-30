@@ -6,7 +6,7 @@
     "grad": "",
     "email": "alex.rivera@my.csun.edu",
     "photo": "assets/images/officers/profile-xj.png",
-    "linkedin": "#"
+    "linkedin": ""
   },
   {
     "name": "Param Desai",
@@ -20,54 +20,46 @@
     
   },
   {
-    "name": "Ridham Patel",
+    "name": "Gev Chalikyan",
     "role": "Vice President",
     "major": "Computer Science",
     "grad": "2026",
-    "email": "jamie.chen@my.csun.edu",
-    "photo": "assets/images/officers/profile-rp.jpg",
-    "linkedin": "https://www.linkedin.com/in/ridhampatel23",
-    "github": "https://github.com/ridhampatel23"
+    "email": "gevork.chalikyan.754@my.csun.edu",
+    "photo": "assets/images/officers/profile-gc.jpg",
+    "linkedin": "",
+    "github": "https://github.com/GevChalikyan"
    
   },
   {
-    "name": "Kousha Salimkhan",
-    "role": "Treasurer",
+    "name": "Vikas Sardhara ",
+    "role": "Secretary",
     "major": "Computer Science",
     "grad": "2026",
-    "email": "jamie.chen@my.csun.edu",
-    "photo": "assets/images/officers/profile-ks.jpeg",
-    "linkedin": "https://www.linkedin.com/in/kousha-salimkhan-21aaa31a2",
-    "github": "https://github.com/ksalimkhan"
+    "email": "vikas.sardhara.418@my.csun.edu",
+    "photo": "assets/images/officers/profile-vs.jpg",
+    "linkedin": "https://www.linkedin.com/in/vikas-sardhara",
+    "github":"https://github.com/VikasSardhara"
+    
   },
   {
     "name": "Juan Rodriguez",
     "role": "Web Developer",
     "major": "Computer Science",
     "grad": "2026",
-    "email": "jamie.chen@my.csun.edu",
+    "email": "Juan.Rodriguez.517@my.csun.edu",
     "photo": "assets/images/officers/profile-jr.jpg",
     "linkedin": "https://www.linkedin.com/in/juan-rodriguez-26b39427a",
     "github":"https://github.com/gtech29"
   },
     {
-    "name": "Guna Yaswanth Gadde",
+    "name": "Jessica Reyes",
     "role": "Community Lead",
     "major": "Computer Science",
     "grad": "2026",
-    "email": "jamie.chen@my.csun.edu",
-    "photo": "assets/images/officers/profile-gy.jpg",
-    "linkedin": "https://www.linkedin.com/in/gadde-guna-yaswanth/",
-    "github":"https://github.com/yashu510"
-  },
-    {
-    "name": "Bernadette Panganiban",
-    "role": "Public Relations",
-    "major": "Computer Science",
-    "grad": "2025",
-    "email": "jamie.chen@my.csun.edu",
-    "photo": "assets/images/officers/profile-bp.jpg",
-    "linkedin": "https://www.linkedin.com/in/bernadette-panganiban-10b6291b5/"
-    
+    "email": "jessica.reyes.459@my.csun.edu",
+    "photo": "assets/images/officers/profile-jessreyes.jpg",
+    "linkedin": "http://www.linkedin.com/in/jessica-reyes-ece-b13164330",
+    "github":""
   }
+    
 ]
