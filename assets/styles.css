@@ -91,56 +91,61 @@
     scroll-margin-top: calc(var(--mobile-navbar-h) + 8px);
   }
 }
+/* ===================================================== */
+/* HERO SECTION (Responsive, Theme-Aware, Mobile-Friendly) */
+/* ===================================================== */
 
-/* ======================================================================= */
-/*                                HERO (THEME-AWARE)                       */
-/* ======================================================================= */
-/* Background image (use relative path) + overlay for readability */
 .hero-section {
   border-bottom: 4px solid var(--csun-red);
   position: relative;
-  padding-top: clamp(2rem, 6vh, 4rem);
-  padding-bottom: clamp(2rem, 6vh, 4rem);
+  padding-block: clamp(2rem, 6vh, 4rem);
   background-color: #fff;
-  /* fallback if image fails */
-
-}
-
-header.hero-section {
   background: url("./images/hero.jpeg") center/cover no-repeat;
+  min-height: 60vh;
+  /* <-- ensures it shows even with little content */
+  display: flex;
+  align-items: center;
+  z-index: 0;
 }
 
-/* Soft overlay that adapts to light/dark for better text contrast */
+/* Mobile fix: Ensure background is always visible */
+@media (max-width: 767.98px) {
+  .hero-section {
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+/* Overlay for readability (light/dark aware) */
 .hero-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  /* light: subtle white veil; dark: subtle black veil */
   background: linear-gradient(to right,
       color-mix(in oklab, var(--bs-body-bg) 85%, transparent),
       color-mix(in oklab, var(--bs-body-bg) 60%, transparent));
   pointer-events: none;
-}
-
-/* Ensure the content sits above the overlay */
-.hero-section>.container {
-  position: relative;
   z-index: 1;
 }
 
-/* Headline now theme-aware (no forced text-dark class needed) */
+/* Container content stays above overlay */
+.hero-section>.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Headline - clean, scalable, theme-aware */
 .hero-section .display-5 {
   font-size: clamp(1.8rem, 3.4vw + .6rem, 2.45rem);
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--bs-body-color);
-  margin-bottom: .75rem;
-  text-shadow: none;
 }
 
-/* Keep your existing hero-img sizing; remove hard bg so the logo floats cleanly */
+/* Hero Image (for carousel or logo) */
 .hero-img {
-  width: clamp(340px, 26vw, 320px);
+  width: clamp(140px, 26vw, 320px);
   aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
@@ -150,16 +155,14 @@ header.hero-section {
   border-radius: 1rem;
 }
 
+/* Centered hero variant */
 .hero--center>.container {
-  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  /* ensures full screen centering */
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-block: 0 !important;
 }
 
 .hero--center .row {
@@ -174,14 +177,12 @@ header.hero-section {
   text-align: center;
 }
 
+/* Responsive image scaling */
 @media (max-width: 991.98px) {
   .hero-img {
     width: clamp(112px, 34vw, 172px);
-    place-items: center;
-
   }
 }
-
 /* ======================================================================= */
 /*                             EVENTS SECTION                               */
 /* ======================================================================= */
@@ -528,4 +529,131 @@ header.hero-section {
 /* Roomier dropdown items (touch friendly) */
 .dropdown-menu .dropdown-item {
   padding: .55rem 1rem;
+}
+/* Keep slideshow visuals consistent */
+.hero-section .carousel,
+.hero-section .carousel .carousel-inner {
+  max-width: 520px;
+  /* nice column width on desktop */
+}
+
+@media (min-width: 992px) {
+
+  .hero-section .carousel,
+  .hero-section .carousel .carousel-inner {
+    max-width: 560px;
+    /* slightly wider on large screens */
+  }
+}
+
+/* Ensure images cover the frame without distortion */
+.hero-slide-img {
+  aspect-ratio: 4 / 3;
+  /* consistent height on mobile/desktop */
+  object-fit: cover;
+}
+
+/* Prefer reduced motion users: we’ll pause via JS, but also reduce transitions */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item {
+    transition: none !important;
+  }
+}
+/* Ensures image fills container without distortion */
+.object-fit-cover {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* --- Intro overlay --- */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: var(--bs-body-bg, #fff);
+  z-index: 1080;
+  /* above navbar & modals if needed */
+  transition: opacity .35s ease;
+}
+
+.intro-overlay[hidden] {
+  display: none;
+}
+
+.intro-wrap {
+  display: grid;
+  place-items: center;
+  width: clamp(160px, 28vw, 280px);
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  background: var(--bs-body-bg, #fff);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+  will-change: transform, opacity;
+  animation: intro-pop .9s ease-out both, intro-hold .7s linear .9s both;
+}
+
+.intro-wrap img {
+  width: 70%;
+  height: auto;
+}
+
+@keyframes intro-pop {
+  0% {
+    transform: scale(.85);
+    opacity: 0;
+    filter: blur(6px);
+  }
+
+  60% {
+    transform: scale(1.03);
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* hold a beat, then we’ll fade the overlay via JS */
+@keyframes intro-hold {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.intro-overlay.is-dismissing {
+  opacity: 0;
+}
+
+.intro-skip {
+  position: absolute;
+  bottom: clamp(12px, 4vh, 24px);
+  right: clamp(12px, 4vw, 24px);
+  backdrop-filter: blur(6px);
+}
+
+/* Prevent layout shift while intro is visible */
+body.intro-lock {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .intro-wrap {
+    animation: none;
+  }
+
+  .intro-overlay {
+    transition: none;
+  }
 }

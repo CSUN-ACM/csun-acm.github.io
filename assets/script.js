@@ -1,6 +1,6 @@
 /* assets/script.js */
 (() => {
-  "use strict";
+  ("use strict");
 
   document.addEventListener("DOMContentLoaded", () => {
     initYear();
@@ -11,6 +11,8 @@
     initJoinToggle();
     initEventsFromCalendar(); // render events + RSVP
     initJoinSection();
+    initHeroCarousel();
+    initPageIntro();
   });
 
   function initYear() {
@@ -517,6 +519,152 @@
     };
 
     load();
+  }
+
+  // Intro logo animation (first load per session; a11y + reduced-motion)
+  function initPageIntro() {
+    const intro = document.getElementById("intro");
+    if (!intro) return;
+
+    const playedKey = "acm:introPlayed";
+    const mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const skipBtn = document.getElementById("intro-skip");
+
+    // If user has seen it this session, or prefers reduced motion → skip
+    const shouldSkip =
+      sessionStorage.getItem(playedKey) === "1" || mqReduce.matches;
+
+    const show = () => {
+      intro.hidden = false;
+      document.body.classList.add("intro-lock");
+      window.requestAnimationFrame(() => {
+        // start animations via CSS; nothing else needed here
+      });
+    };
+
+    const hide = () => {
+      sessionStorage.setItem(playedKey, "1");
+      intro.classList.add("is-dismissing");
+      // let the fade complete (CSS .35s), then remove
+      setTimeout(() => {
+        intro.hidden = true;
+        intro.classList.remove("is-dismissing");
+        document.body.classList.remove("intro-lock");
+      }, 380);
+    };
+
+    // If skipping, ensure no lock and just bail
+    if (shouldSkip) {
+      intro.hidden = true;
+      document.body.classList.remove("intro-lock");
+      return;
+    }
+
+    // Otherwise, show the overlay and schedule dismissal
+    show();
+
+    // Dismiss shortly after the animation “hold” completes (~0.9s + 0.7s)
+    const TOTAL = 1650; // ms; feels snappy, adjust 1400–2000 as you like
+    const timer = setTimeout(hide, TOTAL);
+
+    // Skip button, keyboard, and click-to-skip
+    const fastExit = () => {
+      clearTimeout(timer);
+      hide();
+    };
+    skipBtn?.addEventListener("click", fastExit);
+    intro.addEventListener("click", (e) => {
+      // only if they click outside the logo card
+      if (e.target === intro) fastExit();
+    });
+    intro.addEventListener(
+      "keydown",
+      (e) => {
+        if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          fastExit();
+        }
+      },
+      { passive: false }
+    );
+
+    // If the page loses visibility (tab switch), dismiss to avoid stale overlay
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") fastExit();
+    });
+  }
+
+  // --- Hero Carousel: accessibility + performance helpers -------------------
+  function initHeroCarousel() {
+    const el = document.getElementById("heroCarousel");
+    if (!el || typeof bootstrap === "undefined" || !bootstrap.Carousel) return;
+
+    // Allow HTML data-* overrides; fall back to sensible defaults
+    const interval = Number(el.getAttribute("data-interval")) || 6000;
+    const pause = el.getAttribute("data-pause") || "hover";
+
+    // Create (or reuse) the Bootstrap instance
+    const carousel = bootstrap.Carousel.getOrCreateInstance(el, {
+      interval,
+      ride: "carousel",
+      pause,
+      touch: true,
+      keyboard: true,
+    });
+
+    // Respect prefers-reduced-motion (don’t auto-advance for those users)
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const applyMotionPref = () => {
+      if (mq.matches) {
+        carousel.pause();
+        // Keep indicators in sync even when we pause
+        el.setAttribute("data-paused-reduced-motion", "true");
+      } else {
+        // Only cycle if the carousel is actually visible
+        if (isInViewport(el)) carousel.cycle();
+      }
+    };
+    applyMotionPref();
+    mq.addEventListener?.("change", applyMotionPref);
+
+    // Pause when hero is scrolled off screen to save CPU/battery
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        const reduced = mq.matches;
+        if (entry.isIntersecting) {
+          if (!reduced) carousel.cycle();
+        } else {
+          carousel.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    io.observe(el);
+
+    // Keep aria-current on indicators accurate after each slide
+    el.addEventListener("slid.bs.carousel", () => {
+      const activeIdx = Array.from(
+        el.querySelectorAll(".carousel-item")
+      ).findIndex((n) => n.classList.contains("active"));
+      const indicators = el.querySelectorAll(
+        ".carousel-indicators [data-bs-slide-to]"
+      );
+      indicators.forEach((btn, i) => {
+        const isCurrent = i === activeIdx;
+        btn.setAttribute("aria-current", isCurrent ? "true" : "false");
+      });
+    });
+
+    // Util: quick viewport check (used above)
+    function isInViewport(node) {
+      const r = node.getBoundingClientRect();
+      return (
+        r.bottom > 0 &&
+        r.right > 0 &&
+        r.top < (window.innerHeight || document.documentElement.clientHeight) &&
+        r.left < (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
   }
 
   function initJoinSection() {
